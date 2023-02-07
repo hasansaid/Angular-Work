@@ -4,16 +4,21 @@
         <div class="columns is-centered">
             <div class="box column is-one-third">
                 <h1 class="title has-text-centered">Letter Matching</h1>
-
                 <p class="has-text-centered">
-                    Random Text
+                    <span [class]="compare(letter,enteredText[i])"
+                        *ngFor="let letter of randomText.split(''); let i =index">{{letter}}</span>
                 </p>
                 <div class="field" style="margin-top: 10px;">
-                    <input class="input" />
+                    <input class="input" (input)="getInputValue($any($event.target).value)" />
                 </div>
-                <div>
-                    <h1 class="title" style="text-align: center; margin-top: 20px; color:red">Congratulations!!!</h1>
+
+                <div *ngIf="randomText === enteredText">
+                    <h1 class="title" style="text-align: center; margin-top: 20px; color:rgb(3, 179, 3)">
+                        Congratulations!!!</h1>
                 </div>
+                <button class="cong button is-primary is-outlined"><a class="cong2" href="letter-matching-project">
+                        New
+                        Text</a></button>
             </div>
         </div>
     </div>

@@ -1,1 +1,25 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
+.cong {
+  margin-top: 15px;
+  margin-left: 150px;
+}
+
+.cong2 {
+  text-decoration: none;
+  color: rgb(84, 83, 83);
+}
+.cong2:hover {
+  color: black;
+}
+.pending {
+  color: gray;
+}
+.success {
+  color: green;
+  font-weight: bold;
+}
+.insuccess {
+  color: red;
+  font-weight: bold;
+}
