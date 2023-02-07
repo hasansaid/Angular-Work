@@ -34,7 +34,7 @@ export class PasswordProjectComponent implements OnInit {
   }
   buttonClick() {
     const numbers = '1234567890';
-    const letters = 'abcçdefgğhıijklmnoöprsştuüvyzWXYZAKLM';
+    const letters = 'abcdefghijklmnoprstuvyzWXYZAKLM';
     const symbols = '!@#$%^&()*';
 
     let validChars = '';
