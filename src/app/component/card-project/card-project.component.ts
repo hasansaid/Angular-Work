@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-project.component.css'],
 })
 export class CardProjectComponent implements OnInit {
+  contents: string = 'Data is passed between components and ngFor is used.';
   constructor() {}
 
   ngOnInit(): void {}

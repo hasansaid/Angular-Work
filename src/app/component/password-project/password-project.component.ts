@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./password-project.component.css'],
 })
 export class PasswordProjectComponent implements OnInit {
+  content: string = ' Generating password from random characters.';
+
   length: Number = 0;
   password: string = '';
   includeLetters: boolean = false;

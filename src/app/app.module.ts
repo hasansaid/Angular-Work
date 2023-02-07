@@ -8,9 +8,11 @@ import { PasswordProjectComponent } from './component/password-project/password-
 import { ErrorComponent } from './component/error/error.component';
 import { CardProjectComponent } from './component/card-project/card-project.component';
 import { CardComponent } from './component/card-project/card/card.component';
+import { LetterMatchingProjectComponent } from './component/letter-matching-project/letter-matching-project.component';
+import { GoalComponent } from './component/goal/goal.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, PasswordProjectComponent, ErrorComponent, CardProjectComponent, CardComponent],
+  declarations: [AppComponent, HomeComponent, PasswordProjectComponent, ErrorComponent, CardProjectComponent, CardComponent, LetterMatchingProjectComponent, GoalComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,4 +1,4 @@
-<section class="hero is-info">
+<!-- <section class="hero is-info">
     <div class="hero-body">
         <p class="title">
             The goal of the project
@@ -7,7 +7,9 @@
             In this project : Data is passed between components and ngFor is used.
         </p>
     </div>
-</section>
+</section> -->
+
+<app-goal [content]="contents"></app-goal>
 <div class="main">
 
     <app-card *ngFor="let post of posts" [title]="post.title" [imageUrl]="post.imageUrl" [username]="post.username"
