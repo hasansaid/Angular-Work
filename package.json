@@ -19,7 +19,9 @@
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
     "@types/faker": "^6.6.9",
+    "bootstrap": "^5.2.1",
     "faker": "^5.5.3",
+    "jquery": "^3.6.3",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
