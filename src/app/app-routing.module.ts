@@ -1,3 +1,4 @@
+import { PipesProjectComponent } from './component/pipes-project/pipes-project.component';
 import { LetterMatchingProjectComponent } from './component/letter-matching-project/letter-matching-project.component';
 import { CardProjectComponent } from './component/card-project/card-project.component';
 import { ErrorComponent } from './component/error/error.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
     path: 'letter-matching-project',
     component: LetterMatchingProjectComponent,
   },
+  { path: 'pipes-project', component: PipesProjectComponent },
 
   // Error page son path olmalıdır!!!
   { path: '**', component: ErrorComponent },

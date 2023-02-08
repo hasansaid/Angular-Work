@@ -1,0 +1,77 @@
+<app-goal [content]="content"></app-goal>
+
+<div class="container">
+    <div class="row m-5">
+        <span class="fs-2 text-danger">INVOICE</span>
+        <div class="col-md-6 mt-4">
+            <div>
+                <label>Size: </label>
+                <input class="input-group-text" style="width: 350px;" type="text"
+                    (input)="onNameChange($any($event.target).value)">
+            </div>
+
+        </div>
+        <div class="col-md-6 mt-4">
+            <div>
+                <label>Name: </label>
+                <br>
+                <span class="text-info fw-bold">{{name | titlecase}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="row m-5">
+        <div class="col-md-6 mt-4">
+            <div>
+                <label>Payment Date: </label>
+                <input class="input-group-text" style="width: 350px;" type="date"
+                    (input)="onDateChange($any($event.target).value)">
+            </div>
+
+        </div>
+        <div class="col-md-6 mt-4">
+            <div>
+                <label>Payment Date: </label>
+                <br>
+                <span class="text-info fw-bold">{{date | date:"MMMM d,y"}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="row m-5">
+        <div class="col-md-6 mt-4">
+            <div>
+                <label>Total: </label>
+                <input class="input-group-text" style="width: 350px;" type="number"
+                    (input)="onTotalChange($any($event.target).value)">
+            </div>
+
+        </div>
+        <div class="col-md-6 mt-4">
+            <div>
+                <label>Total: </label>
+                <br>
+                <span class="text-info fw-bold">{{total | currency}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="row m-5">
+        <span class="fs-2 text-danger">EXTRA</span>
+        <div class="col-md-6 mt-4">
+            <div>
+                <label>Size: </label>
+                <input class="input-group-text" style="width: 350px;" type="number"
+                    (input)="onSizeChange($any($event.target).value)">
+            </div>
+
+        </div>
+        <div class="col-md-6 mt-4">
+            <div>
+                <label>Size: </label>
+                <br>
+                <span class="text-info fw-bold">{{size | number:"1.1-4"}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="row m-5">
+        <p>{{person | json}}</p>
+    </div>
+</div>
