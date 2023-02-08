@@ -10,10 +10,18 @@ import { CardProjectComponent } from './component/card-project/card-project.comp
 import { CardComponent } from './component/card-project/card/card.component';
 import { LetterMatchingProjectComponent } from './component/letter-matching-project/letter-matching-project.component';
 import { GoalComponent } from './component/goal/goal.component';
-import { PipesProjectComponent } from './component/pipes-project/pipes-project.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, PasswordProjectComponent, ErrorComponent, CardProjectComponent, CardComponent, LetterMatchingProjectComponent, GoalComponent, PipesProjectComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    PasswordProjectComponent,
+    ErrorComponent,
+    CardProjectComponent,
+    CardComponent,
+    LetterMatchingProjectComponent,
+    GoalComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
