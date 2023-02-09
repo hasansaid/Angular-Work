@@ -1,3 +1,4 @@
+import { MainComponent } from './component/main/main.component';
 import { DirectivesProjectComponent } from './component/directives-project/directives-project.component';
 import { LetterMatchingProjectComponent } from './component/letter-matching-project/letter-matching-project.component';
 import { CardProjectComponent } from './component/card-project/card-project.component';
@@ -8,14 +9,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'password-project', component: PasswordProjectComponent },
-  { path: 'card-project', component: CardProjectComponent },
+  { path: '', component: MainComponent },
   {
-    path: 'letter-matching-project',
+    path: 'home',
+    component: HomeComponent,
+  },
+  { path: 'home/password-project', component: PasswordProjectComponent },
+  { path: 'home/card-project', component: CardProjectComponent },
+  {
+    path: 'home/letter-matching-project',
     component: LetterMatchingProjectComponent,
   },
-  { path: 'directives-project', component: DirectivesProjectComponent },
+  { path: 'home/directives-project', component: DirectivesProjectComponent },
 
   // Error page son path olmalıdır!!!
   { path: '**', component: ErrorComponent },

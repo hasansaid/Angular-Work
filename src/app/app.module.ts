@@ -11,6 +11,7 @@ import { CardComponent } from './component/card-project/card/card.component';
 import { LetterMatchingProjectComponent } from './component/letter-matching-project/letter-matching-project.component';
 import { GoalComponent } from './component/goal/goal.component';
 import { DirectivesProjectComponent } from './component/directives-project/directives-project.component';
+import { MainComponent } from './component/main/main.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { DirectivesProjectComponent } from './component/directives-project/direc
     LetterMatchingProjectComponent,
     GoalComponent,
     DirectivesProjectComponent,
+    MainComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
