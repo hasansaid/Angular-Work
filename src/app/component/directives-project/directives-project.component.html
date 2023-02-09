@@ -1,7 +1,23 @@
 <app-goal [content]="content"></app-goal>
 
+<div>
+    <div class="mt-3 fs-1 fw-lighter" style="text-align: center; color:red" [ngSwitch]="currentPage">
+        <div *ngSwitchCase="0">
+            Birinci Sayfa
+        </div>
+        <!-- Kendi oluşturmuş olduğumuz directive kullanıyoruz. -->
+        <div appFirst *ngSwitchCase="1">
+            İkinci Sayfa
+        </div>
+        <div *ngSwitchCase="2">
+            Üçüncü Sayfa
+        </div>
+        <div *ngSwitchDefault>{{currentPage+1}}. Sayfa</div>
+    </div>
+</div>
+
 <nav>
-    <ul class="pagination " style="justify-content: center; margin: 70px;">
+    <ul class="pagination " style="justify-content: center; margin: 40px;">
         <li style="width: 90px;" class="page-item " [ngClass]="{disabled:currentPage === 0}">
             <a class="page-link" (click)="currentPage=currentPage-1">Previous</a>
         </li>
@@ -31,21 +47,5 @@
         <div class=" mt-4" style="display: flex ; justify-content: center;">
             <img style="width: 800px; height: 300px;" src="{{images[currentPage].imageUrl}}" alt="">
         </div>
-    </div>
-</div>
-
-<div>
-
-    <div class="ms-3 fs-4 fw-lighter" [ngSwitch]="currentPage">
-        <div *ngSwitchCase="0">
-            Birinci Sayfa
-        </div>
-        <div *ngSwitchCase="1">
-            İkinci Sayfa
-        </div>
-        <div *ngSwitchCase="2">
-            Üçüncü Sayfa
-        </div>
-        <div *ngSwitchDefault>{{currentPage+1}}. Sayfa</div>
     </div>
 </div>

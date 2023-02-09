@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./directives-project.component.css'],
 })
 export class DirectivesProjectComponent implements OnInit {
-  content: string = '';
+  content: string =
+    "It's about using directives and creating new directives. Check out the codes!!!";
   currentPage = 0;
   images = [
     {

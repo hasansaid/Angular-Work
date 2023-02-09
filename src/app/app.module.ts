@@ -12,6 +12,7 @@ import { LetterMatchingProjectComponent } from './component/letter-matching-proj
 import { GoalComponent } from './component/goal/goal.component';
 import { DirectivesProjectComponent } from './component/directives-project/directives-project.component';
 import { MainComponent } from './component/main/main.component';
+import { FirstDirective } from './component/directives-project/direvtive-first/first.directive';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MainComponent } from './component/main/main.component';
     GoalComponent,
     DirectivesProjectComponent,
     MainComponent,
+    FirstDirective,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
