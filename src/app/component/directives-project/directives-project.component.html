@@ -3,13 +3,14 @@
 <nav>
     <ul class="pagination " style="justify-content: center; margin: 70px;">
         <li style="width: 90px;" class="page-item " [ngClass]="{disabled:currentPage === 0}">
-            <a class="page-link">Previous</a>
+            <a class="page-link" (click)="currentPage=currentPage-1">Previous</a>
         </li>
         <li class="page-item" [ngClass]="{active:i===currentPage}" *ngFor="let image of images; let i = index">
-            <a class="page-link">{{i + 1 }}</a>
+            <a (click)="currentPage=i" class="page-link">{{i + 1 }}</a>
         </li>
         <li style="width: 90px;" class="page-item">
-            <a class="page-link" [ngClass]="{disabled:currentPage===images.length-1}">Next</a>
+            <a class="page-link" (click)="currentPage= currentPage+1"
+                [ngClass]="{disabled:currentPage===images.length-1}">Next</a>
         </li>
     </ul>
 </nav>
@@ -18,3 +19,15 @@
 <!-- ngClass active için kullanım şekilleri
 [ngClass]="{active:i === currentPage}"
 [ngClass]="i === currentPage ? 'active':'passive'"  -->
+
+
+<div style="display: flex; justify-content: center;">
+    <div class="shadow" style="height: 300px; width: 1000px;">
+        <div style="display: flex;justify-content: center;">
+            <p style=" font-size: 20px; color:red;">{{images[currentPage].title}}</p>
+        </div>
+        <div class=" mt-4" style="display: flex ; justify-content: center;">
+            <img style="width: 800px; height: 300px;" src="{{images[currentPage].imageUrl}}" alt="">
+        </div>
+    </div>
+</div>

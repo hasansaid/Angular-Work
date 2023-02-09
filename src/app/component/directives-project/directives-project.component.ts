@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectivesProjectComponent implements OnInit {
   content: string = '';
-  currentPage = 4;
+  currentPage = 0;
   images = [
     {
       title: 'Car 1',
@@ -27,15 +27,20 @@ export class DirectivesProjectComponent implements OnInit {
     {
       title: 'Car 4',
       imageUrl:
-        'https://images.wallpapersden.com/image/download/mclaren-600lt-spider-car_a2hsZWWUmZqaraWkpJRmZ2VlrWltZQ.jpg',
+        'https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1200',
     },
     {
       title: 'Car 5',
       imageUrl:
-        'https://images.wallpapersden.com/image/download/bmw-m550i-4k_bWptaGWUmZqaraWkpJRmZ2VlrWltZQ.jpg',
+        'https://cdn.carsandcoffee.com.sg/web/bo/home-feature/jrkjodVGppgzo5s5EGBG/all-ferrari-sf90-cars-and-coffee-singapore_1440x1440.jpeg?alt=media&token=5b4e1232-9bbb-4f7c-9156-e1decc58e79a',
     },
   ];
   constructor() {}
 
   ngOnInit(): void {}
+
+  changePage(i: number) {
+    // Method kullanılarak da sayfa geçişi yapılabilir ancak html içerisinde sayfa geçişlerini yapmak daha kolaydır.
+    this.currentPage = i;
+  }
 }
