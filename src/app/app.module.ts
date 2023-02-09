@@ -10,6 +10,7 @@ import { CardProjectComponent } from './component/card-project/card-project.comp
 import { CardComponent } from './component/card-project/card/card.component';
 import { LetterMatchingProjectComponent } from './component/letter-matching-project/letter-matching-project.component';
 import { GoalComponent } from './component/goal/goal.component';
+import { DirectivesProjectComponent } from './component/directives-project/directives-project.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { GoalComponent } from './component/goal/goal.component';
     CardComponent,
     LetterMatchingProjectComponent,
     GoalComponent,
+    DirectivesProjectComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

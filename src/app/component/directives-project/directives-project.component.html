@@ -1,0 +1,20 @@
+<app-goal [content]="content"></app-goal>
+
+<nav>
+    <ul class="pagination " style="justify-content: center; margin: 70px;">
+        <li style="width: 90px;" class="page-item " [ngClass]="{disabled:currentPage === 0}">
+            <a class="page-link">Previous</a>
+        </li>
+        <li class="page-item" [ngClass]="{active:i===currentPage}" *ngFor="let image of images; let i = index">
+            <a class="page-link">{{i + 1 }}</a>
+        </li>
+        <li style="width: 90px;" class="page-item">
+            <a class="page-link" [ngClass]="{disabled:currentPage===images.length-1}">Next</a>
+        </li>
+    </ul>
+</nav>
+
+
+<!-- ngClass active için kullanım şekilleri
+[ngClass]="{active:i === currentPage}"
+[ngClass]="i === currentPage ? 'active':'passive'"  -->
