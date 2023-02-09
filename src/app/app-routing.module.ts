@@ -15,7 +15,7 @@ const routes: Routes = [
     component: HomeComponent,
   },
   { path: 'home/password-project', component: PasswordProjectComponent },
-  { path: 'home/card-project', component: CardProjectComponent },
+  { path: 'home/card-pipes-project', component: CardProjectComponent },
   {
     path: 'home/letter-matching-project',
     component: LetterMatchingProjectComponent,

@@ -5,9 +5,11 @@
         <li style="width: 90px;" class="page-item " [ngClass]="{disabled:currentPage === 0}">
             <a class="page-link" (click)="currentPage=currentPage-1">Previous</a>
         </li>
-        <li class="page-item" [ngClass]="{active:i===currentPage}" *ngFor="let image of images; let i = index">
-            <a (click)="currentPage=i" class="page-link">{{i + 1 }}</a>
-        </li>
+        <ng-container *ngFor="let image of images; let i = index">
+            <li class="page-item" [ngClass]="{active:i===currentPage}" *ngIf="PageIndex(i)">
+                <a (click)="currentPage=i" class="page-link">{{i + 1 }}</a>
+            </li>
+        </ng-container>
         <li style="width: 90px;" class="page-item">
             <a class="page-link" (click)="currentPage= currentPage+1"
                 [ngClass]="{disabled:currentPage===images.length-1}">Next</a>
@@ -29,5 +31,21 @@
         <div class=" mt-4" style="display: flex ; justify-content: center;">
             <img style="width: 800px; height: 300px;" src="{{images[currentPage].imageUrl}}" alt="">
         </div>
+    </div>
+</div>
+
+<div>
+
+    <div class="ms-3 fs-4 fw-lighter" [ngSwitch]="currentPage">
+        <div *ngSwitchCase="0">
+            Birinci Sayfa
+        </div>
+        <div *ngSwitchCase="1">
+            İkinci Sayfa
+        </div>
+        <div *ngSwitchCase="2">
+            Üçüncü Sayfa
+        </div>
+        <div *ngSwitchDefault>{{currentPage+1}}. Sayfa</div>
     </div>
 </div>
