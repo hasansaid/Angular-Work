@@ -1,3 +1,8 @@
+import { PopupsComponent } from './component/routing-state-management/popups/popups.component';
+import { ListsComponent } from './component/routing-state-management/lists/lists.component';
+import { TablesComponent } from './component/routing-state-management/tables/tables.component';
+import { PlaceholdersComponent } from './component/routing-state-management/placeholders/placeholders.component';
+import { RstHomeComponent } from './component/routing-state-management/rst-home/rst-home.component';
 import { MainComponent } from './component/main/main.component';
 import { DirectivesProjectComponent } from './component/directives-project/directives-project.component';
 import { LetterMatchingProjectComponent } from './component/letter-matching-project/letter-matching-project.component';
@@ -21,6 +26,17 @@ const routes: Routes = [
     component: LetterMatchingProjectComponent,
   },
   { path: 'home/directives-project', component: DirectivesProjectComponent },
+  {
+    path: 'home/rst-project',
+    component: RstHomeComponent,
+    children: [
+      { path: '', component: PlaceholdersComponent },
+      { path: 'placeholders', component: PlaceholdersComponent },
+      { path: 'tables', component: TablesComponent },
+      { path: 'lists', component: ListsComponent },
+      { path: 'popups', component: PopupsComponent },
+    ],
+  },
 
   // Error page son path olmalıdır!!!
   { path: '**', component: ErrorComponent },

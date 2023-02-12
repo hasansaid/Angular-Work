@@ -13,6 +13,11 @@ import { GoalComponent } from './component/goal/goal.component';
 import { DirectivesProjectComponent } from './component/directives-project/directives-project.component';
 import { MainComponent } from './component/main/main.component';
 import { FirstDirective } from './component/directives-project/direvtive-first/first.directive';
+import { RstHomeComponent } from './component/routing-state-management/rst-home/rst-home.component';
+import { PlaceholdersComponent } from './component/routing-state-management/placeholders/placeholders.component';
+import { ListsComponent } from './component/routing-state-management/lists/lists.component';
+import { PopupsComponent } from './component/routing-state-management/popups/popups.component';
+import { TablesComponent } from './component/routing-state-management/tables/tables.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +32,11 @@ import { FirstDirective } from './component/directives-project/direvtive-first/f
     DirectivesProjectComponent,
     MainComponent,
     FirstDirective,
+    RstHomeComponent,
+    PlaceholdersComponent,
+    ListsComponent,
+    PopupsComponent,
+    TablesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
