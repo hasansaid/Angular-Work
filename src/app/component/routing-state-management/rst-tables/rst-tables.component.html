@@ -1,3 +1,16 @@
 <app-rst-divider>
-    Tables
+    Satisfaction Survey
 </app-rst-divider>
+
+<table class="ui striped celled table">
+    <thead>
+        <tr>
+            <th *ngFor="let header of headers">{{header.label}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of datas">
+            <th *ngFor="let header of headers">{{data[header.key]}}</th>
+        </tr>
+    </tbody>
+</table>

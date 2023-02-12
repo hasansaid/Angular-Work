@@ -1,7 +1,12 @@
 Routing State Management Project
+
 **
-ng g m name ile modül oluşturabilir. Aynı zamanda modüller için Lazy Loading yöntemini kullanabilirsin. 
-Peki lazyloading nedir? Ne işe yarar?
+ng g m name ile modül oluşturabilir. --routing eklentisi ile routing.module'yi ekleyebiliriz. Böylelikle app-routing.module de path'lerde 
+children kullanmamıza gerek kalmaz. Projede bu yöntemi kullanmadım. Sizler araştırabilirsiniz. Burada bahsetme amacım routing işlemlerinin 
+farklı yollarıda olduğu... 
+** 
+Aynı zamanda modüller için Lazy Loading yöntemini kullanabilirsin. 
+Peki Lazy Loading nedir? Ne işe yarar?
 Lazy Loading uygulama modüllerimizi, çoklu modüllere bölerek talep üzerine yüklenmesini sağlar. Bu işlem vakit ve performans kazandırır.
 Kullanımı: 
 {path:" " , loadChildren: ()=> import("dosya yolu").then(m=>m.Modülİsmi)}
