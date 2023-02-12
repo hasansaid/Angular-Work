@@ -15,11 +15,12 @@ import { MainComponent } from './component/main/main.component';
 import { FirstDirective } from './component/directives-project/direvtive-first/first.directive';
 import { RstHomeComponent } from './component/routing-state-management/rst-home/rst-home.component';
 import { RstMainComponent } from './component/routing-state-management/rst-main/rst-main.component';
-import { RstTablesComponent } from './component/routing-state-management/rst-tables/rst-tables.component';
 import { RstPlaceholdersComponent } from './component/routing-state-management/rst-placeholders/rst-placeholders.component';
 import { RstListsComponent } from './component/routing-state-management/rst-lists/rst-lists.component';
 import { RstPopupsComponent } from './component/routing-state-management/rst-popups/rst-popups.component';
 import { RstErrorComponent } from './component/routing-state-management/rst-error/rst-error.component';
+import { RstDividerComponent } from './component/routing-state-management/rst-shared/rst-divider/rst-divider.component';
+import { RstTablesComponent } from './component/routing-state-management/rst-tables/rst-tables.component';
 
 @NgModule({
   declarations: [
@@ -36,11 +37,12 @@ import { RstErrorComponent } from './component/routing-state-management/rst-erro
     FirstDirective,
     RstHomeComponent,
     RstMainComponent,
-    RstTablesComponent,
     RstPlaceholdersComponent,
     RstListsComponent,
     RstPopupsComponent,
     RstErrorComponent,
+    RstDividerComponent,
+    RstTablesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

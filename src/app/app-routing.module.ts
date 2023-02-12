@@ -1,7 +1,7 @@
+import { RstTablesComponent } from './component/routing-state-management/rst-tables/rst-tables.component';
 import { RstErrorComponent } from './component/routing-state-management/rst-error/rst-error.component';
 import { RstPopupsComponent } from './component/routing-state-management/rst-popups/rst-popups.component';
 import { RstListsComponent } from './component/routing-state-management/rst-lists/rst-lists.component';
-import { RstTablesComponent } from './component/routing-state-management/rst-tables/rst-tables.component';
 import { RstPlaceholdersComponent } from './component/routing-state-management/rst-placeholders/rst-placeholders.component';
 import { RstMainComponent } from './component/routing-state-management/rst-main/rst-main.component';
 import { RstHomeComponent } from './component/routing-state-management/rst-home/rst-home.component';
