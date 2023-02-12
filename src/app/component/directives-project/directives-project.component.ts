@@ -116,7 +116,7 @@ export class DirectivesProjectComponent implements OnInit {
   ngOnInit(): void {}
 
   PageIndex(index: number) {
-    return Math.abs(this.currentPage - index) < 5;
+    return Math.abs(this.currentPage - index) < 3;
   }
 
   changePage(i: number) {
