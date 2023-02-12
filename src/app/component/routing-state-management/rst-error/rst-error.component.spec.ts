@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TablesComponent } from './tables.component';
+import { RstErrorComponent } from './rst-error.component';
 
-describe('TablesComponent', () => {
-  let component: TablesComponent;
-  let fixture: ComponentFixture<TablesComponent>;
+describe('RstErrorComponent', () => {
+  let component: RstErrorComponent;
+  let fixture: ComponentFixture<RstErrorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TablesComponent ]
+      declarations: [ RstErrorComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TablesComponent);
+    fixture = TestBed.createComponent(RstErrorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

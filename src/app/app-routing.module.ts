@@ -1,8 +1,9 @@
+import { RstErrorComponent } from './component/routing-state-management/rst-error/rst-error.component';
+import { RstPopupsComponent } from './component/routing-state-management/rst-popups/rst-popups.component';
+import { RstListsComponent } from './component/routing-state-management/rst-lists/rst-lists.component';
+import { RstTablesComponent } from './component/routing-state-management/rst-tables/rst-tables.component';
+import { RstPlaceholdersComponent } from './component/routing-state-management/rst-placeholders/rst-placeholders.component';
 import { RstMainComponent } from './component/routing-state-management/rst-main/rst-main.component';
-import { PopupsComponent } from './component/routing-state-management/popups/popups.component';
-import { ListsComponent } from './component/routing-state-management/lists/lists.component';
-import { TablesComponent } from './component/routing-state-management/tables/tables.component';
-import { PlaceholdersComponent } from './component/routing-state-management/placeholders/placeholders.component';
 import { RstHomeComponent } from './component/routing-state-management/rst-home/rst-home.component';
 import { MainComponent } from './component/main/main.component';
 import { DirectivesProjectComponent } from './component/directives-project/directives-project.component';
@@ -33,10 +34,11 @@ const routes: Routes = [
     children: [
       { path: '', component: RstHomeComponent },
       { path: 'home', component: RstHomeComponent },
-      { path: 'placeholders', component: PlaceholdersComponent },
-      { path: 'tables', component: TablesComponent },
-      { path: 'lists', component: ListsComponent },
-      { path: 'popups', component: PopupsComponent },
+      { path: 'placeholders', component: RstPlaceholdersComponent },
+      { path: 'tables', component: RstTablesComponent },
+      { path: 'lists', component: RstListsComponent },
+      { path: 'popups', component: RstPopupsComponent },
+      { path: '**', component: RstErrorComponent },
     ],
   },
 

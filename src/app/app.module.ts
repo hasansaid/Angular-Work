@@ -14,11 +14,12 @@ import { DirectivesProjectComponent } from './component/directives-project/direc
 import { MainComponent } from './component/main/main.component';
 import { FirstDirective } from './component/directives-project/direvtive-first/first.directive';
 import { RstHomeComponent } from './component/routing-state-management/rst-home/rst-home.component';
-import { PlaceholdersComponent } from './component/routing-state-management/placeholders/placeholders.component';
-import { ListsComponent } from './component/routing-state-management/lists/lists.component';
-import { PopupsComponent } from './component/routing-state-management/popups/popups.component';
-import { TablesComponent } from './component/routing-state-management/tables/tables.component';
 import { RstMainComponent } from './component/routing-state-management/rst-main/rst-main.component';
+import { RstTablesComponent } from './component/routing-state-management/rst-tables/rst-tables.component';
+import { RstPlaceholdersComponent } from './component/routing-state-management/rst-placeholders/rst-placeholders.component';
+import { RstListsComponent } from './component/routing-state-management/rst-lists/rst-lists.component';
+import { RstPopupsComponent } from './component/routing-state-management/rst-popups/rst-popups.component';
+import { RstErrorComponent } from './component/routing-state-management/rst-error/rst-error.component';
 
 @NgModule({
   declarations: [
@@ -34,11 +35,12 @@ import { RstMainComponent } from './component/routing-state-management/rst-main/
     MainComponent,
     FirstDirective,
     RstHomeComponent,
-    PlaceholdersComponent,
-    ListsComponent,
-    PopupsComponent,
-    TablesComponent,
     RstMainComponent,
+    RstTablesComponent,
+    RstPlaceholdersComponent,
+    RstListsComponent,
+    RstPopupsComponent,
+    RstErrorComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

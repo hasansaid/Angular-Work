@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PopupsComponent } from './popups.component';
+import { RstPopupsComponent } from './rst-popups.component';
 
-describe('PopupsComponent', () => {
-  let component: PopupsComponent;
-  let fixture: ComponentFixture<PopupsComponent>;
+describe('RstPopupsComponent', () => {
+  let component: RstPopupsComponent;
+  let fixture: ComponentFixture<RstPopupsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PopupsComponent ]
+      declarations: [ RstPopupsComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PopupsComponent);
+    fixture = TestBed.createComponent(RstPopupsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

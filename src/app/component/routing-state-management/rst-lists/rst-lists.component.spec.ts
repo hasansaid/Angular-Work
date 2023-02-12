@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PlaceholdersComponent } from './placeholders.component';
+import { RstListsComponent } from './rst-lists.component';
 
-describe('PlaceholdersComponent', () => {
-  let component: PlaceholdersComponent;
-  let fixture: ComponentFixture<PlaceholdersComponent>;
+describe('RstListsComponent', () => {
+  let component: RstListsComponent;
+  let fixture: ComponentFixture<RstListsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PlaceholdersComponent ]
+      declarations: [ RstListsComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PlaceholdersComponent);
+    fixture = TestBed.createComponent(RstListsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
