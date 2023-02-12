@@ -14,3 +14,27 @@
         </tr>
     </tbody>
 </table>
+
+
+<app-rst-divider>
+    Extra Surveys
+</app-rst-divider>
+
+<div class="ui grid">
+    <div class="four wide column">
+        <div class="ui vertical fluid tabular menu">
+            <a routerLinkActive="active" routerLink="survey-one" [routerLinkActiveOptions]="{exact:true}"
+                class="item active">
+                Salary Survey
+            </a>
+            <a routerLinkActive="active" routerLink="survey-two" class="item">
+                Holiday Survey
+            </a>
+        </div>
+    </div>
+    <div class="twelve wide stretched column">
+        <div class="ui segment">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

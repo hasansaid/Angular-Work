@@ -1,3 +1,5 @@
+import { RstSurveyTwoComponent } from './component/routing-state-management/rst-tables/rst-survey-two/rst-survey-two.component';
+import { RstSurveyComponent } from './component/routing-state-management/rst-tables/rst-survey/rst-survey.component';
 import { RstTablesComponent } from './component/routing-state-management/rst-tables/rst-tables.component';
 import { RstErrorComponent } from './component/routing-state-management/rst-error/rst-error.component';
 import { RstPopupsComponent } from './component/routing-state-management/rst-popups/rst-popups.component';
@@ -35,7 +37,15 @@ const routes: Routes = [
       { path: '', component: RstHomeComponent },
       { path: 'home', component: RstHomeComponent },
       { path: 'placeholders', component: RstPlaceholdersComponent },
-      { path: 'tables', component: RstTablesComponent },
+      {
+        path: 'tables',
+        component: RstTablesComponent,
+        children: [
+          { path: '', component: RstSurveyComponent },
+          { path: 'survey-one', component: RstSurveyComponent },
+          { path: 'survey-two', component: RstSurveyTwoComponent },
+        ],
+      },
       { path: 'lists', component: RstListsComponent },
       { path: 'popups', component: RstPopupsComponent },
       { path: '**', component: RstErrorComponent },

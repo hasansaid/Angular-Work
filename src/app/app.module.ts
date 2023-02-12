@@ -21,6 +21,8 @@ import { RstPopupsComponent } from './component/routing-state-management/rst-pop
 import { RstErrorComponent } from './component/routing-state-management/rst-error/rst-error.component';
 import { RstDividerComponent } from './component/routing-state-management/rst-shared/rst-divider/rst-divider.component';
 import { RstTablesComponent } from './component/routing-state-management/rst-tables/rst-tables.component';
+import { RstSurveyComponent } from './component/routing-state-management/rst-tables/rst-survey/rst-survey.component';
+import { RstSurveyTwoComponent } from './component/routing-state-management/rst-tables/rst-survey-two/rst-survey-two.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { RstTablesComponent } from './component/routing-state-management/rst-tab
     RstErrorComponent,
     RstDividerComponent,
     RstTablesComponent,
+    RstSurveyComponent,
+    RstSurveyTwoComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
