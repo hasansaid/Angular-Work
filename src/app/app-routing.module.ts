@@ -1,3 +1,4 @@
+import { RstMainComponent } from './component/routing-state-management/rst-main/rst-main.component';
 import { PopupsComponent } from './component/routing-state-management/popups/popups.component';
 import { ListsComponent } from './component/routing-state-management/lists/lists.component';
 import { TablesComponent } from './component/routing-state-management/tables/tables.component';
@@ -28,9 +29,10 @@ const routes: Routes = [
   { path: 'home/directives-project', component: DirectivesProjectComponent },
   {
     path: 'home/rst-project',
-    component: RstHomeComponent,
+    component: RstMainComponent,
     children: [
-      { path: '', component: PlaceholdersComponent },
+      { path: '', component: RstHomeComponent },
+      { path: 'home', component: RstHomeComponent },
       { path: 'placeholders', component: PlaceholdersComponent },
       { path: 'tables', component: TablesComponent },
       { path: 'lists', component: ListsComponent },

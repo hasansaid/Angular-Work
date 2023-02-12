@@ -18,6 +18,7 @@ import { PlaceholdersComponent } from './component/routing-state-management/plac
 import { ListsComponent } from './component/routing-state-management/lists/lists.component';
 import { PopupsComponent } from './component/routing-state-management/popups/popups.component';
 import { TablesComponent } from './component/routing-state-management/tables/tables.component';
+import { RstMainComponent } from './component/routing-state-management/rst-main/rst-main.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { TablesComponent } from './component/routing-state-management/tables/tab
     ListsComponent,
     PopupsComponent,
     TablesComponent,
+    RstMainComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
