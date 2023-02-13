@@ -23,6 +23,8 @@ import { RstDividerComponent } from './component/routing-state-management/rst-sh
 import { RstTablesComponent } from './component/routing-state-management/rst-tables/rst-tables.component';
 import { RstSurveyComponent } from './component/routing-state-management/rst-tables/rst-survey/rst-survey.component';
 import { RstSurveyTwoComponent } from './component/routing-state-management/rst-tables/rst-survey-two/rst-survey-two.component';
+import { RstListsItemComponent } from './component/routing-state-management/rst-lists/rst-lists-item/rst-lists-item.component';
+import { RstPopupsModalComponent } from './component/routing-state-management/rst-popups/rst-popups-modal/rst-popups-modal.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { RstSurveyTwoComponent } from './component/routing-state-management/rst-
     RstTablesComponent,
     RstSurveyComponent,
     RstSurveyTwoComponent,
+    RstListsItemComponent,
+    RstPopupsModalComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

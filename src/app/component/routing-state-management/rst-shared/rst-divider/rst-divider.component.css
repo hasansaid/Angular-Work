@@ -1,1 +1,6 @@
 @import "semantic-ui-css/semantic.min.css";
+
+:host:not(:first-of-type) {
+  display: block;
+  margin-top: 20px;
+}

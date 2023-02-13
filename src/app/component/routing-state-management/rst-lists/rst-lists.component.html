@@ -1,1 +1,20 @@
-<p>rst-lists works!</p>
+<app-rst-divider>
+    General Information
+</app-rst-divider>
+
+<div class="ui statistics">
+    <div class="statistic" *ngFor="let data of datas">
+        <div class="value">
+            {{data.value}}
+        </div>
+        <div class="label">
+            {{data.label}}
+        </div>
+    </div>
+
+</div>
+
+<app-rst-divider>
+    Products
+</app-rst-divider>
+<app-rst-lists-item [items]="images"></app-rst-lists-item>

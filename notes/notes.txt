@@ -15,3 +15,4 @@ Babadan oğula veri akışında iki farklı yöntem kullanılabilir.
 1-ng-content yöntemidir. => Kullanımı daha kolaydır.
 2-@Input() @Output() yöntemidir.
 **
+Angular Lifecycle--
