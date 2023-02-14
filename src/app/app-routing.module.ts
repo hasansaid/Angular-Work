@@ -1,3 +1,4 @@
+import { ReactiveFormProjectComponent } from './component/reactive-form-project/reactive-form-project.component';
 import { RstSurveyTwoComponent } from './component/routing-state-management/rst-tables/rst-survey-two/rst-survey-two.component';
 import { RstSurveyComponent } from './component/routing-state-management/rst-tables/rst-survey/rst-survey.component';
 import { RstTablesComponent } from './component/routing-state-management/rst-tables/rst-tables.component';
@@ -50,6 +51,10 @@ const routes: Routes = [
       { path: 'popups', component: RstPopupsComponent },
       { path: '**', component: RstErrorComponent },
     ],
+  },
+  {
+    path: 'home/reactive-form-project',
+    component: ReactiveFormProjectComponent,
   },
 
   // Error page son path olmalıdır!!!

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { RstSurveyComponent } from './component/routing-state-management/rst-tab
 import { RstSurveyTwoComponent } from './component/routing-state-management/rst-tables/rst-survey-two/rst-survey-two.component';
 import { RstListsItemComponent } from './component/routing-state-management/rst-lists/rst-lists-item/rst-lists-item.component';
 import { RstPopupsModalComponent } from './component/routing-state-management/rst-popups/rst-popups-modal/rst-popups-modal.component';
+import { ReactiveFormProjectComponent } from './component/reactive-form-project/reactive-form-project.component';
 
 @NgModule({
   declarations: [
@@ -51,8 +53,9 @@ import { RstPopupsModalComponent } from './component/routing-state-management/rs
     RstSurveyTwoComponent,
     RstListsItemComponent,
     RstPopupsModalComponent,
+    ReactiveFormProjectComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
