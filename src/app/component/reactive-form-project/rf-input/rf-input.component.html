@@ -1,0 +1,22 @@
+<!-- Angular Abstract Control => touched, dirty and errors  -->
+
+<div class="field">
+    <label class="label">{{label}}</label>
+    <div class="control">
+        <input type="text" class="input" placeholder="Text Input" [formControl]="control "
+            [ngClass]="{'is-danger':showErrors()}">
+    </div>
+</div>
+
+<ng-container *ngIf="showErrors()">
+    <div class="help is-danger" *ngIf="control.errors?.['required']">
+        *Zorunlu alan.
+    </div>
+    <div class="help is-danger" *ngIf="control.errors?.['minlength']">
+        *Girdiğiniz isim
+        {{control.errors?.['minlength']?.['actualLength']}}
+        karakter içermektedir. Ancak minimum
+        {{control.errors?.['minlength']?.['requiredLength']}}
+        olmalıdır.
+    </div>
+</ng-container>

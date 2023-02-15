@@ -1,10 +1,17 @@
-<form [formGroup]="cardForm">
-    <input type="text" formControlName="name">
+<form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+
+    <app-rf-input label="Full Name" [control]="cardForm.get('name')"></app-rf-input>
+    <app-rf-input label="Card Number" [control]="cardForm.get('cardNumber')"></app-rf-input>
+    <app-rf-input label="Expiration Date" [control]="cardForm.get('expiration')"></app-rf-input>
+    <app-rf-input label="Security Code" [control]="cardForm.get('securityCode')"></app-rf-input>
+    <button class="button is-primary" [disabled]="cardForm.invalid" type="sumbit">Kaydet</button>
 </form>
 
-<h3>
+<div>
     Form içeriği: {{cardForm.value | json}}
-</h3>
-<h3>
+</div>
+<div>
     Form valid mi? : {{cardForm.valid ? "evet" : "hayır"}}
-</h3>
+</div>
+
+<div> Form Hataları : {{cardForm.get("name")?.errors | json}}</div>

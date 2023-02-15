@@ -27,6 +27,7 @@ import { RstSurveyTwoComponent } from './component/routing-state-management/rst-
 import { RstListsItemComponent } from './component/routing-state-management/rst-lists/rst-lists-item/rst-lists-item.component';
 import { RstPopupsModalComponent } from './component/routing-state-management/rst-popups/rst-popups-modal/rst-popups-modal.component';
 import { ReactiveFormProjectComponent } from './component/reactive-form-project/reactive-form-project.component';
+import { RfInputComponent } from './component/reactive-form-project/rf-input/rf-input.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { ReactiveFormProjectComponent } from './component/reactive-form-project/
     RstListsItemComponent,
     RstPopupsModalComponent,
     ReactiveFormProjectComponent,
+    RfInputComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
