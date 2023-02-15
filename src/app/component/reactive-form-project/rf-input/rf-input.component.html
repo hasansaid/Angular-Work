@@ -10,13 +10,20 @@
 
 <ng-container *ngIf="showErrors()">
     <div class="help is-danger" *ngIf="control.errors?.['required']">
-        *Zorunlu alan.
+        *Required field.
     </div>
     <div class="help is-danger" *ngIf="control.errors?.['minlength']">
-        *Girdiğiniz isim
+        *The value you entered contains
         {{control.errors?.['minlength']?.['actualLength']}}
-        karakter içermektedir. Ancak minimum
+        characters. But it should be at least
         {{control.errors?.['minlength']?.['requiredLength']}}
-        olmalıdır.
+        .
+    </div>
+    <div class="help is-danger" *ngIf="control.errors?.['maxlength']">
+        *The value you entered contains
+        {{control.errors?.['maxlength']?.['actualLength']}}
+        characters. But the maximum should be
+        {{control.errors?.['maxlength']?.['requiredLength']}}
+        .
     </div>
 </ng-container>

@@ -1,17 +1,29 @@
-<form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+<div class="rf-main">
+    <div style="margin-left: 110px;">
+        <img src="https://i4.hurimg.com/i/hurriyet/75/600x338/5a716e057152d82e74e7bcb6.jpg" alt="">
+    </div>
+    <div class="container" style="max-width: 500px;">
+        <form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
 
-    <app-rf-input label="Full Name" [control]="cardForm.get('name')"></app-rf-input>
-    <app-rf-input label="Card Number" [control]="cardForm.get('cardNumber')"></app-rf-input>
-    <app-rf-input label="Expiration Date" [control]="cardForm.get('expiration')"></app-rf-input>
-    <app-rf-input label="Security Code" [control]="cardForm.get('securityCode')"></app-rf-input>
-    <button class="button is-primary" [disabled]="cardForm.invalid" type="sumbit">Kaydet</button>
-</form>
-
-<div>
-    Form içeriği: {{cardForm.value | json}}
+            <app-rf-input label="Full Name" [control]="cardForm.get('name')"></app-rf-input>
+            <app-rf-input label="Card Number" [control]="cardForm.get('cardNumber')"></app-rf-input>
+            <div class="columns">
+                <div class="column">
+                    <app-rf-input label="Expiration Date" [control]="cardForm.get('expiration')"></app-rf-input>
+                </div>
+                <div class="column">
+                    <app-rf-input label="Security Code" [control]="cardForm.get('securityCode')"></app-rf-input>
+                </div>
+            </div>
+            <div class="buttons" style="display: flex; justify-content: flex-end;">
+                <button (click)="resetForm()" class="button is-warning" [disabled]="cardForm.valid"
+                    type="button">Temizle</button>
+                <button class="button is-primary" [disabled]="cardForm.invalid" type="sumbit">Kaydet</button>
+            </div>
+        </form>
+    </div>
 </div>
-<div>
-    Form valid mi? : {{cardForm.valid ? "evet" : "hayır"}}
-</div>
 
-<div> Form Hataları : {{cardForm.get("name")?.errors | json}}</div>
+<!-- <div>Form içeriği: {{cardForm.value | json}}</div>
+<div>Form valid mi? : {{cardForm.valid ? "evet" : "hayır"}}</div>
+<div>Form Hataları : {{cardForm.get("name")?.errors | json}}</div> -->

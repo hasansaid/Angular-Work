@@ -1,3 +1,4 @@
+import { DateFormControl } from './date-form-control';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -15,7 +16,7 @@ export class ReactiveFormProjectComponent implements OnInit {
       Validators.maxLength(16),
     ]),
     // regex pattern
-    expiration: new FormControl(null, [
+    expiration: new DateFormControl(null, [
       Validators.minLength(3),
       Validators.pattern(/^(0[1-9]|1[0-2])\/\d{2}$/),
     ]),
@@ -31,4 +32,8 @@ export class ReactiveFormProjectComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {}
+
+  resetForm() {
+    this.cardForm.reset();
+  }
 }
