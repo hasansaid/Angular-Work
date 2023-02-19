@@ -1,3 +1,4 @@
+import { RxjsProjectComponent } from './component/rxjs-project/rxjs-project.component';
 import { ReactiveFormProjectComponent } from './component/reactive-form-project/reactive-form-project.component';
 import { RstSurveyTwoComponent } from './component/routing-state-management/rst-tables/rst-survey-two/rst-survey-two.component';
 import { RstSurveyComponent } from './component/routing-state-management/rst-tables/rst-survey/rst-survey.component';
@@ -56,6 +57,7 @@ const routes: Routes = [
     path: 'home/reactive-form-project',
     component: ReactiveFormProjectComponent,
   },
+  { path: 'home/rxjs-project', component: RxjsProjectComponent },
 
   // Error page son path olmalıdır!!!
   { path: '**', component: ErrorComponent },

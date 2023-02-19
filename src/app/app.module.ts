@@ -28,6 +28,7 @@ import { RstListsItemComponent } from './component/routing-state-management/rst-
 import { RstPopupsModalComponent } from './component/routing-state-management/rst-popups/rst-popups-modal/rst-popups-modal.component';
 import { ReactiveFormProjectComponent } from './component/reactive-form-project/reactive-form-project.component';
 import { RfInputComponent } from './component/reactive-form-project/rf-input/rf-input.component';
+import { RxjsProjectComponent } from './component/rxjs-project/rxjs-project.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { RfInputComponent } from './component/reactive-form-project/rf-input/rf-
     RstPopupsModalComponent,
     ReactiveFormProjectComponent,
     RfInputComponent,
+    RxjsProjectComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
