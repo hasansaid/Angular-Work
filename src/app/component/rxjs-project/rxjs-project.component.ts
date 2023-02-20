@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { from, fromEvent, Observable, of, timer } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
 
 @Component({
@@ -20,6 +20,10 @@ export class RxjsProjectComponent implements OnInit {
     // this.four();
     // this.five();
     this.six();
+    // this.seven();
+    // this.eight();
+    this.nine();
+    this.ten();
   }
 
   one() {
@@ -61,7 +65,7 @@ export class RxjsProjectComponent implements OnInit {
 
     // Tip belirtilmelidir.
     const observable$ = new Observable<string>((subscriber) => {
-      console.log('Observable çalıştı.');
+      console.log('Observable run.');
       subscriber.next('Hasan');
       setTimeout(() => {
         subscriber.next('Mustafa');
@@ -71,13 +75,13 @@ export class RxjsProjectComponent implements OnInit {
       }, 3000);
     });
 
-    console.log('Subscription 1 başladı.');
+    console.log('Subscription 1 started.');
     observable$.subscribe((value) => {
       console.log('Subscription 1: ' + value);
     });
 
     setTimeout(() => {
-      console.log('Subscription 2 başladı.');
+      console.log('Subscription 2 started.');
       observable$.subscribe((value) => {
         console.log('Subscription 2: ' + value);
       });
@@ -95,14 +99,14 @@ export class RxjsProjectComponent implements OnInit {
 
     // Observable execute sıralaması.
     const observavle$ = new Observable<string>((subscriber) => {
-      console.log('Observervabla çalıştı..');
+      console.log('Observervabla run..');
       subscriber.next('Can');
       setTimeout(() => {
         subscriber.next('Hüseyin');
         // subscriber.complete();
       }, 3000);
       setTimeout(() => {
-        subscriber.error(new Error('Hata oluştu..'));
+        subscriber.error(new Error('Error ..'));
       }, 4000);
 
       return () => {
@@ -113,21 +117,21 @@ export class RxjsProjectComponent implements OnInit {
     const observer = {
       next: (value) => console.log(value),
       error: (err) => console.log(err.message),
-      complete: () => console.log('Tamamlandı'),
+      complete: () => console.log('Completed'),
     };
 
-    console.log('Subscribe olmadan önce..');
+    console.log('Before subscribing..');
     observavle$.subscribe(observer);
-    console.log('Subscribe olduktan sonra..');
+    console.log('After subscribing..');
   }
 
   four() {
     // Teardown kullanımına örnek..
     const interval$ = new Observable<number>((subscriber) => {
-      let sayac = 1;
+      let counter = 1;
       const intervalId = setInterval(() => {
-        console.log(sayac); // Teardown kullanmazsak yazdırmaya devam eder.
-        subscriber.next(sayac++);
+        console.log(counter); // Teardown kullanmazsak yazdırmaya devam eder.
+        subscriber.next(counter++);
       }, 500);
 
       return () => {
@@ -138,7 +142,7 @@ export class RxjsProjectComponent implements OnInit {
     const subscription = interval$.subscribe((value) => console.log(value));
 
     setTimeout(() => {
-      console.log('Bitir');
+      console.log('Finish');
       subscription.unsubscribe();
     }, 5000);
   }
@@ -161,5 +165,85 @@ export class RxjsProjectComponent implements OnInit {
 
   six() {
     // Hot Observable
+    // İki subscribe da aynı gelecektir. Data bağımlı olarak çalışır.
+    const helloButton = document.querySelector('button#six');
+    const helloClick$ = new Observable<MouseEvent>((subscriber) => {
+      helloButton.addEventListener('click', (event) => {
+        subscriber.next(event as MouseEvent);
+      });
+    });
+
+    helloClick$.subscribe((event) =>
+      console.log('Sub 1:', event.type, event.x, event.y)
+    );
+    helloClick$.subscribe((event) =>
+      console.log('Sub 2:', event.type, event.x, event.y)
+    );
   }
+
+  seven() {
+    // Of Creation Fonksiyonu
+    of('Hasan', 'Mustafa', 'Enes').subscribe({
+      next: (value) => console.log(value),
+      complete: () => console.log('Completed'),
+    });
+  }
+
+  eight() {
+    // From Creation Fonksiyonu => Değerlerini diziden alır.
+    const array = [10, 20, 30];
+    const result = from(array);
+    result.subscribe((value) => console.log(value));
+
+    // resolve => kabul edilen callback fonksiyonunu tetikler. reject reddedilen callback fonksiyonunu tetikler.
+    const somePromise = new Promise((resolve, reject) => {
+      // resolve('Accepted');
+      reject('Rejected');
+    });
+
+    const observableFromPromise$ = from(somePromise);
+    observableFromPromise$.subscribe({
+      next: (value) => console.log(value),
+      error: (err) => console.log('Error!!! ', err),
+      complete: () => console.log('Completed'),
+    });
+  }
+
+  nine() {
+    // Uzun yol..
+    const button = document.querySelector('button#nine');
+    const click$ = new Observable<MouseEvent>((subscriber) => {
+      const clickHandler = (event) => {
+        subscriber.next(event as MouseEvent);
+      };
+      button.addEventListener('click', clickHandler);
+
+      // Memory link'i durdurmak için..
+      return () => {
+        button.removeEventListener('click', clickHandler);
+      };
+    });
+
+    const subscription = click$.subscribe((event) =>
+      console.log('Sub 1:', event.type, event.x, event.y)
+    );
+
+    setTimeout(() => {
+      console.log('Unsubscribe!!!');
+      subscription.unsubscribe();
+    }, 5000);
+
+    // Kısa yol: fromEvent()
+    const button2 = document.querySelector('button#nine-2');
+    const subscription2 = fromEvent<MouseEvent>(button2, 'click').subscribe(
+      (event) => console.log(event.type, event.x, event.y)
+    );
+
+    setTimeout(() => {
+      console.log('Unsubscribe-2');
+      subscription2.unsubscribe();
+    }, 3000);
+  }
+
+  ten() {}
 }
