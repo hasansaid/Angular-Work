@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {
   concat,
   empty,
+  forkJoin,
   from,
   fromEvent,
   interval,
@@ -11,7 +12,7 @@ import {
   timer,
 } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
-import { delay, mapTo, startWith } from 'rxjs/operators';
+import { delay, endWith, mapTo, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-rxjs-project',
@@ -43,7 +44,7 @@ export class RxjsProjectComponent implements OnInit {
     // this.eleven();
     // this.twelve();
     // this.thirteen();
-    this.fourteen();
+    // this.fourteen();
     this.fiveteen();
     this.sixteen();
     this.seventeen();
@@ -330,10 +331,10 @@ export class RxjsProjectComponent implements OnInit {
   }
 
   thirteen() {
-    // Merge
-    const first = interval(1000);
-    const second = interval(1000);
-    const third = interval(1000);
+    // Merge : Console a yazdırınca zaman önceliğine göre çıktı veriyor. Asla bitmiyor sürekli yazdırmaya devam ediyor.
+    const first = interval(2000);
+    const second = interval(1500);
+    const third = interval(2500);
     const fourth = interval(1000);
 
     const example = merge(
@@ -348,9 +349,52 @@ export class RxjsProjectComponent implements OnInit {
     });
   }
 
-  fourteen() {}
+  fourteen() {
+    // startWith: Başa eleman ekler. endWith: Sona eleman ekler.
+    const source$ = of('Ali', 'Mehmet', 'Hasan');
+    source$.pipe(startWith('Mustafa')).subscribe((value) => console.log(value));
+    console.log('****************');
+    source$.pipe(startWith('Mustafa')).subscribe((value) => console.log(value));
+  }
 
-  fiveteen() {}
+  fiveteen() {
+    // forkJoin: İçerisine input olarak observable ları alır.
+    const observable = forkJoin({
+      foo: of(1, 2, 3),
+      bar: Promise.resolve(8),
+      baz: timer(4000), // 4 saniye sonra console a yazdırır.
+    });
+
+    observable.subscribe({
+      next: (value) => console.log(value),
+      complete: () => console.log('Completed'),
+    });
+
+    const randomName$ = ajax<any>(
+      'https://random-data-api.com/api/name/random_name'
+    );
+
+    const randomNation$ = ajax<any>(
+      'https://random-data-api.com/api/nation/random_nation'
+    );
+
+    const randomFood$ = ajax<any>(
+      'https://random-data-api.com/api/food/random_food'
+    );
+
+    forkJoin([randomName$, randomFood$, randomNation$]).subscribe(
+      ([name, food, nation]) => {
+        const value =
+          name.response['first_name'] +
+          ' lives in ' +
+          nation.response['capital'] +
+          '. Favorite food: ' +
+          food.response['dish'];
+        // this.one$ = value;
+        console.log(value);
+      }
+    );
+  }
 
   sixteen() {}
 
