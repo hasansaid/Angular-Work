@@ -1,6 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { from, fromEvent, Observable, of, timer } from 'rxjs';
+import {
+  concat,
+  empty,
+  from,
+  fromEvent,
+  interval,
+  merge,
+  Observable,
+  of,
+  timer,
+} from 'rxjs';
 import { ajax } from 'rxjs/ajax';
+import { delay, mapTo, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-rxjs-project',
@@ -8,6 +19,7 @@ import { ajax } from 'rxjs/ajax';
   styleUrls: ['./rxjs-project.component.css'],
 })
 export class RxjsProjectComponent implements OnInit {
+  content = 'RxJs Library operations have been done. Examine the codes.';
   one$;
   two$;
 
@@ -19,11 +31,22 @@ export class RxjsProjectComponent implements OnInit {
     // this.three();
     // this.four();
     // this.five();
+
     this.six();
+
     // this.seven();
     // this.eight();
-    this.nine();
-    this.ten();
+
+    // this.nine();
+
+    // this.ten();
+    // this.eleven();
+    // this.twelve();
+    // this.thirteen();
+    this.fourteen();
+    this.fiveteen();
+    this.sixteen();
+    this.seventeen();
   }
 
   one() {
@@ -233,7 +256,7 @@ export class RxjsProjectComponent implements OnInit {
       subscription.unsubscribe();
     }, 5000);
 
-    // Kısa yol: fromEvent()
+    // Kısa yol: fromEvent() Creation Fonksiyon
     const button2 = document.querySelector('button#nine-2');
     const subscription2 = fromEvent<MouseEvent>(button2, 'click').subscribe(
       (event) => console.log(event.type, event.x, event.y)
@@ -245,5 +268,91 @@ export class RxjsProjectComponent implements OnInit {
     }, 3000);
   }
 
-  ten() {}
+  ten() {
+    // timer Creation Fonksiyon : Belli bir süre sonra observable a girmeyi sağlar.
+    console.log('Start');
+    const subscription = timer(2000).subscribe({
+      next: (value) => console.log(value),
+      complete: () => console.log('Completed'),
+    });
+
+    setTimeout(() => {
+      console.log('Unsubscribe!!');
+      subscription.unsubscribe();
+    }, 3000);
+  }
+
+  eleven() {
+    // Interval Creation Fonksiyon => setInterval metoduna benzer.
+    const subscription = interval(2000).subscribe({
+      next: (value) => console.log(value),
+      complete: () => console.log('Completed'),
+    });
+
+    setTimeout(() => {
+      subscription.unsubscribe();
+      console.log('Unsubscribe');
+    }, 7000);
+  }
+
+  // Combination Operators - Birleştirme Operatörleri
+
+  twelve() {
+    // Concat
+    concat(of(1, 2, 3), of(4, 5, 6), of(7, 8, 9)).subscribe((value) => {
+      // console.log(value);
+      // this.one$ = value;
+    });
+
+    // Interval duramayacağı için of operatörü ile birleşemez.
+    // concat(interval(1000),of("July","May","June")).subscribe(console.log);
+
+    concat(of('WELLCOME', 'MY', 'WEBSITE')).subscribe((value) => {
+      // this.two$ = value;
+    });
+
+    const userMessage = document.querySelector('.message');
+    const deylaedMessage = (message, delayedTime = 1000) => {
+      return empty().pipe(startWith(message), delay(delayedTime));
+    };
+
+    concat(
+      deylaedMessage('3'),
+      deylaedMessage('2'),
+      deylaedMessage('1'),
+      deylaedMessage('WELLCOME'),
+      deylaedMessage('TO'),
+      deylaedMessage('MY WEBSITE'),
+      deylaedMessage(' ', 1000)
+    ).subscribe((message: any) => {
+      userMessage.innerHTML = message;
+    });
+  }
+
+  thirteen() {
+    // Merge
+    const first = interval(1000);
+    const second = interval(1000);
+    const third = interval(1000);
+    const fourth = interval(1000);
+
+    const example = merge(
+      first.pipe(mapTo('First')),
+      second.pipe(mapTo('Second')),
+      third.pipe(mapTo('Third')),
+      fourth.pipe(mapTo('Fourth'))
+    );
+
+    example.subscribe((value) => {
+      // console.log(value);
+    });
+  }
+
+  fourteen() {}
+
+  fiveteen() {}
+
+  sixteen() {}
+
+  seventeen() {}
 }
