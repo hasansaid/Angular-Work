@@ -1,9 +1,26 @@
-<form [formGroup]="mathForm">
-    {{firstNumber}} + {{secondNumber}}=
-    <input type="text" formControlName="answer">
-</form>
+<div class="larger shadow p-5">
+    <div class="mb-4  d-flex justify-content-center fs-1 fw-bold " style="color: red;">
+        ENTER THE CORRECT ANSWER
+    </div>
 
+    <form [formGroup]="mathForm">
+        <div class="input-group mb-3">
+            <div class="input-group input-group-lg">
+                <span class="input-group-text" id="inputGroup-sizing-lg">{{firstNumber}} + {{secondNumber}}=</span>
+                <input type="text" class="form-control" formControlName="answer" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-lg">
+            </div>
+        </div>
+    </form>
 
+    {{totalSeconds | number:"1.1-3"}} ---
+    {{averageSeconds | number:"1.1-3"}} ---
+    {{solved}}
+
+    <div *ngIf="mathForm.valid">
+        Correct Answer
+    </div>
+</div>
 <!-- formlarda debug için aşağıdaki teknikleri kullanmakta fayda vardır -->
 
 <hr>
