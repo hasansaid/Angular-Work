@@ -1,3 +1,4 @@
+import { CorrectAnswerProjectComponent } from './component/correct-answer-project/correct-answer-project.component';
 import { RandomImageProjectComponent } from './component/random-image-project/random-image-project.component';
 import { RxjsProjectComponent } from './component/rxjs-project/rxjs-project.component';
 import { ReactiveFormProjectComponent } from './component/reactive-form-project/reactive-form-project.component';
@@ -60,7 +61,10 @@ const routes: Routes = [
   },
   { path: 'home/rxjs-project', component: RxjsProjectComponent },
   { path: 'home/random-image-project', component: RandomImageProjectComponent },
-
+  {
+    path: 'home/correct-answer-project',
+    component: CorrectAnswerProjectComponent,
+  },
   // Error page son path olmalıdır!!!
   { path: '**', component: ErrorComponent },
 ];

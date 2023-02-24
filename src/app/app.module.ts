@@ -31,6 +31,7 @@ import { ReactiveFormProjectComponent } from './component/reactive-form-project/
 import { RfInputComponent } from './component/reactive-form-project/rf-input/rf-input.component';
 import { RxjsProjectComponent } from './component/rxjs-project/rxjs-project.component';
 import { RandomImageProjectComponent } from './component/random-image-project/random-image-project.component';
+import { CorrectAnswerProjectComponent } from './component/correct-answer-project/correct-answer-project.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { RandomImageProjectComponent } from './component/random-image-project/ra
     RfInputComponent,
     RxjsProjectComponent,
     RandomImageProjectComponent,
+    CorrectAnswerProjectComponent,
   ],
   imports: [
     BrowserModule,
