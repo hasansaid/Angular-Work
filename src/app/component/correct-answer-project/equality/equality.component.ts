@@ -27,7 +27,18 @@ export class EqualityComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.mathForm.statusChanges.subscribe((value) => {
+      if (value === 'INVALID') {
+        return;
+      }
+      this.mathForm.setValue({
+        firstNumber: this.generateNumber(),
+        secondNumber: this.generateNumber(),
+        answer: '',
+      });
+    });
+  }
 
   generateNumber() {
     return Math.ceil(Math.random() * 10);
