@@ -1,0 +1,12 @@
+<form [formGroup]="mathForm">
+    {{firstNumber}} + {{secondNumber}}=
+    <input type="text" formControlName="answer">
+</form>
+
+
+<!-- formlarda debug için aşağıdaki teknikleri kullanmakta fayda vardır -->
+
+<hr>
+<div>Form valid mi : {{mathForm.valid}}</div>
+<div>Form degerleri : {{mathForm.value | json}}</div>
+<div>Form hataları : {{mathForm.errors | json}}</div>
