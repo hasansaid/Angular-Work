@@ -12,7 +12,15 @@ import {
   timer,
 } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
-import { delay, endWith, mapTo, startWith } from 'rxjs/operators';
+import {
+  delay,
+  endWith,
+  filter,
+  map,
+  mapTo,
+  startWith,
+  tap,
+} from 'rxjs/operators';
 
 @Component({
   selector: 'app-rxjs-project',
@@ -45,9 +53,10 @@ export class RxjsProjectComponent implements OnInit {
     // this.twelve();
     // this.thirteen();
     // this.fourteen();
-    this.fiveteen();
-    this.sixteen();
-    this.seventeen();
+    // this.fiveteen();
+    // this.sixteen();
+    // this.seventeen();
+    this.eighteen();
   }
 
   one() {
@@ -396,7 +405,45 @@ export class RxjsProjectComponent implements OnInit {
     );
   }
 
-  sixteen() {}
+  // Pipeable Operators
+  sixteen() {
+    // Filter
+    const source = from([1, 2, 3, 4, 5, 6]);
+    source.pipe(filter((num) => num % 2 === 0)).subscribe((val) => {
+      console.log('Çift sayılar : ' + val);
+    });
 
-  seventeen() {}
+    // Değişkene atarakta yapabilirim.
+    const example = source.pipe(filter((num) => num % 2 !== 0));
+    example.subscribe((val) => console.log('Tek sayılar : ' + val));
+
+    const people = from([
+      { name: 'Hasan', age: 24 },
+      { name: 'Mustafa', age: 25 },
+      { name: 'Enes', age: 18 },
+    ]);
+    console.log('24 yaş ve üstlerinin ');
+    const person = people.pipe(filter((person) => person.age >= 24));
+    person.subscribe((per) =>
+      console.log('İsmi : ' + per.name + ' - Yaş : ' + per.age)
+    );
+  }
+
+  seventeen() {
+    // Map
+    const source = from([1, 2, 3, 4, 5, 6]);
+    const example = source.pipe(map((num) => num + 5));
+    example.subscribe((val) => console.log(val));
+  }
+
+  eighteen() {
+    // Tab
+    const source = of(1, 2, 3, 4, 5, 6);
+    const example = source.pipe(
+      tap((val) => console.log('Before Map : ' + val)),
+      map((val) => console.log('Mapping : ', val + 10)),
+      tap((val) => console.log('After Map : ' + val))
+    );
+    example.subscribe((val) => console.log(val));
+  }
 }

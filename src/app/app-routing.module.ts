@@ -1,3 +1,4 @@
+import { RandomImageProjectComponent } from './component/random-image-project/random-image-project.component';
 import { RxjsProjectComponent } from './component/rxjs-project/rxjs-project.component';
 import { ReactiveFormProjectComponent } from './component/reactive-form-project/reactive-form-project.component';
 import { RstSurveyTwoComponent } from './component/routing-state-management/rst-tables/rst-survey-two/rst-survey-two.component';
@@ -58,6 +59,7 @@ const routes: Routes = [
     component: ReactiveFormProjectComponent,
   },
   { path: 'home/rxjs-project', component: RxjsProjectComponent },
+  { path: 'home/random-image-project', component: RandomImageProjectComponent },
 
   // Error page son path olmalıdır!!!
   { path: '**', component: ErrorComponent },

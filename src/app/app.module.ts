@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +30,7 @@ import { RstPopupsModalComponent } from './component/routing-state-management/rs
 import { ReactiveFormProjectComponent } from './component/reactive-form-project/reactive-form-project.component';
 import { RfInputComponent } from './component/reactive-form-project/rf-input/rf-input.component';
 import { RxjsProjectComponent } from './component/rxjs-project/rxjs-project.component';
+import { RandomImageProjectComponent } from './component/random-image-project/random-image-project.component';
 
 @NgModule({
   declarations: [
@@ -58,8 +60,14 @@ import { RxjsProjectComponent } from './component/rxjs-project/rxjs-project.comp
     ReactiveFormProjectComponent,
     RfInputComponent,
     RxjsProjectComponent,
+    RandomImageProjectComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
