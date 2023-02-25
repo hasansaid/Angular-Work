@@ -13,17 +13,26 @@
         </div>
     </form>
 
-    {{totalSeconds | number:"1.1-3"}} ---
-    {{averageSeconds | number:"1.1-3"}} ---
-    {{solved}}
-
-    <div *ngIf="mathForm.valid">
-        Correct Answer
+    <div class="d-flex justify-content-evenly fw-bold">
+        <div>
+            Total Seconds: {{totalSeconds | number:"1.1-3"}}
+        </div>
+        <div>
+            Average Seconds: {{averageSeconds | number:"1.1-3"}}
+        </div>
+        <div>
+            Total Correct Answer: {{solved}}
+        </div>
     </div>
+
+</div>
+
+<div *ngIf="mathForm.valid" class="d-flex justify-content-evenly fs-3 fw-bold shadow p-3" style="color: green;">
+    CONGRATULATIONS
 </div>
 <!-- formlarda debug için aşağıdaki teknikleri kullanmakta fayda vardır -->
 
-<hr>
+<!-- <hr>
 <div>Form valid mi : {{mathForm.valid}}</div>
 <div>Form degerleri : {{mathForm.value | json}}</div>
-<div>Form hataları : {{mathForm.errors | json}}</div>
+<div>Form hataları : {{mathForm.errors | json}}</div> -->

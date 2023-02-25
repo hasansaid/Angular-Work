@@ -10,7 +10,6 @@ import { delay, filter } from 'rxjs';
   styleUrls: ['./equality.component.css'],
 })
 export class EqualityComponent implements OnInit {
-  current = '';
   totalSeconds = 0;
   averageSeconds = 0;
   solved = 0;

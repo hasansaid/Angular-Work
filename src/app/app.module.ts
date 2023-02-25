@@ -33,6 +33,7 @@ import { RxjsProjectComponent } from './component/rxjs-project/rxjs-project.comp
 import { RandomImageProjectComponent } from './component/random-image-project/random-image-project.component';
 import { CorrectAnswerProjectComponent } from './component/correct-answer-project/correct-answer-project.component';
 import { EqualityComponent } from './component/correct-answer-project/equality/equality.component';
+import { BigProjectsComponent } from './component/big-projects/big-projects.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { EqualityComponent } from './component/correct-answer-project/equality/e
     RandomImageProjectComponent,
     CorrectAnswerProjectComponent,
     EqualityComponent,
+    BigProjectsComponent,
   ],
   imports: [
     BrowserModule,

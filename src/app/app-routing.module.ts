@@ -1,3 +1,4 @@
+import { BigProjectsComponent } from './component/big-projects/big-projects.component';
 import { CorrectAnswerProjectComponent } from './component/correct-answer-project/correct-answer-project.component';
 import { RandomImageProjectComponent } from './component/random-image-project/random-image-project.component';
 import { RxjsProjectComponent } from './component/rxjs-project/rxjs-project.component';
@@ -23,6 +24,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
+  { path: 'big-projects', component: BigProjectsComponent },
   {
     path: 'home',
     component: HomeComponent,
