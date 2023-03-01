@@ -16,3 +16,9 @@ Babadan oğula veri akışında iki farklı yöntem kullanılabilir.
 2-@Input() @Output() yöntemidir.
 **
 Angular Lifecycle--
+
+Kullanılan css kütüphaneleri...
+Angular Material
+Semantic ui
+Bootstrap
+Bulma

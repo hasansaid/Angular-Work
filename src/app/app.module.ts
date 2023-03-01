@@ -3,6 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+// Angular Material
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+// ****************
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './component/home/home.component';
@@ -34,6 +39,9 @@ import { RandomImageProjectComponent } from './component/random-image-project/ra
 import { CorrectAnswerProjectComponent } from './component/correct-answer-project/correct-answer-project.component';
 import { EqualityComponent } from './component/correct-answer-project/equality/equality.component';
 import { BigProjectsComponent } from './component/big-projects/big-projects.component';
+import { BlogWebsiteProjectComponent } from './component/big-projects/blog-website-project/blog-website-project.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BlogWebsiteService } from './service/blog-website-project/blog-website.service';
 
 @NgModule({
   declarations: [
@@ -67,14 +75,18 @@ import { BigProjectsComponent } from './component/big-projects/big-projects.comp
     CorrectAnswerProjectComponent,
     EqualityComponent,
     BigProjectsComponent,
+    BlogWebsiteProjectComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule,
   ],
-  providers: [],
+  providers: [BlogWebsiteService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
