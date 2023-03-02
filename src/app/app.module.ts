@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 // Angular Material
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDividerModule } from '@angular/material/divider';
 // ****************
 
 import { AppRoutingModule } from './app-routing.module';
@@ -42,6 +44,7 @@ import { BigProjectsComponent } from './component/big-projects/big-projects.comp
 import { BlogWebsiteProjectComponent } from './component/big-projects/blog-website-project/blog-website-project.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BlogWebsiteService } from './service/blog-website-project/blog-website.service';
+import { DialogComponent } from './component/big-projects/blog-website-project/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +79,7 @@ import { BlogWebsiteService } from './service/blog-website-project/blog-website.
     EqualityComponent,
     BigProjectsComponent,
     BlogWebsiteProjectComponent,
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,6 +89,8 @@ import { BlogWebsiteService } from './service/blog-website-project/blog-website.
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
+    MatDialogModule,
+    MatDividerModule,
   ],
   providers: [BlogWebsiteService],
   bootstrap: [AppComponent],

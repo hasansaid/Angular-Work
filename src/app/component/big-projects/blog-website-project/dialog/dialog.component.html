@@ -1,0 +1,30 @@
+<div class="d-flex d-flex justify-content-between">
+    <div class="d-flex align-items-center me-1">
+        <h3 style="margin: 0px;">
+            <span>
+                {{isUpdate ? "Edit Post":"See Post"}}
+            </span>
+        </h3>
+    </div>
+
+    <button mat-button style="font-size: 24px;" (click)="close()">x</button>
+</div>
+<mat-divider></mat-divider>
+
+<div class="mt-2" *ngIf="!isUpdate">
+    <div class="row">
+        <div class="col-md-6">
+            <img class="w-100" src="assets/images/image{{imageUrl}}.jpg">
+        </div>
+        <div class="col-md-6">
+            <h2>{{title}}</h2>
+            <p>{{body}}</p>
+        </div>
+    </div>
+</div>
+<div class="mt-2" *ngIf="isUpdate">
+    <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-6"></div>
+    </div>
+</div>

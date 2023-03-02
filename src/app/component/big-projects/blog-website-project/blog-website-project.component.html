@@ -23,8 +23,8 @@
                 <mat-card-actions>
                     <!-- <button mat-button>LIKE</button>
                     <button mat-button>SHARE</button> -->
-                    <button mat-raised-button color="primary">Görüntüle</button>
-                    <button mat-raised-button color="accent">Düzenle</button>
+                    <button (click)="openDialog(post,false)" mat-raised-button color="primary">View</button>
+                    <button (click)="openDialog(post,true)" mat-raised-button color="accent">Edit</button>
                 </mat-card-actions>
             </mat-card>
         </div>
