@@ -29,10 +29,12 @@
                                 <button (click)="openDialog(post,true)" mat-raised-button color="accent">Edit</button>
                             </div>
                             <div class="col-md-7 ">
-                                <button routerLink="view-blog/{{post.id}}" mat-raised-button color="primary">View
-                                    Page</button>
-                                <button routerLink="update-blog/{{post.id}}" mat-raised-button color="accent">Edit
-                                    Page</button>
+                                <a href="/big-projects/blog-website-project/view-blog/{{post.id}}">
+                                    <button mat-raised-button color="primary">View Page</button>
+                                </a>
+                                <a class="ms-2" href="/big-projects/blog-website-project/update-blog/{{post.id}}">
+                                    <button mat-raised-button color="accent">Edit Page</button>
+                                </a>
                             </div>
                         </div>
                     </div>

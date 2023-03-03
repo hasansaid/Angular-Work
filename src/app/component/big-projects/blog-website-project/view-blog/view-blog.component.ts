@@ -1,3 +1,4 @@
+import { BlogUserService } from './../../../../service/blog-website-project/blog-user.service';
 import { filter } from 'rxjs';
 import { BlogCommentsService } from './../../../../service/blog-website-project/blog-comments.service';
 import { BlogPostService } from './../../../../service/blog-website-project/blog-post.service';
@@ -13,9 +14,12 @@ export class ViewBlogComponent implements OnInit {
   blogid: any;
   blogPost: any;
   comments: any;
+  users: any = [];
+  commentId: any;
   constructor(
     private postService: BlogPostService,
     private commentsService: BlogCommentsService,
+    private userService: BlogUserService,
     private activatedRoute: ActivatedRoute
   ) {}
 
@@ -23,6 +27,9 @@ export class ViewBlogComponent implements OnInit {
     // İki farklı yöntem ile id yi çekebiliriz.
     // this.one();
     this.two();
+    // this.getUser();
+
+    console.log(this.users);
   }
 
   getPost(id: any) {
@@ -36,9 +43,19 @@ export class ViewBlogComponent implements OnInit {
       this.comments = res.filter(
         (x: { postId: any }) => x.postId == this.blogid
       );
+
+      this.userService.getUsers().subscribe((res) => {
+        // special code.. don't steal (:
+        res.filter((x: { id: any }) => {
+          this.comments.forEach((element) => {
+            if (x.id == element.userId) {
+              this.users.push(x);
+            }
+          });
+        });
+      });
     });
   }
-
   one() {
     this.activatedRoute.params.subscribe((params) => {
       this.getPost(params['blogid']);

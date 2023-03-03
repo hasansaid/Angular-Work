@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-5">
     <div class="row" *ngIf="blogPost !=null">
         <div class="col-md-6" style="padding-left: 0px;">
             <img class="w-100" src="assets/images/image{{blogPost.imageId}}.jpg">
@@ -9,17 +9,25 @@
         </div>
     </div>
     <p class="d-flex justify-content-center m-5 fs-2">COMMENTS</p>
-    <ng-container>
-        <div class="row" *ngFor="let comment of comments"
-            style="background-color: lightgray; margin-top: 20px; padding: 20px;">
-            <div class="col-md-2">
-                <img style="width: 100px; height: 100px; border-radius: 30%;"
-                    src="assets/images/profile/profile{{comment.userId}}.jpg" alt="">
-            </div>
-            <div class="col-md-10">
-                <h3 class="fw-bolder">{{comment.name}}</h3>
-                <h4>{{comment.body}}</h4>
+
+    <div class="row" *ngFor="let comment of comments"
+        style="background-color: lightgray; margin-top: 20px; padding: 20px;">
+        <div class="col-md-2">
+            <img style="width: 100px; height: 100px; border-radius: 30%;"
+                src="assets/images/profile/profile{{comment.userId}}.jpg" alt="">
+            <ng-container *ngFor="let user of users">
+                <p *ngIf="comment.userId==user.id">{{user.name}}</p>
+            </ng-container>
+            <div>
             </div>
         </div>
-    </ng-container>
+        <div class="col-md-10">
+            <h3 class="fw-bolder">{{comment.name}}</h3>
+            <h4>{{comment.body}}</h4>
+        </div>
+    </div>
 </div>
+
+<!-- <div *ngFor="let user of users">
+    {{user.name}}
+</div> -->

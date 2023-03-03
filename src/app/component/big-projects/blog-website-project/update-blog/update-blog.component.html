@@ -1,1 +1,28 @@
-<p>update-blog works!</p>
+<div class="container mt-5">
+    <div class="d-flex justify-content-center">
+        <h1 class="fs-1 fw-bold">EDIT PAGE</h1>
+    </div>
+    <form [formGroup]="form" class="shadow p-5 mt-5" style="min-width: 350px;">
+        <div class="container">
+            <div class="row">
+                <mat-form-field>
+                    <mat-label>
+                        Blog Title
+                    </mat-label>
+                    <input matInput formControlName="title">
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field>
+                    <mat-label>
+                        Blog Contents
+                    </mat-label>
+                    <textarea matInput formControlName="body" cols="40" rows="10"> </textarea>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="d-flex justify-content-end me-2">
+            <button (click)="onSubmit()" [disabled]="!form.valid" mat-raised-button color="warn">UPDATE</button>
+        </div>
+    </form>
+</div>
