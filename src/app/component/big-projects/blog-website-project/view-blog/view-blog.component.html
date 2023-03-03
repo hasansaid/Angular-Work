@@ -1,2 +1,25 @@
-<p>view-blog works!</p>
-{{blogPost.body}}
+<div class="container">
+    <div class="row" *ngIf="blogPost !=null">
+        <div class="col-md-6" style="padding-left: 0px;">
+            <img class="w-100" src="assets/images/image{{blogPost.imageId}}.jpg">
+        </div>
+        <div class="col-md-6">
+            <h2 class="fs-2">{{blogPost.title}}</h2>
+            <p>{{blogPost.body}}</p>
+        </div>
+    </div>
+    <p class="d-flex justify-content-center m-5 fs-2">COMMENTS</p>
+    <ng-container>
+        <div class="row" *ngFor="let comment of comments"
+            style="background-color: lightgray; margin-top: 20px; padding: 20px;">
+            <div class="col-md-2">
+                <img style="width: 100px; height: 100px; border-radius: 30%;"
+                    src="assets/images/profile/profile{{comment.userId}}.jpg" alt="">
+            </div>
+            <div class="col-md-10">
+                <h3 class="fw-bolder">{{comment.name}}</h3>
+                <h4>{{comment.body}}</h4>
+            </div>
+        </div>
+    </ng-container>
+</div>

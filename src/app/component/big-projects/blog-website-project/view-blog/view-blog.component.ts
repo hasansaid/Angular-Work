@@ -1,3 +1,4 @@
+import { filter } from 'rxjs';
 import { BlogCommentsService } from './../../../../service/blog-website-project/blog-comments.service';
 import { BlogPostService } from './../../../../service/blog-website-project/blog-post.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ViewBlogComponent implements OnInit {
   blogid: any;
   blogPost: any;
+  comments: any;
   constructor(
     private postService: BlogPostService,
     private commentsService: BlogCommentsService,
@@ -26,6 +28,14 @@ export class ViewBlogComponent implements OnInit {
   getPost(id: any) {
     this.postService.getPost(id).subscribe((data) => {
       this.blogPost = data;
+      this.getComment();
+    });
+  }
+  getComment() {
+    this.commentsService.getComments().subscribe((res) => {
+      this.comments = res.filter(
+        (x: { postId: any }) => x.postId == this.blogid
+      );
     });
   }
 
