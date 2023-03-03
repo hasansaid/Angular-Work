@@ -16,14 +16,22 @@ export class BlogWebsiteProjectComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.blogPostService.getPosts().subscribe((res) => {
-      // console.log(res);
-      this.posts = res;
-    });
+    this.getBlogList();
   }
   openDialog(post: any, viewOrUpdate: any) {
     const dialogRef = this.matDialog.open(DialogComponent, {
       data: { blog: post, isUpdate: viewOrUpdate },
+    });
+
+    dialogRef.afterClosed().subscribe((res) => {
+      this.getBlogList();
+    });
+  }
+
+  getBlogList() {
+    this.blogPostService.getPosts().subscribe((res) => {
+      // console.log(res);
+      this.posts = res;
     });
   }
 }
