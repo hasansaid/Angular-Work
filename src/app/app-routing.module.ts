@@ -1,3 +1,5 @@
+import { UpdateBlogComponent } from './component/big-projects/blog-website-project/update-blog/update-blog.component';
+import { ViewBlogComponent } from './component/big-projects/blog-website-project/view-blog/view-blog.component';
 import { BlogWebsiteProjectComponent } from './component/big-projects/blog-website-project/blog-website-project.component';
 import { BigProjectsComponent } from './component/big-projects/big-projects.component';
 import { CorrectAnswerProjectComponent } from './component/correct-answer-project/correct-answer-project.component';
@@ -29,6 +31,14 @@ const routes: Routes = [
   {
     path: 'big-projects/blog-website-project',
     component: BlogWebsiteProjectComponent,
+  },
+  {
+    path: 'big-projects/blog-website-project/view-blog/:blogid',
+    component: ViewBlogComponent,
+  },
+  {
+    path: 'big-projects/blog-website-project/update-blog/:blogid',
+    component: UpdateBlogComponent,
   },
   {
     path: 'home',

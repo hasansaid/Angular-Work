@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-3  col-sm-6 mt-3" *ngFor="let post of posts">
+        <div class="col-md-4  col-sm-6 mt-3" *ngFor="let post of posts">
             <mat-card class="example-card">
                 <mat-card-header>
                     <!-- <div mat-card-avatar class="example-header-image"></div> -->
@@ -21,10 +21,21 @@
                     </p>
                 </mat-card-content>
                 <mat-card-actions>
-                    <!-- <button mat-button>LIKE</button>
-                    <button mat-button>SHARE</button> -->
-                    <button (click)="openDialog(post,false)" mat-raised-button color="primary">View</button>
-                    <button (click)="openDialog(post,true)" mat-raised-button color="accent">Edit</button>
+
+                    <div style="margin-left:4px ;">
+                        <div class="row">
+                            <div class="col-md-5 "> <button (click)="openDialog(post,false)" mat-raised-button
+                                    color="primary">View</button>
+                                <button (click)="openDialog(post,true)" mat-raised-button color="accent">Edit</button>
+                            </div>
+                            <div class="col-md-7 ">
+                                <button routerLink="view-blog/{{post.id}}" mat-raised-button color="primary">View
+                                    Page</button>
+                                <button routerLink="update-blog/{{post.id}}" mat-raised-button color="accent">Edit
+                                    Page</button>
+                            </div>
+                        </div>
+                    </div>
                 </mat-card-actions>
             </mat-card>
         </div>

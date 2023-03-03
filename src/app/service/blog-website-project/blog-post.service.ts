@@ -13,6 +13,10 @@ export class BlogPostService extends BlogWebsiteService {
     return this.blogWebsiteService.getReq('/posts');
   }
 
+  public getPost(id: any) {
+    return this.blogWebsiteService.getReq('/posts/' + id);
+  }
+
   public updatePost(id: any, data: any) {
     return this.blogWebsiteService.putReq('/posts/' + id, data);
   }

@@ -47,6 +47,8 @@ import { BlogWebsiteProjectComponent } from './component/big-projects/blog-websi
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BlogWebsiteService } from './service/blog-website-project/blog-website.service';
 import { DialogComponent } from './component/big-projects/blog-website-project/dialog/dialog.component';
+import { ViewBlogComponent } from './component/big-projects/blog-website-project/view-blog/view-blog.component';
+import { UpdateBlogComponent } from './component/big-projects/blog-website-project/update-blog/update-blog.component';
 
 @NgModule({
   declarations: [
@@ -82,6 +84,8 @@ import { DialogComponent } from './component/big-projects/blog-website-project/d
     BigProjectsComponent,
     BlogWebsiteProjectComponent,
     DialogComponent,
+    ViewBlogComponent,
+    UpdateBlogComponent,
   ],
   imports: [
     BrowserModule,
