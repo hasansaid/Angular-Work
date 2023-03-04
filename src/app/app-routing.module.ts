@@ -1,3 +1,6 @@
+import { SofAccountComponent } from './component/big-projects/stackoverflow-project/sof-account/sof-account.component';
+import { SofLoginComponent } from './component/big-projects/stackoverflow-project/sof-login/sof-login.component';
+import { StackoverflowProjectComponent } from './component/big-projects/stackoverflow-project/stackoverflow-project.component';
 import { UpdateBlogComponent } from './component/big-projects/blog-website-project/update-blog/update-blog.component';
 import { ViewBlogComponent } from './component/big-projects/blog-website-project/view-blog/view-blog.component';
 import { BlogWebsiteProjectComponent } from './component/big-projects/blog-website-project/blog-website-project.component';
@@ -39,6 +42,15 @@ const routes: Routes = [
   {
     path: 'big-projects/blog-website-project/update-blog/:blogid',
     component: UpdateBlogComponent,
+  },
+  {
+    path: 'big-projects/stackoverflow-project',
+    component: StackoverflowProjectComponent,
+    children: [
+      { path: '', component: SofLoginComponent },
+      { path: 'sof-login', component: SofLoginComponent },
+      { path: 'sof-account', component: SofAccountComponent },
+    ],
   },
   {
     path: 'home',

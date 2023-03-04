@@ -10,6 +10,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
 // ****************
 
 import { AppRoutingModule } from './app-routing.module';
@@ -49,6 +50,10 @@ import { BlogWebsiteService } from './service/blog-website-project/blog-website.
 import { DialogComponent } from './component/big-projects/blog-website-project/dialog/dialog.component';
 import { ViewBlogComponent } from './component/big-projects/blog-website-project/view-blog/view-blog.component';
 import { UpdateBlogComponent } from './component/big-projects/blog-website-project/update-blog/update-blog.component';
+import { StackoverflowProjectComponent } from './component/big-projects/stackoverflow-project/stackoverflow-project.component';
+import { SofHeaderComponent } from './component/big-projects/stackoverflow-project/sof-header/sof-header.component';
+import { SofLoginComponent } from './component/big-projects/stackoverflow-project/sof-login/sof-login.component';
+import { SofAccountComponent } from './component/big-projects/stackoverflow-project/sof-account/sof-account.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +91,10 @@ import { UpdateBlogComponent } from './component/big-projects/blog-website-proje
     DialogComponent,
     ViewBlogComponent,
     UpdateBlogComponent,
+    StackoverflowProjectComponent,
+    SofHeaderComponent,
+    SofLoginComponent,
+    SofAccountComponent,
   ],
   imports: [
     BrowserModule,
@@ -99,6 +108,7 @@ import { UpdateBlogComponent } from './component/big-projects/blog-website-proje
     MatDividerModule,
     MatFormFieldModule,
     MatInputModule,
+    MatToolbarModule,
   ],
   providers: [BlogWebsiteService],
   bootstrap: [AppComponent],
