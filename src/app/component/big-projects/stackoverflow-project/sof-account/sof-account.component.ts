@@ -1,3 +1,5 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { SofUserService } from './../../../../service/stackoverflow-project/sof-user.service';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
@@ -10,7 +12,9 @@ import { Component, OnInit } from '@angular/core';
 export class SofAccountComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
-    public userService: SofUserService
+    private userService: SofUserService,
+    private router: Router,
+    private matSnackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {}
@@ -26,6 +30,13 @@ export class SofAccountComponent implements OnInit {
   }
 
   createAccount() {
-    this.userService.createAccount(this.accountForm.value).subscribe();
+    if (this.accountForm.valid) {
+      this.userService.createAccount(this.accountForm.value).subscribe();
+      this.router.navigateByUrl(
+        '/big-projects/stackoverflow-project/sof-login'
+      );
+      this.matSnackBar.open('Registration successful', 'X');
+    } else
+      this.matSnackBar.open('The form is incomplete, please fill it!', 'X');
   }
 }

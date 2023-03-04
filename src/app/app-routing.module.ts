@@ -1,3 +1,4 @@
+import { SofHomeComponent } from './component/big-projects/stackoverflow-project/sof-home/sof-home.component';
 import { SofAccountComponent } from './component/big-projects/stackoverflow-project/sof-account/sof-account.component';
 import { SofLoginComponent } from './component/big-projects/stackoverflow-project/sof-login/sof-login.component';
 import { StackoverflowProjectComponent } from './component/big-projects/stackoverflow-project/stackoverflow-project.component';
@@ -50,6 +51,7 @@ const routes: Routes = [
       { path: '', component: SofLoginComponent },
       { path: 'sof-login', component: SofLoginComponent },
       { path: 'sof-account', component: SofAccountComponent },
+      { path: 'sof-home', component: SofHomeComponent },
     ],
   },
   {

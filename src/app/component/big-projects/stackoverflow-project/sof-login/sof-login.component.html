@@ -17,13 +17,14 @@
                 <input type="password" matInput formControlName="password" />
                 <mat-error>
                     <p *ngIf="f['password'].errors && f['password'].errors['required']">Password is required..</p>
-                    <p *ngIf="f['password'].errors && f['password'].errors['minlength']">Enter a minimum of 8
+                    <p *ngIf="f['password'].errors && f['password'].errors['minlength']">
+                        Number of characters you entered: {{loginForm.value.password.length}} .Enter a minimum of 8
                         characters..</p>
                 </mat-error>
             </mat-form-field>
         </form>
-        <div class="buttons-container">
-            <button [disabled]="!loginForm.valid" mat-raised-button class="login-button">
+        <div class="buttons-container mt-3">
+            <button (click)="login()" [disabled]="!loginForm.valid" mat-raised-button class="login-button">
                 Login
             </button>
             <p>Or</p>

@@ -1,9 +1,14 @@
-<mat-toolbar routerLink="/big-projects/stackoverflow-project" class="d-flex justify-content-between" color="primary"
-    style="cursor: pointer;">
-    <div>
+<mat-toolbar class="d-flex justify-content-between" color="primary">
+    <div style="cursor: pointer;" routerLink="/big-projects/stackoverflow-project">
         Stackoverflow
     </div>
-    <div routerLink="/big-projects" style="cursor: pointer;" mat-button>
-        Logout
+    <div class="row">
+        <div *ngIf="userService.user != undefined" (click)="logout()" class="col-md-6" style="cursor: pointer;"
+            mat-button>
+            Logout
+        </div>
+        <div class="col-md-6" routerLink="/big-projects" style="cursor: pointer;" mat-button>
+            LEAVE
+        </div>
     </div>
 </mat-toolbar>
