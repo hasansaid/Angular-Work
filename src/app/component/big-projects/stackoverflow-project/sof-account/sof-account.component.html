@@ -1,29 +1,43 @@
 <div class="container">
     <div class="form-container">
-        <div class="title">Hesap Oluştur</div>
-        <form>
+        <div class="title">CREATE ACCOUNT</div>
+        <form [formGroup]="accountForm">
             <mat-form-field appearance="outline">
-                <mat-label>Emailinizi Giriniz</mat-label>
-                <input matInput />
+                <mat-label>Enter your email...</mat-label>
+                <input matInput formControlName="email" />
+                <mat-error>
+                    <p *ngIf="f['email'].errors && f['email'].errors['required']">Email is required..</p>
+                    <p *ngIf="f['email'].errors && f['email'].errors['email']">Enter the email format correctly...</p>
+                </mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Kullanıcı Adınızı Giriniz</mat-label>
-                <input matInput />
+                <mat-label>Enter your username...</mat-label>
+                <input matInput formControlName="username" />
+                <mat-error>
+                    <p *ngIf="f['password'].errors && f['password'].errors['required']">Username is required..</p>
+                    <p *ngIf="f['password'].errors && f['password'].errors['maxlength']">Enter a maximum of 10
+                        characters..</p>
+                </mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Şifrenizi Giriniz</mat-label>
-                <input type="password" matInput />
-
+                <mat-label>Enter your password...</mat-label>
+                <input type="password" matInput formControlName="password" />
+                <mat-error>
+                    <p *ngIf="f['password'].errors && f['password'].errors['required']">Password is required..</p>
+                    <p *ngIf="f['password'].errors && f['password'].errors['minlength']">Enter a minimum of 8
+                        characters..</p>
+                </mat-error>
             </mat-form-field>
         </form>
         <div class="buttons-container">
-            <button mat-raised-button class="login-button">
-                Kaydol
+            <button (click)="createAccount()" [disabled]="accountForm.invalid" mat-raised-button class="login-button">
+                Register
             </button>
-            <p>Veya</p>
-            <a href="/big-projects/stackoverflow-project/sof-login"> <button mat-button>Giriş Yap</button></a>
+            <p>Or</p>
+            <button routerLink="/big-projects/stackoverflow-project/sof-login" mat-button color="primary">Login</button>
+            <!-- {{accountForm.value |json}} -->
         </div>
     </div>
 </div>

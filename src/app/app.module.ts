@@ -1,3 +1,4 @@
+import { SofBaseService } from './service/stackoverflow-project/sof-base.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -110,7 +111,7 @@ import { SofAccountComponent } from './component/big-projects/stackoverflow-proj
     MatInputModule,
     MatToolbarModule,
   ],
-  providers: [BlogWebsiteService],
+  providers: [BlogWebsiteService, SofBaseService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

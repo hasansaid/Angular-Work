@@ -1,24 +1,36 @@
 <div class="container">
     <div class="form-container">
-        <div class="title">Giriş</div>
-        <form>
+        <div class="title">LOGIN</div>
+        <form [formGroup]="loginForm">
             <mat-form-field appearance="outline">
-                <mat-label>Emailinizi Giriniz</mat-label>
-                <input matInput />
-
+                <mat-label>Enter your email...</mat-label>
+                <input matInput formControlName="email" />
+                <mat-error>
+                    <p *ngIf="f['email'].errors && f['email'].errors['required']">Email is required..</p>
+                    <p *ngIf="f['email'].errors && f['email'].errors['email']">Enter the email format correctly..</p>
+                </mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label>Şifrenizi Giriniz</mat-label>
-                <input type="password" matInput />
 
+
+            <mat-form-field appearance="outline">
+                <mat-label>Enter your password...</mat-label>
+                <input type="password" matInput formControlName="password" />
+                <mat-error>
+                    <p *ngIf="f['password'].errors && f['password'].errors['required']">Password is required..</p>
+                    <p *ngIf="f['password'].errors && f['password'].errors['minlength']">Enter a minimum of 8
+                        characters..</p>
+                </mat-error>
             </mat-form-field>
         </form>
         <div class="buttons-container">
-            <button mat-raised-button class="login-button">
-                Giriş Yap
+            <button [disabled]="!loginForm.valid" mat-raised-button class="login-button">
+                Login
             </button>
-            <p>Veya</p>
-            <a href="/big-projects/stackoverflow-project/sof-account"> <button mat-button>Hesap Oluştur</button></a>
+            <p>Or</p>
+            <button routerLink="/big-projects/stackoverflow-project/sof-account" mat-button color="primary">Create
+                Account</button>
+            <!-- {{loginForm.value | json}} -->
+            <!-- {{loginForm.valid}} -->
         </div>
     </div>
 </div>
