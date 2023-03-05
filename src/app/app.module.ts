@@ -14,6 +14,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatIconModule } from '@angular/material/icon';
 // ****************
 
 import { AppRoutingModule } from './app-routing.module';
@@ -58,6 +59,7 @@ import { SofHeaderComponent } from './component/big-projects/stackoverflow-proje
 import { SofLoginComponent } from './component/big-projects/stackoverflow-project/sof-login/sof-login.component';
 import { SofAccountComponent } from './component/big-projects/stackoverflow-project/sof-account/sof-account.component';
 import { SofHomeComponent } from './component/big-projects/stackoverflow-project/sof-home/sof-home.component';
+import { SofSolutionsComponent } from './component/big-projects/stackoverflow-project/sof-solutions/sof-solutions.component';
 
 @NgModule({
   declarations: [
@@ -100,6 +102,7 @@ import { SofHomeComponent } from './component/big-projects/stackoverflow-project
     SofLoginComponent,
     SofAccountComponent,
     SofHomeComponent,
+    SofSolutionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -116,6 +119,7 @@ import { SofHomeComponent } from './component/big-projects/stackoverflow-project
     MatToolbarModule,
     MatSnackBarModule,
     FormsModule,
+    MatIconModule,
   ],
   providers: [BlogWebsiteService, SofBaseService],
   bootstrap: [AppComponent],

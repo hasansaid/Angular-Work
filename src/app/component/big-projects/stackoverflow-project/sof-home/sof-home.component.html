@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container ">
     <div class="content-wrapper">
         <mat-form-field appearance="fill">
             <textarea [(ngModel)]="question" matInput cdkTextareaAutosize cdkAutosizeMinRows="5"
@@ -10,8 +10,8 @@
         </div>
         <!-- {{question}} -->
 
-        <mat-card *ngFor="let item of questions" class="question-card">
-            <mat-card-content>
+        <mat-card style="cursor: pointer;" *ngFor="let item of questions" class="question-card">
+            <mat-card-content routerLink="/big-projects/stackoverflow-project/sof-solutions/{{item.id}}">
                 <p class="username">{{item.username}}</p>
                 <p>
                     {{item.question}}

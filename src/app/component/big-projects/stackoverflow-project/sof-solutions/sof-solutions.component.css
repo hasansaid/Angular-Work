@@ -1,0 +1,96 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 92vh;
+  background: #fff;
+  max-height: 600px;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.title-container {
+  font-size: 22px;
+}
+
+mat-form-field {
+  margin-top: 20px;
+}
+
+.new-post-actions-container {
+  display: flex;
+  flex-direction: row;
+  height: 6vh;
+  align-items: center;
+}
+
+.post-button {
+  background-color: #ff9900;
+  color: white;
+  width: 118px;
+}
+
+.solution-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.arrows-container {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  font-size: 20px;
+  align-items: center;
+}
+
+.data-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+  justify-content: center;
+  padding-left: 10px;
+}
+
+.question-card {
+  background-color: white;
+  /* width: 100%; */
+  box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.username {
+  font-size: 20px;
+  font-weight: 450;
+}
+
+mat-card-content {
+  font-size: 18px;
+}
+
+.mat-icon {
+  font-size: 30px;
+}
+
+.title {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.colored-icon {
+  color: #ff9900;
+}
+
+.increasedecrease {
+  margin-left: 5px;
+}

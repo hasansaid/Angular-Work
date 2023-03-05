@@ -16,4 +16,12 @@ export class SofQuestionService extends SofBaseService {
   public getQuestions() {
     return this.getReq('/questions');
   }
+
+  public getQuestion(questionid: any) {
+    return this.getReq('/questions/' + questionid);
+  }
+
+  public updateQuestion(newQuestion: any) {
+    return this.putReq('/questions/' + newQuestion.id, newQuestion);
+  }
 }

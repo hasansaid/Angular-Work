@@ -1,0 +1,55 @@
+<div class="container" *ngIf="question!=undefined">
+    <div style="display: flex;align-items: center;margin-right: 50px;">
+        <button routerLink="/big-projects/stackoverflow-project/sof-home" mat-raised-button color="accent">Back to
+            Questions</button>
+    </div>
+    <div class="content-wrapper">
+        <div class="title-container">
+            Question - Answer Page
+        </div>
+        <mat-card style="background-color: rgb(255, 66, 98);" class="question-card">
+            <mat-card-content>
+                <div class="solution-container">
+                    <div class="data-container">
+                        <p class="username">{{question?.username}}</p>
+                        <p>
+                            {{question?.question}}
+                        </p>
+                    </div>
+                </div>
+
+            </mat-card-content>
+        </mat-card>
+
+
+        <mat-form-field appearance="fill">
+            <textarea [(ngModel)]="solutionText" matInput cdkTextareaAutosize cdkAutosizeMinRows="5"
+                placeholder="Enter your answer. Min 8 characters..."></textarea>
+        </mat-form-field>
+        <!-- {{solutionText.length}} -->
+        <div class="new-post-actions-container">
+            <button [disabled]="condition()" (click)="postSolutions()" mat-raised-button
+                class="post-button">Save</button>
+        </div>
+
+
+        <mat-card class="question-card" *ngFor="let solution of question.solutions; let i = index">
+            <mat-card-content>
+                <div class="solution-container">
+                    <div class="arrows-container">
+                        <button (click)="plusOne(i,1)" mat-icon-button><mat-icon>expand_less</mat-icon></button>
+                        <span class="increasedecrease">{{solution.plus.length - solution.minus.length}}</span>
+                        <button (click)="plusOne(i,-1)" mat-icon-button><mat-icon>expand_more</mat-icon></button>
+                    </div>
+                    <div class="data-container">
+                        <p class="username">{{solution?.username}}</p>
+                        <p>
+                            {{solution?.solution}}
+                        </p>
+                    </div>
+                </div>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

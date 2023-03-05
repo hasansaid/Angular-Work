@@ -11,6 +11,12 @@
       "username": "hawkey",
       "password": "12345678",
       "id": 2
+    },
+    {
+      "email": "jw@gmail.com",
+      "username": "jhonWalker",
+      "password": "12345678",
+      "id": 3
     }
   ],
   "questions": [
@@ -18,7 +24,35 @@
       "username": "hawkey",
       "question": "What is framework?\n",
       "userId": 2,
-      "solutions": [],
+      "solutions": [
+        {
+          "username": "jhonWalker",
+          "solution": "A framework is therefore a set of tools and modules that can be reused for various projects. One of the most well-known and used frameworks is the Microsoft . NET Framework for websites.",
+          "plus": [
+            1,
+            2
+          ],
+          "minus": []
+        },
+        {
+          "username": "hworld",
+          "solution": "sdsd",
+          "plus": [],
+          "minus": []
+        },
+        {
+          "username": "hworld",
+          "solution": "sdsdsdsd",
+          "plus": [],
+          "minus": []
+        },
+        {
+          "username": "hworld",
+          "solution": "sdsdsdsd",
+          "plus": [],
+          "minus": []
+        }
+      ],
       "id": 1
     },
     {
@@ -27,6 +61,34 @@
       "userId": 2,
       "solutions": [],
       "id": 2
+    },
+    {
+      "username": "hworld",
+      "question": "Is Angular easy?",
+      "userId": 1,
+      "solutions": [],
+      "id": 3
+    },
+    {
+      "username": "hworld",
+      "question": "Backend or frontend easier?",
+      "userId": 1,
+      "solutions": [],
+      "id": 4
+    },
+    {
+      "username": "jhonWalker",
+      "question": "What should I do to get started with Angular?",
+      "userId": 3,
+      "solutions": [],
+      "id": 5
+    },
+    {
+      "username": "jhonWalker",
+      "question": "What should I do to get started with React?",
+      "userId": 3,
+      "solutions": [],
+      "id": 6
     }
   ]
 }
