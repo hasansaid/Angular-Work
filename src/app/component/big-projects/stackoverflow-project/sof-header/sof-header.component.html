@@ -3,11 +3,15 @@
         Stackoverflow
     </div>
     <div class="row">
-        <div *ngIf="userService.user != undefined" (click)="logout()" class="col-md-6" style="cursor: pointer;"
+        <div *ngIf="userService.user == undefined" routerLink="/big-projects/stackoverflow-project/sof-login"
+            class="col-md-4 me-4" style="cursor: pointer;" mat-button>
+            Login
+        </div>
+        <div *ngIf="userService.user != undefined" (click)="logout()" class="col-md-4 me-4" style="cursor: pointer;"
             mat-button>
             Logout
         </div>
-        <div (click)="leave()" class="col-md-6" routerLink="/big-projects" style="cursor: pointer;" mat-button>
+        <div (click)="leave()" class="col-md-4" routerLink="/big-projects" style="cursor: pointer;" mat-button>
             LEAVE
         </div>
     </div>

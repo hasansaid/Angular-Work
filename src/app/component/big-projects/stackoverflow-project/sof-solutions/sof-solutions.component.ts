@@ -13,7 +13,7 @@ export class SofSolutionsComponent implements OnInit {
   questionid: any;
   solutionText: string = '';
   constructor(
-    private userService: SofUserService,
+    public userService: SofUserService,
     private questionService: SofQuestionService,
     private activatedRoute: ActivatedRoute
   ) {}

@@ -1,13 +1,15 @@
 <div class="container ">
     <div class="content-wrapper">
-        <mat-form-field appearance="fill">
-            <textarea [(ngModel)]="question" matInput cdkTextareaAutosize cdkAutosizeMinRows="5"
-                placeholder="Ask your question..."></textarea>
-        </mat-form-field>
-        <div class="new-post-actions-container">
-            <button (click)="post()" [disabled]="question.trim() == ''" mat-raised-button
-                class="post-button">Ask</button>
-        </div>
+        <ng-container *ngIf="userService.user!=undefined">
+            <mat-form-field appearance="fill">
+                <textarea [(ngModel)]="question" matInput cdkTextareaAutosize cdkAutosizeMinRows="5"
+                    placeholder="Ask your question..."></textarea>
+            </mat-form-field>
+            <div class="new-post-actions-container">
+                <button (click)="post()" [disabled]="question.trim() == ''" mat-raised-button
+                    class="post-button">Ask</button>
+            </div>
+        </ng-container>
         <!-- {{question}} -->
 
         <mat-card style="cursor: pointer;" *ngFor="let item of questions" class="question-card">

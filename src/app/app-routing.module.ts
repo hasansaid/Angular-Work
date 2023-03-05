@@ -49,7 +49,7 @@ const routes: Routes = [
     path: 'big-projects/stackoverflow-project',
     component: StackoverflowProjectComponent,
     children: [
-      { path: '', component: SofLoginComponent },
+      { path: '', component: SofHomeComponent },
       { path: 'sof-login', component: SofLoginComponent },
       { path: 'sof-account', component: SofAccountComponent },
       { path: 'sof-home', component: SofHomeComponent },

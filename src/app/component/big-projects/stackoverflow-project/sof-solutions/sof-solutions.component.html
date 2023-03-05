@@ -22,15 +22,17 @@
         </mat-card>
 
 
-        <mat-form-field appearance="fill">
-            <textarea [(ngModel)]="solutionText" matInput cdkTextareaAutosize cdkAutosizeMinRows="5"
-                placeholder="Enter your answer. Min 8 characters..."></textarea>
-        </mat-form-field>
-        <!-- {{solutionText.length}} -->
-        <div class="new-post-actions-container">
-            <button [disabled]="condition()" (click)="postSolutions()" mat-raised-button
-                class="post-button">Save</button>
-        </div>
+        <ng-container *ngIf="userService.user!=undefined">
+            <mat-form-field appearance="fill">
+                <textarea [(ngModel)]="solutionText" matInput cdkTextareaAutosize cdkAutosizeMinRows="5"
+                    placeholder="Enter your answer. Min 8 characters..."></textarea>
+            </mat-form-field>
+            <!-- {{solutionText.length}} -->
+            <div class="new-post-actions-container">
+                <button [disabled]="condition()" (click)="postSolutions()" mat-raised-button
+                    class="post-button">Save</button>
+            </div>
+        </ng-container>
 
 
         <mat-card class="question-card" *ngFor="let solution of question.solutions; let i = index">
