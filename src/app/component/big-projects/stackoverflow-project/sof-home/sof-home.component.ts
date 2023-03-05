@@ -1,3 +1,4 @@
+import { SofQuestionService } from './../../../../service/stackoverflow-project/sof-question.service';
 import { SofUserService } from './../../../../service/stackoverflow-project/sof-user.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,7 +8,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sof-home.component.css'],
 })
 export class SofHomeComponent implements OnInit {
-  constructor(public us: SofUserService) {}
+  question: string = '';
+  questions: Array<any> = [];
 
-  ngOnInit(): void {}
+  constructor(
+    public userService: SofUserService,
+    private questionService: SofQuestionService
+  ) {}
+
+  ngOnInit(): void {
+    this.getQuestions();
+  }
+  getQuestions() {
+    this.questionService.getQuestions().subscribe((res) => {
+      this.questions = res;
+    });
+  }
+  post() {
+    this.questionService
+      .postQuestions({
+        username: this.userService.user.username,
+        question: this.question,
+        userId: this.userService.user.id,
+        solutions: [],
+      })
+      .subscribe((res) => {
+        this.questions.push(res);
+      });
+  }
 }

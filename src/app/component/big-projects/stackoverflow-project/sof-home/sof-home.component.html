@@ -1,17 +1,20 @@
 <div class="container">
     <div class="content-wrapper">
         <mat-form-field appearance="fill">
-            <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="5" placeholder="Sorunuzu sorun..."></textarea>
+            <textarea [(ngModel)]="question" matInput cdkTextareaAutosize cdkAutosizeMinRows="5"
+                placeholder="Ask your question..."></textarea>
         </mat-form-field>
         <div class="new-post-actions-container">
-            <button mat-raised-button class="post-button">Sor</button>
+            <button (click)="post()" [disabled]="question.trim() == ''" mat-raised-button
+                class="post-button">Ask</button>
         </div>
+        <!-- {{question}} -->
 
-        <mat-card class="question-card">
+        <mat-card *ngFor="let item of questions" class="question-card">
             <mat-card-content>
-                <p class="username">Can Boz</p>
+                <p class="username">{{item.username}}</p>
                 <p>
-                    Angular zor mu?
+                    {{item.question}}
                 </p>
             </mat-card-content>
         </mat-card>

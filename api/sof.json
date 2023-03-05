@@ -8,10 +8,25 @@
     },
     {
       "email": "h@gmail.com",
-      "username": "h",
+      "username": "hawkey",
       "password": "12345678",
       "id": 2
     }
   ],
-  "questions": []
+  "questions": [
+    {
+      "username": "hawkey",
+      "question": "What is framework?\n",
+      "userId": 2,
+      "solutions": [],
+      "id": 1
+    },
+    {
+      "username": "hawkey",
+      "question": "What are the differences between Angular and React?\n",
+      "userId": 2,
+      "solutions": [],
+      "id": 2
+    }
+  ]
 }

@@ -25,4 +25,8 @@ export class SofHeaderComponent implements OnInit {
     this.router.navigateByUrl('/big-projects/stackoverflow-project/sof-login');
     localStorage.clear();
   }
+  leave() {
+    this.userService.user = undefined;
+    localStorage.clear();
+  }
 }

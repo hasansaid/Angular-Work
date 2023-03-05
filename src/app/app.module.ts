@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 // Angular Material
 import { MatCardModule } from '@angular/material/card';
@@ -114,6 +115,7 @@ import { SofHomeComponent } from './component/big-projects/stackoverflow-project
     MatInputModule,
     MatToolbarModule,
     MatSnackBarModule,
+    FormsModule,
   ],
   providers: [BlogWebsiteService, SofBaseService],
   bootstrap: [AppComponent],
