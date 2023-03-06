@@ -46,7 +46,7 @@ export class RxjsProjectComponent implements OnInit {
     // this.seven();
     // this.eight();
 
-    // this.nine();
+    this.nine();
 
     // this.ten();
     // this.eleven();
@@ -56,7 +56,7 @@ export class RxjsProjectComponent implements OnInit {
     // this.fiveteen();
     // this.sixteen();
     // this.seventeen();
-    this.eighteen();
+    // this.eighteen();
   }
 
   one() {

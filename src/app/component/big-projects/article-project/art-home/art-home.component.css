@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 90vh;
+  overflow-y: scroll;
+  background: #fff;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.create-button {
+  width: fit-content;
+  background-color: #3d7ccf;
+  font-size: 17px;
+  color: white;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding: 15px 15px 15px 15px;
+}
+
+.title {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.author {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.content {
+  font-size: 16px;
+}

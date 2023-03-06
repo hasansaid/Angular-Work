@@ -60,6 +60,10 @@ import { SofLoginComponent } from './component/big-projects/stackoverflow-projec
 import { SofAccountComponent } from './component/big-projects/stackoverflow-project/sof-account/sof-account.component';
 import { SofHomeComponent } from './component/big-projects/stackoverflow-project/sof-home/sof-home.component';
 import { SofSolutionsComponent } from './component/big-projects/stackoverflow-project/sof-solutions/sof-solutions.component';
+import { ArticleProjectComponent } from './component/big-projects/article-project/article-project.component';
+import { ArtHeaderComponent } from './component/big-projects/article-project/art-header/art-header.component';
+import { ArtHomeComponent } from './component/big-projects/article-project/art-home/art-home.component';
+import { ArtCreateComponent } from './component/big-projects/article-project/art-create/art-create.component';
 
 @NgModule({
   declarations: [
@@ -103,6 +107,10 @@ import { SofSolutionsComponent } from './component/big-projects/stackoverflow-pr
     SofAccountComponent,
     SofHomeComponent,
     SofSolutionsComponent,
+    ArticleProjectComponent,
+    ArtHeaderComponent,
+    ArtHomeComponent,
+    ArtCreateComponent,
   ],
   imports: [
     BrowserModule,

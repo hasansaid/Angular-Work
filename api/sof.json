@@ -37,19 +37,25 @@
         {
           "username": "hworld",
           "solution": "sdsd",
-          "plus": [],
+          "plus": [
+            2
+          ],
           "minus": []
         },
         {
           "username": "hworld",
           "solution": "sdsdsdsd",
           "plus": [],
-          "minus": []
+          "minus": [
+            2
+          ]
         },
         {
           "username": "hworld",
           "solution": "sdsdsdsd",
-          "plus": [],
+          "plus": [
+            2
+          ],
           "minus": []
         }
       ],
@@ -66,7 +72,14 @@
       "username": "hworld",
       "question": "Is Angular easy?",
       "userId": 1,
-      "solutions": [],
+      "solutions": [
+        {
+          "username": "hworld",
+          "solution": "yes because blabla",
+          "plus": [],
+          "minus": []
+        }
+      ],
       "id": 3
     },
     {
@@ -80,7 +93,16 @@
       "username": "jhonWalker",
       "question": "What should I do to get started with Angular?",
       "userId": 3,
-      "solutions": [],
+      "solutions": [
+        {
+          "username": "hworld",
+          "solution": "Bilgisayarın başına otur adamım",
+          "plus": [],
+          "minus": [
+            1
+          ]
+        }
+      ],
       "id": 5
     },
     {
@@ -89,6 +111,20 @@
       "userId": 3,
       "solutions": [],
       "id": 6
+    },
+    {
+      "username": "hworld",
+      "question": "sadasdasd",
+      "userId": 1,
+      "solutions": [],
+      "id": 7
+    },
+    {
+      "username": "hworld",
+      "question": "mustafa naber",
+      "userId": 1,
+      "solutions": [],
+      "id": 8
     }
   ]
 }

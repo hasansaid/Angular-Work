@@ -1,3 +1,6 @@
+import { ArtCreateComponent } from './component/big-projects/article-project/art-create/art-create.component';
+import { ArtHomeComponent } from './component/big-projects/article-project/art-home/art-home.component';
+import { ArticleProjectComponent } from './component/big-projects/article-project/article-project.component';
 import { SofSolutionsComponent } from './component/big-projects/stackoverflow-project/sof-solutions/sof-solutions.component';
 import { SofHomeComponent } from './component/big-projects/stackoverflow-project/sof-home/sof-home.component';
 import { SofAccountComponent } from './component/big-projects/stackoverflow-project/sof-account/sof-account.component';
@@ -54,6 +57,15 @@ const routes: Routes = [
       { path: 'sof-account', component: SofAccountComponent },
       { path: 'sof-home', component: SofHomeComponent },
       { path: 'sof-solutions/:questionid', component: SofSolutionsComponent },
+    ],
+  },
+  {
+    path: 'big-projects/article-project',
+    component: ArticleProjectComponent,
+    children: [
+      { path: '', component: ArtHomeComponent },
+      { path: 'art-home', component: ArtHomeComponent },
+      { path: 'art-create', component: ArtCreateComponent },
     ],
   },
   {
