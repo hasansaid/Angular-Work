@@ -65,6 +65,8 @@ import { ArtHeaderComponent } from './component/big-projects/article-project/art
 import { ArtHomeComponent } from './component/big-projects/article-project/art-home/art-home.component';
 import { ArtCreateComponent } from './component/big-projects/article-project/art-create/art-create.component';
 
+import { AngularEditorModule } from '@kolkov/angular-editor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -117,6 +119,7 @@ import { ArtCreateComponent } from './component/big-projects/article-project/art
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AngularEditorModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,

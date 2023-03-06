@@ -1,1 +1,11 @@
-<p>art-create works!</p>
+<div class="container">
+    <div class="content-wrapper">
+        <mat-form-field>
+            <mat-label>Başlık</mat-label>
+            <input matInput />
+        </mat-form-field>
+        <angular-editor [config]="editorConfig"></angular-editor>
+
+        <button class="buttonclass" mat-raised-button color="primary">Kaydet</button>
+    </div>
+</div>
