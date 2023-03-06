@@ -7,6 +7,10 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
   styleUrls: ['./art-create.component.css'],
 })
 export class ArtCreateComponent implements OnInit {
+  username: string = '';
+  title: string = '';
+  content: string = '';
+
   editorConfig: AngularEditorConfig = {
     editable: true,
     spellcheck: true,
@@ -49,5 +53,7 @@ export class ArtCreateComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.username);
+  }
 }
