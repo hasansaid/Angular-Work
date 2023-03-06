@@ -1,15 +1,15 @@
+import { BaseService } from './../base.service';
 import { Injectable } from '@angular/core';
-import { BlogWebsiteService } from './blog-website.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class BlogCommentsService extends BlogWebsiteService {
-  constructor(private blogWebsiteService: BlogWebsiteService) {
-    super(blogWebsiteService.httpClient);
+export class BlogCommentsService extends BaseService {
+  constructor(private baseService: BaseService) {
+    super(baseService.httpClient);
   }
 
   public getComments() {
-    return this.blogWebsiteService.getReq('/comments');
+    return this.baseService.getReq('/comments');
   }
 }

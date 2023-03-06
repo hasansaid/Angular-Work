@@ -1,4 +1,4 @@
-import { SofBaseService } from './service/stackoverflow-project/sof-base.service';
+import { BaseService } from './service/base.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -50,7 +50,6 @@ import { EqualityComponent } from './component/correct-answer-project/equality/e
 import { BigProjectsComponent } from './component/big-projects/big-projects.component';
 import { BlogWebsiteProjectComponent } from './component/big-projects/blog-website-project/blog-website-project.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BlogWebsiteService } from './service/blog-website-project/blog-website.service';
 import { DialogComponent } from './component/big-projects/blog-website-project/dialog/dialog.component';
 import { ViewBlogComponent } from './component/big-projects/blog-website-project/view-blog/view-blog.component';
 import { UpdateBlogComponent } from './component/big-projects/blog-website-project/update-blog/update-blog.component';
@@ -132,7 +131,7 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     FormsModule,
     MatIconModule,
   ],
-  providers: [BlogWebsiteService, SofBaseService],
+  providers: [BaseService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
