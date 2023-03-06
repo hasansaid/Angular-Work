@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { ArticleService } from './../../../../service/article-project/article.service';
 import { Component, OnInit } from '@angular/core';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 
@@ -7,9 +9,11 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
   styleUrls: ['./art-create.component.css'],
 })
 export class ArtCreateComponent implements OnInit {
-  username: string = '';
-  title: string = '';
-  content: string = '';
+  username: any = '';
+  title: any = '';
+  content: any = '';
+
+  constructor(private articleService: ArticleService, private router: Router) {}
 
   editorConfig: AngularEditorConfig = {
     editable: true,
@@ -51,9 +55,20 @@ export class ArtCreateComponent implements OnInit {
     toolbarPosition: 'top',
   };
 
-  constructor() {}
-
   ngOnInit(): void {
     console.log(this.username);
+  }
+
+  postArticle() {
+    let articleObj = {
+      author: this.username,
+      title: this.title,
+      content: this.content,
+      comments: [],
+    };
+
+    this.articleService.postArticle(articleObj).subscribe((res) => {
+      this.router.navigateByUrl('/big-projects/article-project/art-home');
+    });
   }
 }

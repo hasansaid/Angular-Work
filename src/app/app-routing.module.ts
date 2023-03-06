@@ -1,3 +1,4 @@
+import { ArtArticleComponent } from './component/big-projects/article-project/art-article/art-article.component';
 import { ArtCreateComponent } from './component/big-projects/article-project/art-create/art-create.component';
 import { ArtHomeComponent } from './component/big-projects/article-project/art-home/art-home.component';
 import { ArticleProjectComponent } from './component/big-projects/article-project/article-project.component';
@@ -66,6 +67,7 @@ const routes: Routes = [
       { path: '', component: ArtHomeComponent },
       { path: 'art-home', component: ArtHomeComponent },
       { path: 'art-create', component: ArtCreateComponent },
+      { path: 'art-article/:articleid', component: ArtArticleComponent },
     ],
   },
   {
