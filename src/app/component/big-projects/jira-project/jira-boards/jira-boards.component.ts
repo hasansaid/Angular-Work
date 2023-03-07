@@ -1,5 +1,6 @@
 import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
+import { JiraBoardsDialogComponent } from '../jira-boards-dialog/jira-boards-dialog.component';
 
 @Component({
   selector: 'app-jira-boards',
@@ -11,5 +12,9 @@ export class JiraBoardsComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  openNewBoardDialog() {}
+  openNewBoardDialog() {
+    let dialogRef = this.matDialog.open(JiraBoardsDialogComponent, {
+      width: '500px',
+    });
+  }
 }

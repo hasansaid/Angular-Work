@@ -69,6 +69,7 @@ import { ArtArticleComponent } from './component/big-projects/article-project/ar
 import { JiraProjectComponent } from './component/big-projects/jira-project/jira-project.component';
 import { JiraHeaderComponent } from './component/big-projects/jira-project/jira-header/jira-header.component';
 import { JiraBoardsComponent } from './component/big-projects/jira-project/jira-boards/jira-boards.component';
+import { JiraBoardsDialogComponent } from './component/big-projects/jira-project/jira-boards-dialog/jira-boards-dialog.component';
 
 @NgModule({
   declarations: [
@@ -120,6 +121,7 @@ import { JiraBoardsComponent } from './component/big-projects/jira-project/jira-
     JiraProjectComponent,
     JiraHeaderComponent,
     JiraBoardsComponent,
+    JiraBoardsDialogComponent,
   ],
   imports: [
     BrowserModule,

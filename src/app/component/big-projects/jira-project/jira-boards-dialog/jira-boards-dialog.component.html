@@ -1,0 +1,32 @@
+<div class="d-flex d-flex justify-content-between">
+    <div class="d-flex align-items-center me-1">
+        <h3 style="margin: 0px;">
+            <span>
+                Add New Board
+            </span>
+        </h3>
+    </div>
+
+    <button mat-button style="font-size: 24px;" (click)="close()">x</button>
+</div>
+
+<div mat-dialog-content class="mt-3">
+    <form [formGroup]="boardForm">
+
+        <mat-form-field style="width: 100%;" appearance="fill">
+            <mat-label>
+                Title
+            </mat-label>
+            <input formControlName="title" matInput>
+            <mat-error *ngIf="boardForm.get('title')?.hasError('required')">
+                Title is required!
+            </mat-error>
+        </mat-form-field>
+
+    </form>
+</div>
+<div mat-dialog-actions class="d-flex justify-content-center">
+    <button (click)="create()" [disabled]="boardForm.invalid" style="cursor: pointer;" mat-raised-button
+        color="primary">Create New
+        Board</button>
+</div>
