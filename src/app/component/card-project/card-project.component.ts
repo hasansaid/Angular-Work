@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class CardProjectComponent implements OnInit {
   contents: string =
     'Data is passed between components and ngFor is used. And I gave a few examples of the use of pipes. You can review the codes.';
+  isCard = true;
   name: string = '';
   date: string = '';
   total: number;
@@ -19,6 +20,9 @@ export class CardProjectComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+  change() {
+    this.isCard = !this.isCard;
+  }
   onNameChange(value: string) {
     this.name = value;
   }
