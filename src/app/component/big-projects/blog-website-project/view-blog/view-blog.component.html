@@ -15,9 +15,7 @@
         <div class="col-md-2">
             <img style="width: 100px; height: 100px; border-radius: 30%;"
                 src="assets/images/profile/profile{{comment.userId}}.jpg" alt="">
-            <!-- <ng-container *ngFor="let user of users">
-                <p *ngIf="comment.userId==user.id">{{user.name}}</p>
-            </ng-container> -->
+            <p>{{users[comment.userId-1]?.name}}</p>
             <div>
             </div>
         </div>

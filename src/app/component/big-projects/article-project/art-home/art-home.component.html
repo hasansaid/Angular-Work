@@ -3,7 +3,7 @@
         <button class="create-button" routerLink="/big-projects/article-project/art-create" mat-button>Yeni Yazı
             Oluştur</button>
 
-        <div class="card" *ngFor="let article of articles;"
+        <div class="card" style="cursor: pointer;" *ngFor="let article of articles;"
             routerLink="/big-projects/article-project/art-article/{{article.id}}">
             <div class="title">{{article.title}}</div>
             <div class="author">{{article.author}}</div>

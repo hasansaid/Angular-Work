@@ -66,6 +66,9 @@ import { ArtCreateComponent } from './component/big-projects/article-project/art
 
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { ArtArticleComponent } from './component/big-projects/article-project/art-article/art-article.component';
+import { JiraProjectComponent } from './component/big-projects/jira-project/jira-project.component';
+import { JiraHeaderComponent } from './component/big-projects/jira-project/jira-header/jira-header.component';
+import { JiraBoardsComponent } from './component/big-projects/jira-project/jira-boards/jira-boards.component';
 
 @NgModule({
   declarations: [
@@ -114,6 +117,9 @@ import { ArtArticleComponent } from './component/big-projects/article-project/ar
     ArtHomeComponent,
     ArtCreateComponent,
     ArtArticleComponent,
+    JiraProjectComponent,
+    JiraHeaderComponent,
+    JiraBoardsComponent,
   ],
   imports: [
     BrowserModule,

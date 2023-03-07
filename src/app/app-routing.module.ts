@@ -1,3 +1,5 @@
+import { JiraBoardsComponent } from './component/big-projects/jira-project/jira-boards/jira-boards.component';
+import { JiraProjectComponent } from './component/big-projects/jira-project/jira-project.component';
 import { ArtArticleComponent } from './component/big-projects/article-project/art-article/art-article.component';
 import { ArtCreateComponent } from './component/big-projects/article-project/art-create/art-create.component';
 import { ArtHomeComponent } from './component/big-projects/article-project/art-home/art-home.component';
@@ -61,13 +63,11 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'big-projects/article-project',
-    component: ArticleProjectComponent,
+    path: 'big-projects/jira-project',
+    component: JiraProjectComponent,
     children: [
-      { path: '', component: ArtHomeComponent },
-      { path: 'art-home', component: ArtHomeComponent },
-      { path: 'art-create', component: ArtCreateComponent },
-      { path: 'art-article/:articleid', component: ArtArticleComponent },
+      { path: '', component: JiraBoardsComponent },
+      { path: 'boards', component: JiraBoardsComponent },
     ],
   },
   {
@@ -111,6 +111,16 @@ const routes: Routes = [
   {
     path: 'home/correct-answer-project',
     component: CorrectAnswerProjectComponent,
+  },
+  {
+    path: 'home/article-project',
+    component: ArticleProjectComponent,
+    children: [
+      { path: '', component: ArtHomeComponent },
+      { path: 'art-home', component: ArtHomeComponent },
+      { path: 'art-create', component: ArtCreateComponent },
+      { path: 'art-article/:articleid', component: ArtArticleComponent },
+    ],
   },
   // Error page son path olmalıdır!!!
   { path: '**', component: ErrorComponent },

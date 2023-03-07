@@ -29,13 +29,20 @@ export class ViewBlogComponent implements OnInit {
     this.two();
     // this.getUser();
 
-    console.log(this.users);
+    // console.log(this.users);
+  }
+  getUsers() {
+    this.userService.getUsers().subscribe((res) => {
+      // console.log(res);
+      this.users = res;
+    });
   }
 
   getPost(id: any) {
     this.postService.getPost(id).subscribe((data) => {
       this.blogPost = data;
       this.getComment();
+      this.getUsers();
     });
   }
   getComment() {
@@ -44,16 +51,16 @@ export class ViewBlogComponent implements OnInit {
         (x: { postId: any }) => x.postId == this.blogid
       );
 
-      this.userService.getUsers().subscribe((res) => {
-        // special code.. don't steal (:
-        res.filter((x: { id: any }) => {
-          this.comments.forEach((element) => {
-            if (x.id == element.userId) {
-              this.users.push(x);
-            }
-          });
-        });
-      });
+      // this.userService.getUsers().subscribe((res) => {
+      //   // special code.. don't steal (:
+      //   res.filter((x: { id: any }) => {
+      //     this.comments.forEach((element) => {
+      //       if (x.id == element.userId) {
+      //         this.users.push(x);
+      //       }
+      //     });
+      //   });
+      // });
     });
   }
   one() {
@@ -65,4 +72,6 @@ export class ViewBlogComponent implements OnInit {
     this.blogid = this.activatedRoute.snapshot.paramMap.get('blogid');
     this.getPost(this.blogid);
   }
+
+  direction() {}
 }
