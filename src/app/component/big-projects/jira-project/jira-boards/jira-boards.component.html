@@ -3,3 +3,12 @@
         Add New Board
     </button>
 </div>
+
+<div class="boardD" *ngFor="let board of jiraBoardsService.boards; let i=index">
+    {{board.title}}
+    <div>
+        <button mat-icon-button (click)="deleteBoard(i)">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+</div>

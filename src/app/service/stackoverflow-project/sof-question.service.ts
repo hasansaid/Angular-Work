@@ -24,4 +24,8 @@ export class SofQuestionService extends BaseService {
   public updateQuestion(newQuestion: any) {
     return this.putReq('/questions/' + newQuestion.id, newQuestion);
   }
+
+  public deleteQuestion(id) {
+    return this.deleteReq('/questions/' + id);
+  }
 }

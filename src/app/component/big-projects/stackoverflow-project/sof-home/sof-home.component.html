@@ -13,12 +13,27 @@
         <!-- {{question}} -->
 
         <mat-card style="cursor: pointer;" *ngFor="let item of questions" class="question-card">
-            <mat-card-content routerLink="/big-projects/stackoverflow-project/sof-solutions/{{item.id}}">
-                <p class="username">{{item.username}}</p>
-                <p>
-                    {{item.question}}
-                </p>
-            </mat-card-content>
+            <div class="row">
+                <div class="col-md-11">
+                    <mat-card-content routerLink="/big-projects/stackoverflow-project/sof-solutions/{{item.id}}">
+                        <p class="username">{{item.username}}</p>
+                        <p>
+                            {{item.question}}
+                        </p>
+                    </mat-card-content>
+                </div>
+                <div class="col-md-1">
+                    <ng-container *ngIf="item?.userId == userService.user?.id">
+                        <button color="warn" (click)="delete(item.id)" mat-icon-button>
+                            <mat-icon class="me-2">
+                                delete
+                            </mat-icon>
+                        </button>
+                    </ng-container>
+                </div>
+            </div>
+
+
         </mat-card>
     </div>
 </div>

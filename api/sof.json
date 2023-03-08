@@ -57,6 +57,12 @@
             2
           ],
           "minus": []
+        },
+        {
+          "username": "hawkey",
+          "solution": "sds",
+          "plus": [],
+          "minus": []
         }
       ],
       "id": 1
@@ -76,6 +82,12 @@
         {
           "username": "hworld",
           "solution": "yes because blabla",
+          "plus": [],
+          "minus": []
+        },
+        {
+          "username": "hawkey",
+          "solution": "yeyeye",
           "plus": [],
           "minus": []
         }
@@ -111,20 +123,6 @@
       "userId": 3,
       "solutions": [],
       "id": 6
-    },
-    {
-      "username": "hworld",
-      "question": "sadasdasd",
-      "userId": 1,
-      "solutions": [],
-      "id": 7
-    },
-    {
-      "username": "hworld",
-      "question": "mustafa naber",
-      "userId": 1,
-      "solutions": [],
-      "id": 8
     }
   ]
 }

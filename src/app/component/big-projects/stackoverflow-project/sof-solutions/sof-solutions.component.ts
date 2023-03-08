@@ -12,6 +12,7 @@ export class SofSolutionsComponent implements OnInit {
   question: any;
   questionid: any;
   solutionText: string = '';
+
   constructor(
     public userService: SofUserService,
     private questionService: SofQuestionService,
@@ -25,6 +26,7 @@ export class SofSolutionsComponent implements OnInit {
   getParams() {
     this.questionid = this.activatedRoute.snapshot.paramMap.get('questionid');
     this.getQuestion(this.questionid);
+    console.log(this.userService.user.id);
   }
 
   getQuestion(questionid: any) {
@@ -75,6 +77,8 @@ export class SofSolutionsComponent implements OnInit {
       this.solutionText = '';
     });
   }
+
+  delete() {}
 
   condition() {
     return this.solutionText.trim() === '';

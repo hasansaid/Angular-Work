@@ -34,6 +34,12 @@ export class SofHomeComponent implements OnInit {
       })
       .subscribe((res) => {
         this.questions.push(res);
+        this.question = '';
       });
+  }
+  delete(id) {
+    this.questionService.deleteQuestion(id).subscribe((res) => {
+      this.getQuestions();
+    });
   }
 }

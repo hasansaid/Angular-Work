@@ -17,6 +17,15 @@ export class BaseService {
     });
   }
 
+  deleteReq(url: any) {
+    return this.httpClient.delete(this.baseUrlUpdate(url), {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json; charset=utf-8',
+        'Access-Control-Allow-Origin': this.baseUrlUpdate(url),
+      }),
+    });
+  }
+
   postReq(url: any, data: any) {
     return this.httpClient.post<any>(this.baseUrlUpdate(url), data, {
       headers: new HttpHeaders({
