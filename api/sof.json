@@ -26,41 +26,23 @@
       "userId": 2,
       "solutions": [
         {
+          "id": 1,
           "username": "jhonWalker",
-          "solution": "A framework is therefore a set of tools and modules that can be reused for various projects. One of the most well-known and used frameworks is the Microsoft . NET Framework for websites.",
-          "plus": [
-            1,
-            2
-          ],
-          "minus": []
-        },
-        {
-          "username": "hworld",
-          "solution": "sdsd",
-          "plus": [
-            2
-          ],
-          "minus": []
-        },
-        {
-          "username": "hworld",
-          "solution": "sdsdsdsd",
+          "solution": "asdasdasdas",
           "plus": [],
-          "minus": [
-            2
-          ]
-        },
-        {
-          "username": "hworld",
-          "solution": "sdsdsdsd",
-          "plus": [
-            2
-          ],
           "minus": []
         },
         {
-          "username": "hawkey",
-          "solution": "sds",
+          "id": 2,
+          "username": "jhonWalker",
+          "solution": "ben ",
+          "plus": [],
+          "minus": []
+        },
+        {
+          "id": 3,
+          "username": "jhonWalker",
+          "solution": "sen",
           "plus": [],
           "minus": []
         }
@@ -78,20 +60,7 @@
       "username": "hworld",
       "question": "Is Angular easy?",
       "userId": 1,
-      "solutions": [
-        {
-          "username": "hworld",
-          "solution": "yes because blabla",
-          "plus": [],
-          "minus": []
-        },
-        {
-          "username": "hawkey",
-          "solution": "yeyeye",
-          "plus": [],
-          "minus": []
-        }
-      ],
+      "solutions": [],
       "id": 3
     },
     {
@@ -105,16 +74,7 @@
       "username": "jhonWalker",
       "question": "What should I do to get started with Angular?",
       "userId": 3,
-      "solutions": [
-        {
-          "username": "hworld",
-          "solution": "Bilgisayarın başına otur adamım",
-          "plus": [],
-          "minus": [
-            1
-          ]
-        }
-      ],
+      "solutions": [],
       "id": 5
     },
     {

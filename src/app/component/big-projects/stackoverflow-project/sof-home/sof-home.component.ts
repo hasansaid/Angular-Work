@@ -1,6 +1,7 @@
 import { SofQuestionService } from './../../../../service/stackoverflow-project/sof-question.service';
 import { SofUserService } from './../../../../service/stackoverflow-project/sof-user.service';
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-sof-home',
@@ -13,7 +14,8 @@ export class SofHomeComponent implements OnInit {
 
   constructor(
     public userService: SofUserService,
-    private questionService: SofQuestionService
+    private questionService: SofQuestionService,
+    private matSnackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -40,6 +42,7 @@ export class SofHomeComponent implements OnInit {
   delete(id) {
     this.questionService.deleteQuestion(id).subscribe((res) => {
       this.getQuestions();
+      this.matSnackBar.open('Question deleted!', 'Ok');
     });
   }
 }

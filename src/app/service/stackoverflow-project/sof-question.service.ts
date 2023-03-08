@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class SofQuestionService extends BaseService {
+  counter: any = 0;
   constructor(private baseService: BaseService) {
     super(baseService.httpClient);
   }

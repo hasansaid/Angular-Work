@@ -1,3 +1,4 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { SofUserService } from './../../../../service/stackoverflow-project/sof-user.service';
 import { ActivatedRoute } from '@angular/router';
 import { SofQuestionService } from './../../../../service/stackoverflow-project/sof-question.service';
@@ -11,12 +12,14 @@ import { Component, OnInit } from '@angular/core';
 export class SofSolutionsComponent implements OnInit {
   question: any;
   questionid: any;
+
   solutionText: string = '';
 
   constructor(
     public userService: SofUserService,
     private questionService: SofQuestionService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private matSnackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -26,7 +29,6 @@ export class SofSolutionsComponent implements OnInit {
   getParams() {
     this.questionid = this.activatedRoute.snapshot.paramMap.get('questionid');
     this.getQuestion(this.questionid);
-    console.log(this.userService.user.id);
   }
 
   getQuestion(questionid: any) {
@@ -37,6 +39,7 @@ export class SofSolutionsComponent implements OnInit {
 
   postSolutions() {
     let solutionsObj = {
+      id: (this.questionService.counter += 1),
       username: this.userService.user.username,
       solution: this.solutionText,
       plus: [],
@@ -48,6 +51,14 @@ export class SofSolutionsComponent implements OnInit {
       this.solutionText = '';
     });
   }
+  delete(id) {
+    let srt = this.question.solutions.indexOf(id);
+    this.question.solutions.splice(srt, 1);
+    this.questionService.updateQuestion(this.question).subscribe((res) => {
+      this.matSnackBar.open('Solution deleted', 'Ok');
+    });
+  }
+
   plusOne(index: number, point: number) {
     let userId = this.userService.user.id;
     let solution = this.question.solutions[index];
@@ -55,6 +66,7 @@ export class SofSolutionsComponent implements OnInit {
     if (point == 1) {
       if (!(solution.plus.indexOf(userId) >= 0)) {
         solution.plus.push(userId);
+        this.matSnackBar.open('Plus points given', '+ OK');
       }
 
       for (let i = 0; i < solution.minus.length; i++) {
@@ -65,6 +77,7 @@ export class SofSolutionsComponent implements OnInit {
     } else {
       if (!(solution.minus.indexOf(userId) >= 0)) {
         solution.minus.push(userId);
+        this.matSnackBar.open('Minus points given', '- OK');
       }
       for (let i = 0; i < solution.plus.length; i++) {
         if (solution.plus[i] == userId) {
@@ -77,8 +90,6 @@ export class SofSolutionsComponent implements OnInit {
       this.solutionText = '';
     });
   }
-
-  delete() {}
 
   condition() {
     return this.solutionText.trim() === '';

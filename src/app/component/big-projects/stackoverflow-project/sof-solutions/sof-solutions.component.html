@@ -52,7 +52,7 @@
                     <ng-container
                         *ngIf="userService.user!=undefined && solution.username == userService.user.username ">
                         <div>
-                            <button (click)="delete()" mat-icon-button>
+                            <button (click)="delete(solution.id)" mat-icon-button>
                                 <mat-icon color="warn">delete</mat-icon>
                             </button>
                         </div>
