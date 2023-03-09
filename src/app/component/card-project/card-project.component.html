@@ -10,26 +10,27 @@
 </section> -->
 
 <div style="height: 190px;">
-    <app-goal [content]="contents"></app-goal>
+    <app-goal [content]="eng? contentEn:contentTr"></app-goal>
 </div>
 
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center mt-5">
     <button mat-raised-button color="accent" class="mt-2 fs-5 p-2" (click)="change()">
-        {{isCard? "Open The Pipes" : "Open The Cards" }}</button>
+        {{eng? isCard? "Open The Pipes" : "Open The Cards" : isCard? "Pipe'ları Aç" : "Kartları Aç" }}
+    </button>
 </div>
 <div class="main" *ngIf="isCard">
-    <app-card *ngFor="let post of posts" [title]="post.title" [imageUrl]="post.imageUrl" [username]="post.username"
-        [content]="post.content"></app-card>
+    <app-card *ngFor="let post of posts" [title]="eng? post.title:post.titleTr" [imageUrl]="post.imageUrl"
+        [username]="post.username" [content]="eng?post.content:post.contentTr"></app-card>
 </div>
 
 
 <div *ngIf="!isCard">
     <div class="container" style="margin-left: 150px;">
-        <div class="row m-5">
-            <span class="fs-2 text-danger">INVOICE</span>
+        <div class="row m-5 ">
+            <!-- <span class="fs-2 text-danger">{{eng?"INVOICE":"FATURA"}}</span> -->
             <div class="col-md-6 mt-4">
                 <div>
-                    <label>Name: </label>
+                    <label>{{eng? "Name:" : "İsim: "}} </label>
                     <input class="input-group-text" style="width: 350px;" type="text"
                         (input)="onNameChange($any($event.target).value)">
                 </div>
@@ -37,7 +38,7 @@
             </div>
             <div class="col-md-6 mt-4">
                 <div>
-                    <label>Name: </label>
+                    <label>{{eng? "Name:" : "İsim: "}} </label>
                     <br>
                     <span class="text-info fw-bold">{{name | titlecase}}</span>
                 </div>
@@ -46,7 +47,7 @@
         <div class="row m-5">
             <div class="col-md-6 mt-4">
                 <div>
-                    <label>Payment Date: </label>
+                    <label>{{eng? "Payment Date:":"Ödeme Günü:"}} </label>
                     <input class="input-group-text" style="width: 350px;" type="date"
                         (input)="onDateChange($any($event.target).value)">
                 </div>
@@ -54,16 +55,16 @@
             </div>
             <div class="col-md-6 mt-4">
                 <div>
-                    <label>Payment Date: </label>
+                    <label>{{eng? "Payment Date:":"Ödeme Günü:"}} </label>
                     <br>
                     <span class="text-info fw-bold">{{date | date:"MMMM d,y"}}</span>
                 </div>
             </div>
         </div>
-        <div class="row m-5">
+        <div class="row m-5  ">
             <div class="col-md-6 mt-4">
                 <div>
-                    <label>Total: </label>
+                    <label>{{eng? "Total:":"Toplam:"}} </label>
                     <input class="input-group-text" style="width: 350px;" type="number"
                         (input)="onTotalChange($any($event.target).value)">
                 </div>
@@ -71,17 +72,17 @@
             </div>
             <div class="col-md-6 mt-4">
                 <div>
-                    <label>Total: </label>
+                    <label>{{eng? "Total:":"Toplam:"}} </label>
                     <br>
                     <span class="text-info fw-bold">{{total | currency}}</span>
                 </div>
             </div>
         </div>
         <div class="row m-5">
-            <span class="fs-2 text-danger">EXTRA</span>
+            <!-- <span class="fs-2 text-danger">{{eng? "EXTRA:":"EKSTRA:"}}</span> -->
             <div class="col-md-6 mt-4">
                 <div>
-                    <label>Size: </label>
+                    <label>{{eng? "Size:":"Ölçü:"}} </label>
                     <input class="input-group-text" style="width: 350px;" type="number"
                         (input)="onSizeChange($any($event.target).value)">
                 </div>
@@ -89,14 +90,14 @@
             </div>
             <div class="col-md-6 mt-4">
                 <div>
-                    <label>Size: </label>
+                    <label>{{eng? "Size:":"Ölçü:"}} </label>
                     <br>
                     <span class="text-info fw-bold">{{size | number:"1.1-4"}}</span>
                 </div>
             </div>
         </div>
         <div class="row m-5">
-            <p>{{person | json}}</p>
+            <p> Json => {{person | json}}</p>
         </div>
     </div>
 

@@ -22,6 +22,7 @@
     "@angular/router": "^14.2.0",
     "@kolkov/angular-editor": "^2.1.0",
     "@types/faker": "^6.6.9",
+    "@yusuf-yeniceri/easy-storage": "^1.0.23",
     "bootstrap": "^5.2.1",
     "faker": "^5.5.3",
     "jquery": "^3.6.3",
