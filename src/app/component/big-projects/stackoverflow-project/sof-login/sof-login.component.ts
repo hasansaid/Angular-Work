@@ -33,6 +33,7 @@ export class SofLoginComponent implements OnInit {
         this.matSnackBar.open('No such account found!', 'Ok');
       } else {
         if (res[0].password === this.loginForm.value.password) {
+          this.matSnackBar.open('WELLCOME SOF-PROJECT', 'OK');
           this.router.navigateByUrl(
             '/big-projects/stackoverflow-project/sof-home'
           );

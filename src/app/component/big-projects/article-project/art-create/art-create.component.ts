@@ -68,7 +68,7 @@ export class ArtCreateComponent implements OnInit {
     };
 
     this.articleService.postArticle(articleObj).subscribe((res) => {
-      this.router.navigateByUrl('/big-projects/article-project/art-home');
+      this.router.navigateByUrl('/home/article-project/art-home');
     });
   }
 }

@@ -1,10 +1,10 @@
 <div class="container">
     <div class="content-wrapper">
-        <button class="create-button" routerLink="/big-projects/article-project/art-create" mat-button>Yeni Yazı
+        <button class="create-button" routerLink="/home/article-project/art-create" mat-button>Yeni Yazı
             Oluştur</button>
 
         <div class="card" style="cursor: pointer;" *ngFor="let article of articles;"
-            routerLink="/big-projects/article-project/art-article/{{article.id}}">
+            routerLink="/home/article-project/art-article/{{article.id}}">
             <div class="title">{{article.title}}</div>
             <div class="author">{{article.author}}</div>
             <div class="content">{{article.content}}</div>

@@ -1,3 +1,4 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { SofUserService } from './../../../../service/stackoverflow-project/sof-user.service';
 import { Component, OnInit } from '@angular/core';
@@ -8,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sof-header.component.css'],
 })
 export class SofHeaderComponent implements OnInit {
-  constructor(public userService: SofUserService, private router: Router) {}
+  constructor(
+    public userService: SofUserService,
+    private router: Router,
+    private matSnackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     let user = localStorage.getItem('user');
@@ -24,6 +29,7 @@ export class SofHeaderComponent implements OnInit {
   }
   logout() {
     this.userService.user = undefined;
+    this.matSnackBar.open('GOODBYE', 'OK');
     this.router.navigateByUrl('/big-projects/stackoverflow-project/sof-home');
     localStorage.clear();
   }
