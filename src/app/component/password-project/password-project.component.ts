@@ -1,3 +1,4 @@
+import { TranslateService } from './../../service/translate.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./password-project.component.css'],
 })
 export class PasswordProjectComponent implements OnInit {
-  content: string = ' Generating password from random characters.';
+  contentEn: string = ' Generating password from random characters.';
+  contentTr: string = ' Rastgele karakterlerden şifre oluşturma.';
 
   length: Number = 0;
   password: string = '';
@@ -14,7 +16,11 @@ export class PasswordProjectComponent implements OnInit {
   includeNumbers: boolean = false;
   includeSymbols: boolean = false;
 
-  constructor() {}
+  eng: boolean;
+
+  constructor(private translateService: TranslateService) {
+    this.eng = translateService.eng;
+  }
 
   ngOnInit(): void {}
 

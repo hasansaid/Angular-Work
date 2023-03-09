@@ -71,6 +71,15 @@ import { JiraHeaderComponent } from './component/big-projects/jira-project/jira-
 import { JiraBoardsComponent } from './component/big-projects/jira-project/jira-boards/jira-boards.component';
 import { JiraBoardsDialogComponent } from './component/big-projects/jira-project/jira-boards-dialog/jira-boards-dialog.component';
 
+// for the translate
+import { APP_INITIALIZER } from '@angular/core';
+import { TranslateService } from './service/translate.service';
+import { TranslatePipe } from './pipes/translate.pipe';
+
+export function setupTranslateFactory(service: TranslateService): Function {
+  return () => service.use('tr');
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -122,6 +131,7 @@ import { JiraBoardsDialogComponent } from './component/big-projects/jira-project
     JiraHeaderComponent,
     JiraBoardsComponent,
     JiraBoardsDialogComponent,
+    TranslatePipe,
   ],
   imports: [
     BrowserModule,
@@ -141,7 +151,15 @@ import { JiraBoardsDialogComponent } from './component/big-projects/jira-project
     FormsModule,
     MatIconModule,
   ],
-  providers: [BaseService],
+  providers: [
+    BaseService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: setupTranslateFactory,
+      deps: [TranslateService],
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

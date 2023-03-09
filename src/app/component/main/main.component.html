@@ -26,44 +26,61 @@
             <div class="col">
                 <div class="row-12 row-sm-8"></div>
                 <div class="w-100 d-none d-md-block"></div>
-                <div class="row-6 row-sm-4" style="display: flex; justify-content: flex-start;">
-                    <a href="big-projects" class="btn">
-                        <span class="btn__circle"></span>
-                        <span class="btn__white-circle">
-                            <svg xmlns="http://www.w3.org/2000/svg" id="icon-arrow-right" viewBox="0 0 21 12">
-                                <path
-                                    d="M17.104 5.072l-4.138-4.014L14.056 0l6 5.82-6 5.82-1.09-1.057 4.138-4.014H0V5.072h17.104z">
-                                </path>
-                            </svg>
-                        </span>
-                        <span class="btn__text fst-italic ">Big Projects</span>
-                    </a>
+                <div>
+                    <div class="row-6 row-sm-4" style="display: flex; justify-content: flex-start;">
+                        <a routerLink="big-projects" class="btn">
+                            <span class="btn__circle"></span>
+                            <span class="btn__white-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="icon-arrow-right" viewBox="0 0 21 12">
+                                    <path
+                                        d="M17.104 5.072l-4.138-4.014L14.056 0l6 5.82-6 5.82-1.09-1.057 4.138-4.014H0V5.072h17.104z">
+                                    </path>
+                                </svg>
+                            </span>
+                            <span class="btn__text fst-italic ">{{'big-p' | translate}}</span>
+                        </a>
+                    </div>
+                    <div class="row-6 row-sm-4 ms-5" style="display: flex; justify-content: flex-start;">
+                        <a routerLink="home" class="btn">
+                            <span class="btn__circle"></span>
+                            <span class="btn__white-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="icon-arrow-right" viewBox="0 0 21 12">
+                                    <path
+                                        d="M17.104 5.072l-4.138-4.014L14.056 0l6 5.82-6 5.82-1.09-1.057 4.138-4.014H0V5.072h17.104z">
+                                    </path>
+                                </svg>
+                            </span>
+                            <span class="btn__text fst-italic">{{"lesson-p" | translate}}</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="row-6 row-sm-4 ms-5" style="display: flex; justify-content: flex-start;">
-                    <a href=" home" class="btn">
-                        <span class="btn__circle"></span>
-                        <span class="btn__white-circle">
-                            <svg xmlns="http://www.w3.org/2000/svg" id="icon-arrow-right" viewBox="0 0 21 12">
-                                <path
-                                    d="M17.104 5.072l-4.138-4.014L14.056 0l6 5.82-6 5.82-1.09-1.057 4.138-4.014H0V5.072h17.104z">
-                                </path>
-                            </svg>
-                        </span>
-                        <span class="btn__text fst-italic">Lesson Projects</span>
-                    </a>
-                </div>
-                <div class="row-6 row-sm-4 ms-1" style="display: flex; justify-content: flex-start;">
-                    <a href="**" class="btn">
-                        <span class="btn__circle"></span>
-                        <span class="btn__white-circle">
-                            <svg xmlns="http://www.w3.org/2000/svg" id="icon-arrow-right" viewBox="0 0 21 12">
-                                <path
-                                    d="M17.104 5.072l-4.138-4.014L14.056 0l6 5.82-6 5.82-1.09-1.057 4.138-4.014H0V5.072h17.104z">
-                                </path>
-                            </svg>
-                        </span>
-                        <span class="btn__text fst-italic text-decoration-line-through">Angular Material</span>
-                    </a>
+                <div class="mt-5">
+                    <div class="row-6 row-sm-4 ms-5" style="display: flex; justify-content: flex-start;">
+                        <a (click)="translateEn()" class="btn">
+                            <span class="btn__circle"></span>
+                            <span class="btn__white-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="icon-arrow-right" viewBox="0 0 21 12">
+                                    <path
+                                        d="M17.104 5.072l-4.138-4.014L14.056 0l6 5.82-6 5.82-1.09-1.057 4.138-4.014H0V5.072h17.104z">
+                                    </path>
+                                </svg>
+                            </span>
+                            <span class="btn__text fst-italic">{{"language-e"|translate}}</span>
+                        </a>
+                    </div>
+                    <div class="row-6 row-sm-4 ms-1" style="display: flex; justify-content: flex-start;">
+                        <a (click)="translateTr() " class="btn">
+                            <span class="btn__circle"></span>
+                            <span class="btn__white-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="icon-arrow-right" viewBox="0 0 21 12">
+                                    <path
+                                        d="M17.104 5.072l-4.138-4.014L14.056 0l6 5.82-6 5.82-1.09-1.057 4.138-4.014H0V5.072h17.104z">
+                                    </path>
+                                </svg>
+                            </span>
+                            <span class="btn__text fst-italic">{{"language-t"|translate}}</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

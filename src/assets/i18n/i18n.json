@@ -1,0 +1,79 @@
+{
+  "mainComponent": {},
+  "big-p": {
+    "tr": "Büyük Projeler",
+    "en": "Big Projects"
+  },
+  "lesson-p": {
+    "tr": "Ders Projeleri",
+    "en": "Lesson Projects"
+  },
+  "language-t": {
+    "tr": "Türkçe",
+    "en": "Turkish"
+  },
+  "language-e": {
+    "tr": "İngilizce",
+    "en": "English"
+  },
+
+  "homeComponent": {},
+  "password-p": {
+    "tr": "Şifre Oluşturma Projesi",
+    "en": "Password Creation Project"
+  },
+  "card-pipes-p": {
+    "tr": "Card - Pipes Projesi",
+    "en": "Card - Pipes Project"
+  },
+  "letter-p": {
+    "tr": "Harf Eşleştirme Projesi",
+    "en": "Letter Matching Project"
+  },
+  "directives-p": {
+    "tr": "Direktifler Projesi",
+    "en": "Directives Project"
+  },
+  "routing-p": {
+    "tr": "Yönlendirme ve Durum Yönetimi",
+    "en": "Routing and State Management"
+  },
+  "form-p": {
+    "tr": "Reaktif Form Projesi",
+    "en": "Reactive Form Project"
+  },
+  "rxjs-p": {
+    "tr": "RxJs Projesi",
+    "en": "RxJs Project"
+  },
+  "image-p": {
+    "tr": "Rastgele Resim Projesi",
+    "en": "Random Image Project"
+  },
+  "correct-p": {
+    "tr": "Doğru Cevap Projesi",
+    "en": "Correct Answer Project"
+  },
+  "article-p": {
+    "tr": "Makale Projesi",
+    "en": "Article Project"
+  },
+  "back": {
+    "tr": "GERİ DÖN",
+    "en": "BACK TO HOME"
+  },
+
+  "goalComponent": {},
+  "goal-title": {
+    "tr": "Bu projenin amacı",
+    "en": "In this project :"
+  },
+  "goal-explain": {
+    "tr": "Bu projede :",
+    "en": "In this project :"
+  },
+  "goal-button": {
+    "tr": "Ders Projelerine Geri Dön",
+    "en": "Back to Lesson Projects"
+  }
+}
