@@ -1,8 +1,8 @@
 <app-rst-divider>
-    Satisfaction Survey
+    {{eng?"Satisfaction Survey":"Memnuniyet Anketi"}}
 </app-rst-divider>
 
-<table class="ui striped celled table">
+<!-- <table class="ui striped celled table">
     <thead>
         <tr>
             <th *ngFor="let header of headers">{{header.label}}</th>
@@ -13,11 +13,27 @@
             <th *ngFor="let header of headers">{{data[header.key]}}</th>
         </tr>
     </tbody>
+</table> -->
+
+<table class="ui striped celled table">
+    <thead>
+        <tr>
+            <th *ngFor="let header of headers">{{header.label}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of datas">
+            <th>{{data.name}}</th>
+            <th>{{data.age}}</th>
+            <th>{{eng?data.job:data.jobTr}}</th>
+            <th>{{eng?data.employed:data.employedTr}}</th>
+        </tr>
+    </tbody>
 </table>
 
 
 <app-rst-divider>
-    Extra Surveys
+    {{eng?"Extra Surveys":"Ektra Anketler"}}
 </app-rst-divider>
 
 <div class="ui grid">
@@ -25,10 +41,10 @@
         <div class="ui vertical fluid tabular menu">
             <a routerLinkActive="active" routerLink="survey-one" [routerLinkActiveOptions]="{exact:true}"
                 class="item active">
-                Salary Survey
+                {{eng?"Salary Survey":"Maaş Anketi"}}
             </a>
             <a routerLinkActive="active" routerLink="survey-two" class="item">
-                Holiday Survey
+                {{eng?"Holiday Survey":"Tatil Anketi"}}
             </a>
         </div>
     </div>

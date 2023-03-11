@@ -1,7 +1,7 @@
 <!-- Önceden kullandığımız yöntem buydu. Artık değişim zamanı (: -->
 <!-- <app-rst-divider [title]="'Placeholders'"></app-rst-divider> -->
 
-<app-rst-divider>Placeholders</app-rst-divider>
+<app-rst-divider>{{"r-placeholders"|translate}}</app-rst-divider>
 
 <div class="ui placeholder">
     <div class="image header">
@@ -15,11 +15,13 @@
     </div>
 </div>
 
-<app-rst-divider>Segments</app-rst-divider>
+<app-rst-divider>{{eng?"Segments":"Segmentler"}}</app-rst-divider>
 <div class="ui placeholder segment">
     <div class="ui icon header">
         <i class="pdf file outline icon"></i>
-        No documents are listed for this customer.
+        {{eng?"No documents are listed for this customer.":"Bu müşteri için hiçbir belge listelenmedi."}}
     </div>
-    <div class="ui primary button">Add Document</div>
+    <div class="ui primary button">
+        {{eng?"Add Document":"Belge Ekle"}}
+    </div>
 </div>

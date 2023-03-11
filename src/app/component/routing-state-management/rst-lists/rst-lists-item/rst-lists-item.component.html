@@ -4,15 +4,15 @@
             <img src="{{item.imageUrl}}">
         </div>
         <div class="content">
-            <a class="header">{{item.title}}</a>
+            <a class="header">{{eng?item.title:item.titleTr}}</a>
             <div class="meta">
-                <span>{{item.description}}</span>
+                <span>{{eng?item.description:item.descriptionTr}}</span>
             </div>
             <div class="description">
                 <p></p>
             </div>
             <div class="extra">
-                Additional details : ON SALE!!!
+                {{eng?"Additional details : ON SALE!!!":"Ek ayrıntılar : SATIŞTA!!!"}}
             </div>
         </div>
     </div>

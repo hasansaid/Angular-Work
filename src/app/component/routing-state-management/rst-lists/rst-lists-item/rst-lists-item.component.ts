@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RstListsItemComponent implements OnInit {
   @Input() items = [];
+  @Input() eng: boolean;
   constructor() {}
 
   ngOnInit(): void {}

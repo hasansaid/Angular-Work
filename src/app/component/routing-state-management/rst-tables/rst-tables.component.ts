@@ -1,3 +1,4 @@
+import { TranslateService } from './../../../service/translate.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,18 +8,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RstTablesComponent implements OnInit {
   datas = [
-    { name: 'Jhon', age: 23, job: 'Computer Engineer', employed: 'No' },
-    { name: 'Jack', age: 42, job: 'Software Engineer', employed: 'No' },
-    { name: 'Will', age: 38, job: 'Industrial Engineer', employed: 'Yes' },
+    {
+      name: 'Jhon',
+      age: 23,
+      job: 'Computer Engineer',
+      jobTr: 'Bilgisayar Mühendisi',
+      employed: 'No',
+      employedTr: 'Hayır',
+    },
+    {
+      name: 'Jack',
+      age: 42,
+      job: 'Software Engineer',
+      jobTr: 'Yazılım Mühendisi',
+      employed: 'No',
+      employedTr: 'Hayır',
+    },
+    {
+      name: 'Will',
+      age: 38,
+      job: 'Industrial Engineer',
+      jobTr: 'Endüstri Mühendisi',
+      employed: 'Yes',
+      employedTr: 'Evet',
+    },
   ];
   headers = [
-    { key: 'name', label: 'Fullname' },
-    { key: 'age', label: 'Age' },
-    { key: 'job', label: 'Job' },
-    { key: 'employed', label: 'Is he/she satisfied with his/her salary?' },
+    { key: 'name', label: 'Fullname', labelTr: 'İsim' },
+    { key: 'age', label: 'Age', labelTr: 'Yaş' },
+    { key: 'job', label: 'Job', labelTr: 'İş' },
+    {
+      key: 'employed',
+      label: 'Is he/she satisfied with his/her salary?',
+      labelTr: 'Aldığı maaştan memnun mu?',
+    },
   ];
 
-  constructor() {}
+  eng: boolean;
+  constructor(private translateService: TranslateService) {
+    this.eng = translateService.eng;
+  }
 
   ngOnInit(): void {}
 }

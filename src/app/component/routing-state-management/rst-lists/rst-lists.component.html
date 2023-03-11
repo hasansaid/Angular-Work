@@ -1,5 +1,5 @@
 <app-rst-divider>
-    General Information
+    {{eng?"General Information":"Genel Bilgi"}}
 </app-rst-divider>
 
 <div class="ui statistics">
@@ -8,13 +8,13 @@
             {{data.value}}
         </div>
         <div class="label">
-            {{data.label}}
+            {{eng?data.label:data.labelTr}}
         </div>
     </div>
 
 </div>
 
 <app-rst-divider>
-    Products
+    {{eng?" Products":"Ürünler"}}
 </app-rst-divider>
-<app-rst-lists-item [items]="images"></app-rst-lists-item>
+<app-rst-lists-item [items]="images" [eng]="eng"></app-rst-lists-item>

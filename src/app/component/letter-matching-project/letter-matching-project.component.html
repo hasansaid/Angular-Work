@@ -1,9 +1,9 @@
-<app-goal [content]="content"></app-goal>
+<app-goal [content]="eng? content : contentTr"></app-goal>
 <div class="mainArea" style="margin-top: 70px;">
     <div class="container">
         <div class="columns is-centered">
             <div class="box column is-one-third">
-                <h1 class="title has-text-centered">Letter Matching</h1>
+                <h1 class="title has-text-centered">{{eng?"Letter Matching":"Harf Eşleştirme"}}</h1>
                 <p class="has-text-centered">
                     <span [class]="compare(letter,enteredText[i])"
                         *ngFor="let letter of randomText.split(''); let i =index">{{letter}}</span>
@@ -14,11 +14,10 @@
 
                 <div *ngIf="randomText === enteredText">
                     <h1 class="title" style="text-align: center; margin-top: 20px; color:rgb(3, 179, 3)">
-                        Congratulations!!!</h1>
+                        {{eng?"Congratulations!!!":"Tebrikler!!!"}}</h1>
                 </div>
                 <button class="cong button is-primary is-outlined"><a class="cong2" href="home/letter-matching-project">
-                        New
-                        Text</a></button>
+                        {{eng?"New Text":"Yeni Metin"}}</a></button>
             </div>
         </div>
     </div>

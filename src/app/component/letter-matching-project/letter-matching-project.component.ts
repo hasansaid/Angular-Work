@@ -1,3 +1,4 @@
+import { TranslateService } from './../../service/translate.service';
 import { Component, OnInit } from '@angular/core';
 import { lorem } from 'faker';
 @Component({
@@ -8,10 +9,16 @@ import { lorem } from 'faker';
 export class LetterMatchingProjectComponent implements OnInit {
   content: string =
     'A random text is generated. We need to write the same text to the input. If the entered text and the random text match, a congratulations message is displayed. Try and see!!!';
+  contentTr: string =
+    "Rastgele bir metin oluşturulur. Input'a aynı metni yazmamız gerekiyor. Girilen metin ve rastgele metin eşleşirse, bir tebrik mesajı görüntülenir. Deneyin ve görün!!!";
   randomText: string = lorem.sentence();
   enteredText: string = '';
 
-  constructor() {}
+  eng: boolean;
+
+  constructor(private translateService: TranslateService) {
+    this.eng = translateService.eng;
+  }
 
   ngOnInit(): void {}
 
