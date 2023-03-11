@@ -10,6 +10,6 @@ export class AppComponent {
   title = 'angular';
 
   constructor(private translateService: TranslateService) {
-    translateService.aa();
+    translateService.translateLanguage();
   }
 }

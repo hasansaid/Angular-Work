@@ -1,5 +1,13 @@
 {
   "mainComponent": {},
+  "main-title": {
+    "tr": "ANGULAR WORK PROJESİNE HOŞGELDİNİZ",
+    "en": "WELCOME TO ANGULAR WORK PROJECT"
+  },
+  "main-explain": {
+    "tr": "Bu projede..",
+    "en": "In this project.."
+  },
   "big-p": {
     "tr": "Büyük Projeler",
     "en": "Big Projects"

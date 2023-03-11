@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import db from '@yusuf-yeniceri/easy-storage';
+import { validatorLocalStorage } from '../common';
 
 @Injectable({
   providedIn: 'root',
@@ -9,8 +10,9 @@ export class TranslateService {
   data: any = {};
   eng: boolean = false;
   constructor(private http: HttpClient) {}
-  aa() {
-    let lang = db.ref('AngularProject/lang').get();
+  translateLanguage() {
+    let lang =
+      validatorLocalStorage(db.ref('AngularProject/lang').get()) || 'tr';
     this.eng = lang == 'tr' ? false : true;
     this.use(lang);
   }

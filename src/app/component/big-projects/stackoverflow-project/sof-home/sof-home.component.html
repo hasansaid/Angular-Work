@@ -1,39 +1,51 @@
-<div class="container ">
-    <div class="content-wrapper">
-        <ng-container *ngIf="userService.user!=undefined">
-            <mat-form-field appearance="fill">
-                <textarea [(ngModel)]="question" matInput cdkTextareaAutosize cdkAutosizeMinRows="5"
-                    placeholder="Ask your question..."></textarea>
-            </mat-form-field>
-            <div class="new-post-actions-container">
-                <button (click)="post()" [disabled]="question.trim() == ''" mat-raised-button
-                    class="post-button">Ask</button>
-            </div>
-        </ng-container>
-        <!-- {{question}} -->
+<html>
 
-        <mat-card style="cursor: pointer;" *ngFor="let item of questions" class="question-card">
-            <div class="row">
-                <div class="col-md-11">
-                    <mat-card-content routerLink="/big-projects/stackoverflow-project/sof-solutions/{{item.id}}">
-                        <p class="username">{{item.username}}</p>
-                        <p>
-                            {{item.question}}
-                        </p>
-                    </mat-card-content>
+<body>
+
+
+    <div class="container ">
+        <div class="content-wrapper">
+            <ng-container *ngIf="userService.user!=undefined">
+                <mat-form-field appearance="fill">
+                    <textarea [(ngModel)]="question" matInput cdkTextareaAutosize cdkAutosizeMinRows="5"
+                        placeholder="Ask your question..."></textarea>
+                </mat-form-field>
+                <div class="new-post-actions-container">
+                    <button (click)="post()" [disabled]="question.trim() == ''" mat-raised-button
+                        class="post-button">Ask</button>
                 </div>
-                <div class="col-md-1">
-                    <ng-container *ngIf="item?.userId == userService.user?.id">
-                        <button color="warn" (click)="delete(item.id)" mat-icon-button>
-                            <mat-icon class="me-2">
-                                delete
-                            </mat-icon>
-                        </button>
-                    </ng-container>
+            </ng-container>
+            <!-- {{question}} -->
+
+
+            <mat-card style="cursor: pointer;" *ngFor="let item of questions" class="question-card">
+                <div class="row">
+                    <div class="col-md-11">
+                        <mat-card-content routerLink="/big-projects/stackoverflow-project/sof-solutions/{{item.id}}">
+                            <p class="username">{{item.username}}</p>
+                            <p>
+                                {{item.question}}
+                            </p>
+                        </mat-card-content>
+                    </div>
+                    <div class="col-md-1">
+                        <ng-container *ngIf="item?.userId == userService.user?.id">
+                            <button color="warn" (click)="delete(item.id)" mat-icon-button>
+                                <mat-icon class="me-2">
+                                    delete
+                                </mat-icon>
+                            </button>
+                        </ng-container>
+                    </div>
                 </div>
-            </div>
 
 
-        </mat-card>
+            </mat-card>
+        </div>
     </div>
-</div>
+
+
+
+</body>
+
+</html>

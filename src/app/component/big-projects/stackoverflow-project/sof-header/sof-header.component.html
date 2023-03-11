@@ -1,8 +1,14 @@
-<mat-toolbar class="d-flex justify-content-between" color="primary">
+<mat-toolbar class="d-flex justify-content-center" color="primary">
     <div style="cursor: pointer;" routerLink="/big-projects/stackoverflow-project">
         Stackoverflow
     </div>
+    <div>
+        <div id="google_translate_element" style="position: absolute; z-index: 10000; right: 0"></div>
+        <div #elementRef></div>
+    </div>
+
     <div class="row">
+
         <div *ngIf="userService.user == undefined" routerLink="/big-projects/stackoverflow-project/sof-login"
             class="col-md-4 me-4" style="cursor: pointer;" mat-button>
             Login

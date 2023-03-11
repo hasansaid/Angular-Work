@@ -21,6 +21,7 @@ export class SofHomeComponent implements OnInit {
   ngOnInit(): void {
     this.getQuestions();
   }
+
   getQuestions() {
     this.questionService.getQuestions().subscribe((res) => {
       this.questions = res;
