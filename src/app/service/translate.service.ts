@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import db from '@yusuf-yeniceri/easy-storage';
-import { validatorLocalStorage } from '../common';
+import { validatorLocalStorage } from '../common/localStorage';
 
 @Injectable({
   providedIn: 'root',
