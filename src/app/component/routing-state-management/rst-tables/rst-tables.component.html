@@ -18,7 +18,7 @@
 <table class="ui striped celled table">
     <thead>
         <tr>
-            <th *ngFor="let header of headers">{{header.label}}</th>
+            <th *ngFor="let header of headers">{{eng?header.label:header.labelTr}}</th>
         </tr>
     </thead>
     <tbody>

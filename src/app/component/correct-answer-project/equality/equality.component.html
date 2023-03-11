@@ -1,9 +1,9 @@
-<div class="larger shadow p-5">
-    <div class="mb-4  d-flex justify-content-center fs-1 fw-bold " style="color: red;">
-        ENTER THE CORRECT ANSWER
+<div class="larger shadow p-5 mt-5">
+    <div class="m-5  d-flex justify-content-center fs-1 fw-bold  " style="color: red;">
+        {{eng?"ENTER THE CORRECT ANSWER":"DOĞRU CEVABI GİRİN"}}
     </div>
 
-    <form [formGroup]="mathForm">
+    <form [formGroup]="mathForm" style="margin-top: 30px; padding: 20px;">
         <div class="input-group mb-3">
             <div class="input-group input-group-lg">
                 <span class="input-group-text" id="inputGroup-sizing-lg">{{firstNumber}} + {{secondNumber}}=</span>
@@ -13,19 +13,25 @@
         </div>
     </form>
 
-    <div class="d-flex justify-content-evenly fw-bold">
-        <div>
-            Total Seconds: {{totalSeconds | number:"1.1-3"}}
+    <div class="d-flex justify-content-evenly fw-bold ">
+        <div class="me-2">
+            {{eng?" Total Seconds: ":"Toplam Saniye: "}} {{totalSeconds | number:"1.1-3"}}
+        </div>
+        <div class="me-2">
+            {{eng?" Average Seconds: ":"Ortalama Saniye: "}} {{averageSeconds | number:"1.1-3"}}
         </div>
         <div>
-            Average Seconds: {{averageSeconds | number:"1.1-3"}}
-        </div>
-        <div>
-            Total Correct Answer: {{solved}}
+            {{eng?" Total Correct Answer: ":"Toplam Doğru Cevap"}} {{solved}}
         </div>
     </div>
-
+    <div class="d-flex justify-content-center mt-3">
+        <a href="/home/correct-answer-project"><button color="primary" mat-raised-button>
+                {{eng?"Reset Time":"Süreyi Sıfırla"}}
+            </button></a>
+    </div>
 </div>
+
+
 
 <div *ngIf="mathForm.valid" class="d-flex justify-content-evenly fs-3 fw-bold shadow p-3" style="color: green;">
     CONGRATULATIONS

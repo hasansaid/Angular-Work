@@ -28,7 +28,7 @@ export class RstListsComponent implements OnInit {
       title: 'Table',
       titleTr: 'Masa',
       description: 'Made of wood.',
-      descriptionTr: 'Ağaçtan yapılmıştır.',
+      descriptionTr: 'Bambu ağacından yapılmıştır.',
     },
   ];
   eng: boolean;

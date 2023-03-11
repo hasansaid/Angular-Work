@@ -1,4 +1,9 @@
 {
+  "back": {
+    "tr": "GERİ DÖN",
+    "en": "BACK TO HOME"
+  },
+
   "mainComponent": {},
   "main-title": {
     "tr": "ANGULAR WORK PROJESİNE HOŞGELDİNİZ",
@@ -66,10 +71,6 @@
     "tr": "Makale Projesi",
     "en": "Article Project"
   },
-  "back": {
-    "tr": "GERİ DÖN",
-    "en": "BACK TO HOME"
-  },
 
   "goalComponent": {},
   "goal-title": {
@@ -117,5 +118,19 @@
   "r-go": {
     "tr": "GİT",
     "en": "GO"
+  },
+
+  "big-projects": {},
+  "blog-w": {
+    "tr": "Blog Sitesi",
+    "en": "Blog Website "
+  },
+  "sof-w": {
+    "tr": "Stackoverflow Sitesi",
+    "en": "Stackoverflow Website "
+  },
+  "jira-w": {
+    "tr": "Jira Sitesi",
+    "en": "Jira Website "
   }
 }

@@ -1,7 +1,7 @@
 import { startWith } from 'rxjs/operators';
 import { EqualityValidators } from './equality-validators';
 import { FormGroup, FormControl, AbstractControl } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { delay, filter } from 'rxjs';
 
 @Component({
@@ -10,6 +10,7 @@ import { delay, filter } from 'rxjs';
   styleUrls: ['./equality.component.css'],
 })
 export class EqualityComponent implements OnInit {
+  @Input() eng: boolean;
   totalSeconds = 0;
   averageSeconds = 0;
   solved = 0;
@@ -48,6 +49,7 @@ export class EqualityComponent implements OnInit {
         this.totalSeconds = (new Date().getTime() - startTime.getTime()) / 1000;
         this.averageSeconds =
           (new Date().getTime() - startTime.getTime()) / this.solved / 1000;
+
         // setValue tüm değerleri güncellerken patchValue girilen değerleri update eder.
         this.mathForm.setValue({
           firstNumber: this.generateNumber(),

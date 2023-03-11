@@ -1,3 +1,4 @@
+import { TranslateService } from './../../service/translate.service';
 import { RandomImageService } from './../../service/random-image-project/random-image.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./random-image-project.component.css'],
 })
 export class RandomImageProjectComponent implements OnInit {
-  content =
+  content: string =
     "Added service layer and HttpClient module. So data can be retrieved from api. Pictures come from api. Don't forget to review the codes (: ";
+  contentTr: string =
+    "Servis katmanı ve HttpClient modülü eklendi. Böylece veriler api'den alınabilir. Resimler api'den geliyor. Kodları incelemeyi unutmayın (:";
+
   imageUrl: string = '';
-  constructor(private imageService: RandomImageService) {}
+  eng: boolean;
+  constructor(
+    private imageService: RandomImageService,
+    private translateService: TranslateService
+  ) {
+    this.eng = translateService.eng;
+  }
 
   ngOnInit(): void {
     this.getImages();

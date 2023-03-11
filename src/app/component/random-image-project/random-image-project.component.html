@@ -1,11 +1,14 @@
 <div class="mb-5">
-    <app-goal [content]="content"></app-goal>
+    <app-goal [content]="eng?content:contentTr"></app-goal>
 </div>
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6" style="display: flex; justify-content: center;">
-            <button (click)=" onClick()" class="btn btn-success">New Image</button>
+        <div class="col-md-6"
+            style="display: flex; justify-content: center; padding-top: 200px; padding-bottom: 200px;">
+            <button mat-raised-button (click)=" onClick()" color="accent">
+                {{eng?"New Image":"Yeni Resim"}}
+            </button>
         </div>
         <div class="col-md-6">
             <img [src]="imageUrl" style="width: 400px; height: 450px;">
