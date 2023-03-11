@@ -9,6 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class RfInputComponent implements OnInit {
   @Input() control;
   @Input() label;
+  @Input() eng: boolean;
   constructor() {}
 
   ngOnInit(): void {}

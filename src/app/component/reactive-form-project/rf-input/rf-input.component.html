@@ -3,27 +3,27 @@
 <div class="field">
     <label class="label">{{label}}</label>
     <div class="control">
-        <input type="text" class="input" placeholder="Text Input" [formControl]="control "
+        <input type="text" class="input" placeholder="{{eng?'Text Input':'Metin Girişi'}}" [formControl]="control "
             [ngClass]="{'is-danger':showErrors()}">
     </div>
 </div>
 
 <ng-container *ngIf="showErrors()">
     <div class="help is-danger" *ngIf="control.errors?.['required']">
-        *Required field.
+        *{{eng?'Required field.':'Bu alan boş bırakılamaz.'}}
     </div>
     <div class="help is-danger" *ngIf="control.errors?.['minlength']">
-        *The value you entered contains
+        *{{eng?"The value you entered contains":"Girdiğiniz değer"}}
         {{control.errors?.['minlength']?.['actualLength']}}
-        characters. But it should be at least
+        {{eng?"characters. But it should be at least":"karakter içeriyor. Ama en az"}}
         {{control.errors?.['minlength']?.['requiredLength']}}
-        .
+        {{eng?"":"olmalı"}}.
     </div>
     <div class="help is-danger" *ngIf="control.errors?.['maxlength']">
-        *The value you entered contains
+        *{{eng?"The value you entered contains":"Girdiğiniz değer"}}
         {{control.errors?.['maxlength']?.['actualLength']}}
-        characters. But the maximum should be
+        {{eng?"characters. But the maximum should be":"karakter içeriyor. Ama en fazla"}}
         {{control.errors?.['maxlength']?.['requiredLength']}}
-        .
+        {{eng?"":"olmalı"}}.
     </div>
 </ng-container>

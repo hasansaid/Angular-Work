@@ -1,3 +1,4 @@
+import { TranslateService } from './../../service/translate.service';
 import { Component, OnInit } from '@angular/core';
 import {
   concat,
@@ -29,10 +30,15 @@ import {
 })
 export class RxjsProjectComponent implements OnInit {
   content = 'RxJs Library operations have been done. Examine the codes.';
+  contentTr = 'RxJs Kütüphane işlemleri yapıldı. Kodları inceleyin.';
   one$;
   two$;
 
-  constructor() {}
+  eng: boolean;
+
+  constructor(private translateService: TranslateService) {
+    this.eng = translateService.eng;
+  }
 
   ngOnInit(): void {
     // this.one();
@@ -40,7 +46,6 @@ export class RxjsProjectComponent implements OnInit {
     // this.three();
     // this.four();
     // this.five();
-
     this.six();
 
     // this.seven();

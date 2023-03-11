@@ -5,20 +5,25 @@
     <div class="container" style="max-width: 500px;">
         <form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
 
-            <app-rf-input label="Full Name" [control]="cardForm.get('name')"></app-rf-input>
-            <app-rf-input label="Card Number" [control]="cardForm.get('cardNumber')"></app-rf-input>
+            <app-rf-input label="{{eng?' Full Name':'İsim Soyisim'}}" [eng]="eng"
+                [control]="cardForm.get('name')"></app-rf-input>
+            <app-rf-input label="{{eng?'Card Number':'Kart Numarası'}}" [eng]="eng"
+                [control]="cardForm.get('cardNumber')"></app-rf-input>
             <div class="columns">
                 <div class="column">
-                    <app-rf-input label="Expiration Date" [control]="cardForm.get('expiration')"></app-rf-input>
+                    <app-rf-input label="{{eng?'Expiration Date':'Son Kullanma Tarihi'}}" [eng]="eng"
+                        [control]="cardForm.get('expiration')"></app-rf-input>
                 </div>
                 <div class="column">
-                    <app-rf-input label="Security Code" [control]="cardForm.get('securityCode')"></app-rf-input>
+                    <app-rf-input label="{{eng?'Security Code':'Güvenlik Kodu'}}" [eng]="eng"
+                        [control]="cardForm.get('securityCode')"></app-rf-input>
                 </div>
             </div>
             <div class="buttons" style="display: flex; justify-content: flex-end;">
                 <button (click)="resetForm()" class="button is-warning" [disabled]="cardForm.valid"
-                    type="button">Temizle</button>
-                <button class="button is-primary" [disabled]="cardForm.invalid" type="sumbit">Kaydet</button>
+                    type="button">{{eng?"Clear":"Temizle"}}</button>
+                <button class="button is-primary" [disabled]="cardForm.invalid"
+                    type="sumbit">{{eng?"Save":"Kaydet"}}</button>
             </div>
         </form>
     </div>

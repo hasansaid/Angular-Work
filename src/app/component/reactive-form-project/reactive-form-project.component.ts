@@ -1,3 +1,4 @@
+import { TranslateService } from './../../service/translate.service';
 import { DateFormControl } from './date-form-control';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -26,8 +27,11 @@ export class ReactiveFormProjectComponent implements OnInit {
       Validators.maxLength(3),
     ]),
   });
+  eng: boolean;
 
-  constructor() {}
+  constructor(private translateService: TranslateService) {
+    this.eng = translateService.eng;
+  }
 
   ngOnInit(): void {}
 
