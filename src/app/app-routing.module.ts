@@ -1,3 +1,4 @@
+import { JiraViewBoardComponent } from './component/big-projects/jira-project/jira-view-board/jira-view-board.component';
 import { JiraBoardsComponent } from './component/big-projects/jira-project/jira-boards/jira-boards.component';
 import { JiraProjectComponent } from './component/big-projects/jira-project/jira-project.component';
 import { ArtArticleComponent } from './component/big-projects/article-project/art-article/art-article.component';
@@ -68,6 +69,7 @@ const routes: Routes = [
     children: [
       { path: '', component: JiraBoardsComponent },
       { path: 'boards', component: JiraBoardsComponent },
+      { path: 'view-board/:boardid', component: JiraViewBoardComponent },
     ],
   },
   {

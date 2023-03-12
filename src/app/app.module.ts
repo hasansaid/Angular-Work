@@ -76,6 +76,7 @@ import { APP_INITIALIZER } from '@angular/core';
 import { TranslateService } from './service/translate.service';
 import { TranslatePipe } from './pipes/translate.pipe';
 import { GoogleTranslateComponent } from './common/google-translate/google-translate.component';
+import { JiraViewBoardComponent } from './component/big-projects/jira-project/jira-view-board/jira-view-board.component';
 
 export function setupTranslateFactory(service: TranslateService): Function {
   return () => service.use('tr');
@@ -134,6 +135,7 @@ export function setupTranslateFactory(service: TranslateService): Function {
     JiraBoardsDialogComponent,
     TranslatePipe,
     GoogleTranslateComponent,
+    JiraViewBoardComponent,
   ],
   imports: [
     BrowserModule,

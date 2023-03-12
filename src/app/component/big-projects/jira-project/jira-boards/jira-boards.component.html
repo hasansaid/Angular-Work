@@ -4,7 +4,8 @@
     </button>
 </div>
 
-<div class="boardD" *ngFor="let board of jiraBoardsService.boards; let i=index">
+<div style="cursor: pointer;" class="boardD" *ngFor="let board of jiraBoardsService.boards; let i=index"
+    [routerLink]="'/big-projects/jira-project/view-board/'+i">
     {{board.title}}
     <div>
         <button mat-icon-button (click)="deleteBoard(i)">
