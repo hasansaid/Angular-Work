@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "json:server": "json-server --watch db.json"
   },
   "private": true,
   "dependencies": {
@@ -15,6 +16,7 @@
     "@angular/common": "^14.2.0",
     "@angular/compiler": "^14.2.0",
     "@angular/core": "^14.2.0",
+    "@angular/fire": "^7.5.0",
     "@angular/forms": "^14.2.0",
     "@angular/material": "^13.0.0",
     "@angular/platform-browser": "^14.2.0",
@@ -25,6 +27,7 @@
     "@yusuf-yeniceri/easy-storage": "^1.0.23",
     "bootstrap": "^5.2.1",
     "faker": "^5.5.3",
+    "firebase": "^9.17.2",
     "jquery": "^3.6.3",
     "rxjs": "~7.5.0",
     "semantic-ui-css": "^2.5.0",
@@ -32,16 +35,20 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "@angular-builders/custom-webpack": "^14.1.0",
+    "@angular-builders/dev-server": "^7.3.1",
     "@angular-devkit/build-angular": "^14.2.9",
     "@angular/cli": "~14.2.9",
     "@angular/compiler-cli": "^14.2.0",
     "@types/jasmine": "~4.0.0",
+    "dotenv": "^16.0.3",
     "jasmine-core": "~4.3.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "typescript": "~4.7.2"
+    "typescript": "~4.7.2",
+    "yargs": "^17.7.1"
   }
 }

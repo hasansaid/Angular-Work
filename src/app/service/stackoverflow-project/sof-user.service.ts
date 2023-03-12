@@ -12,10 +12,10 @@ export class SofUserService extends BaseService {
   }
 
   public createAccount(user: any) {
-    return this.postReq('/users', user);
+    return this.postReq('/sofusers', user);
   }
 
   public getUser(email: any) {
-    return this.getReq('/users?email=' + email);
+    return this.getReq('/sofusers?email=' + email);
   }
 }
