@@ -42,8 +42,8 @@ export class SofHomeComponent implements OnInit {
   }
   delete(id) {
     this.questionService.deleteQuestion(id).subscribe((res) => {
-      this.getQuestions();
       this.matSnackBar.open('Question deleted!', 'Ok');
+      this.getQuestions();
     });
   }
 }
