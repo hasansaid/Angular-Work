@@ -1,3 +1,5 @@
+import { JiraCardDialogComponent } from './../jira-card-dialog/jira-card-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 import { JiraBoardsService } from './../../../../service/jira-project/jira-boards.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -12,11 +14,19 @@ export class JiraViewBoardComponent implements OnInit {
   boardTitle: string = '';
   constructor(
     private activatedRoute: ActivatedRoute,
-    public jiraBoardsService: JiraBoardsService
+    public jiraBoardsService: JiraBoardsService,
+    private matDialog: MatDialog
   ) {}
 
   ngOnInit(): void {
     this.boardid = this.activatedRoute.snapshot.paramMap.get('boardid');
     this.boardTitle = this.jiraBoardsService.boards[this.boardid].title;
+  }
+
+  openNewCardDialog() {
+    const dialogRef = this.matDialog.open(JiraCardDialogComponent, {
+      width: '500px',
+      data: { boardid: this.boardid },
+    });
   }
 }

@@ -86,6 +86,7 @@ import { TranslateService } from './service/translate.service';
 import { TranslatePipe } from './pipes/translate.pipe';
 import { GoogleTranslateComponent } from './common/google-translate/google-translate.component';
 import { JiraViewBoardComponent } from './component/big-projects/jira-project/jira-view-board/jira-view-board.component';
+import { JiraCardDialogComponent } from './component/big-projects/jira-project/jira-card-dialog/jira-card-dialog.component';
 
 export function setupTranslateFactory(service: TranslateService): Function {
   return () => service.use('tr');
@@ -145,6 +146,7 @@ export function setupTranslateFactory(service: TranslateService): Function {
     TranslatePipe,
     GoogleTranslateComponent,
     JiraViewBoardComponent,
+    JiraCardDialogComponent,
   ],
   imports: [
     BrowserModule,

@@ -21,6 +21,10 @@ export class JiraBoardsService {
     localStorage.setItem('boards', JSON.stringify(this.boards));
   }
 
+  public updateToLocalstorage() {
+    localStorage.setItem('boards', JSON.stringify(this.boards));
+  }
+
   public deleteBoard(boardIndex) {
     this.boards.splice(boardIndex, 1);
     localStorage.setItem('boards', JSON.stringify(this.boards));
