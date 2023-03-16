@@ -24,7 +24,10 @@ export class JiraCardDialogComponent implements OnInit {
     let a = this.data;
   }
 
-  deleteTask(i: number) {}
+  deleteTask(i: number) {
+    this.tasks.splice(i, 1);
+    this.tasksLoop.splice(i, 1);
+  }
 
   addTask() {
     this.tasks.push('');

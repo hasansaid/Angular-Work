@@ -1,5 +1,29 @@
-<div class="d-flex justify-content-center mt-3">
-    <button mat-raised-button (click)="openNewCardDialog()" color="accent">
-        Add New Card
-    </button>
+<div style="display: flex;justify-content:center;margin: 30px 0px;">
+    <div style="display: flex;flex-direction: column;">
+        <div style="display: flex;justify-content:center;margin: 30px 0px;">
+            <button mat-raised-button (click)="openNewCardDialog()" color="accent">Yeni Kart Ekle</button>
+        </div>
+
+
+        <mat-card style="min-width: 400px;margin-bottom: 30px;"
+            *ngFor="let card of jiraBoardsService.boards[boardid].cards;let i = index">
+            <mat-card-title>{{card.title}}</mat-card-title>
+            <mat-card-content>
+                <div style="display: flex;
+        flex-direction: column;">
+                    <mat-checkbox *ngFor="let checkbox of card.checklist;let ikinci = index"
+                        [(ngModel)]="card.status[ikinci]">
+                        {{checkbox}}
+                    </mat-checkbox>
+
+                </div>
+
+            </mat-card-content>
+            <mat-card-actions>
+                <button color="accent" (click)="deleteCard(i)" mat-raised-button>Kartı Sil</button>
+                <!-- <button color="primary" (click)="editCard(i,card)" mat-raised-button>Güncelle</button> -->
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
 </div>

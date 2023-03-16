@@ -19,6 +19,7 @@ export class JiraViewBoardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    debugger;
     this.boardid = this.activatedRoute.snapshot.paramMap.get('boardid');
     this.boardTitle = this.jiraBoardsService.boards[this.boardid].title;
   }
@@ -26,7 +27,19 @@ export class JiraViewBoardComponent implements OnInit {
   openNewCardDialog() {
     const dialogRef = this.matDialog.open(JiraCardDialogComponent, {
       width: '500px',
-      data: { boardid: this.boardid },
+      data: { boardid: this.boardid, editMode: false },
+    });
+  }
+
+  deleteCard(indexCard: number) {
+    this.jiraBoardsService.boards[this.boardid].cards.splice(indexCard, 1);
+    this.jiraBoardsService.updateToLocalstorage();
+  }
+
+  editCard(indexCard: number, card: any) {
+    const dialogRef = this.matDialog.open(JiraCardDialogComponent, {
+      width: '500px',
+      data: { boardid: this.boardid, cardIndex: indexCard, editMode: true },
     });
   }
 }
