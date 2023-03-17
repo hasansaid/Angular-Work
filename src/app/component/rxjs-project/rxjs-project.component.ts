@@ -20,6 +20,8 @@ import {
   map,
   mapTo,
   startWith,
+  take,
+  takeLast,
   tap,
 } from 'rxjs/operators';
 
@@ -62,6 +64,8 @@ export class RxjsProjectComponent implements OnInit {
     // this.sixteen();
     // this.seventeen();
     // this.eighteen();
+    // this.nineteen();
+    // this.twenty();
   }
 
   one() {
@@ -449,6 +453,20 @@ export class RxjsProjectComponent implements OnInit {
       map((val) => console.log('Mapping : ', val + 10)),
       tap((val) => console.log('After Map : ' + val))
     );
+    example.subscribe((val) => console.log(val));
+  }
+
+  nineteen() {
+    // Take
+    const source = of(1, 2, 3, 4, 5);
+    const example = source.pipe(take(3));
+    example.subscribe((val) => console.log(val));
+  }
+
+  twenty() {
+    // TakeLast
+    const source = of('Hasan', 'Osman', 'Can', 'Mustafa', 'Ali');
+    const example = source.pipe(takeLast(3));
     example.subscribe((val) => console.log(val));
   }
 }
