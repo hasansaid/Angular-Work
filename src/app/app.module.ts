@@ -23,7 +23,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import { config } from './common/firebase/config';
+// import { config } from './common/firebase/config';
 // ********
 
 import { AppRoutingModule } from './app-routing.module';
@@ -165,11 +165,11 @@ export function setupTranslateFactory(service: TranslateService): Function {
     MatSnackBarModule,
     FormsModule,
     MatIconModule,
-    AngularFireModule.initializeApp(config),
-    AngularFireAuthModule,
-    AngularFirestoreModule,
-    AngularFireStorageModule,
-    AngularFireDatabaseModule,
+    // AngularFireModule.initializeApp(config),
+    // AngularFireAuthModule,
+    // AngularFirestoreModule,
+    // AngularFireStorageModule,
+    // AngularFireDatabaseModule,
   ],
   providers: [
     BaseService,
@@ -182,4 +182,4 @@ export function setupTranslateFactory(service: TranslateService): Function {
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

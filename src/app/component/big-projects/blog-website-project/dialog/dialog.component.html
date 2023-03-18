@@ -1,29 +1,27 @@
 <div class="d-flex d-flex justify-content-between">
     <div class="d-flex align-items-center me-1">
-        <h3 style="margin: 0px;">
-            <span>
+        <span style="margin: 0px;">
+            <h1>
                 {{isUpdate ? "Edit Post":"See Post"}}
-            </span>
-        </h3>
+            </h1>
+        </span>
     </div>
-
-    <button mat-button style="font-size: 24px;" (click)="close()">x</button>
+    <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
 </div>
-<mat-divider></mat-divider>
 
 <div class="mt-2" *ngIf="!isUpdate">
     <div class="row">
         <div class="col-md-6" style="padding-left: 0px;">
-            <img class="w-100" src="assets/images/image{{imageUrl}}.jpg">
+            <img class="w-100 rounded" src="assets/images/image{{imageUrl}}.jpg">
         </div>
         <div class="col-md-6">
             <h2 class="fs-2">{{title}}</h2>
             <p>{{body}}</p>
         </div>
     </div>
-    <p class="d-flex justify-content-center m-5 fs-2">COMMENTS</p>
-    <div class="row" *ngFor="let comment of comments"
-        style="background-color: lightgray; margin-top: 20px; padding: 20px;">
+    <h2 class="d-flex justify-content-center my-3">COMMENTS</h2>
+    <hr>
+    <div class="row cBtn my-3" *ngFor="let comment of comments">
         <div class="col-md-2">
             <img style="width: 100px; height: 100px; border-radius: 30%;"
                 src="assets/images/profile/profile{{comment.userId}}.jpg" alt="">
