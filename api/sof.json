@@ -29,7 +29,9 @@
           "id": 1,
           "username": "jhonWalker",
           "solution": "asdasdasdas",
-          "plus": [],
+          "plus": [
+            2
+          ],
           "minus": []
         },
         {

@@ -1,15 +1,23 @@
-<div class="d-flex justify-content-center mt-3">
-    <button mat-raised-button (click)="openNewBoardDialog()" color="accent">
-        Add New Board
-    </button>
-</div>
-
-<div style="cursor: pointer;" class="boardD" *ngFor="let board of jiraBoardsService.boards; let i=index"
-    [routerLink]="'/big-projects/jira-project/view-board/'+i">
-    {{board.title}}
-    <div>
-        <button mat-icon-button (click)="deleteBoard(i)">
-            <mat-icon>delete</mat-icon>
+<div class="container">
+    <div class="d-flex justify-content-end mt-5">
+        <button mat-raised-button (click)="openNewBoardDialog()" color="accent">
+            Add New Board
         </button>
+    </div>
+    <div class="conteiner d-flex justify-content-center mt-5" *ngIf="jiraBoardsService.boards.length == 0">
+        <div>
+            <img src="../../../../../assets/images/veriYok.png" width="250">
+            <h1 class="mt-4 mb-1 text-center fw-normal">Burası ıssız...</h1>
+            <h2 class="text-center fw-light">Lütfen veri girişi yapın.</h2>
+        </div>
+    </div>
+    <div style="cursor: pointer;" class="boardD" *ngFor="let board of jiraBoardsService.boards; let i=index"
+        [routerLink]="'/big-projects/jira-project/view-board/'+i">
+        {{board.title}}
+        <div>
+            <button mat-icon-button (click)="deleteBoard(i)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
     </div>
 </div>

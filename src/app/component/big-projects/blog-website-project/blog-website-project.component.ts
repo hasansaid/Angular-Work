@@ -1,3 +1,4 @@
+import { SofUserService } from './../../../service/stackoverflow-project/sof-user.service';
 import { DialogComponent } from './dialog/dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { BlogPostService } from './../../../service/blog-website-project/blog-post.service';
@@ -12,8 +13,9 @@ export class BlogWebsiteProjectComponent implements OnInit {
   posts: Array<any> = [];
   constructor(
     private blogPostService: BlogPostService,
-    public matDialog: MatDialog
-  ) {}
+    public matDialog: MatDialog,
+    public userService: SofUserService
+  ) { }
 
   ngOnInit(): void {
     this.getBlogList();
@@ -33,5 +35,9 @@ export class BlogWebsiteProjectComponent implements OnInit {
       // console.log(res);
       this.posts = res;
     });
+  }
+  leave() {
+    this.userService.user = undefined;
+    localStorage.clear();
   }
 }
