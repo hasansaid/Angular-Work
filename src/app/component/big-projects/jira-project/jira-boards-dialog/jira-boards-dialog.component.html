@@ -2,7 +2,7 @@
     <div class="d-flex align-items-center me-1">
         <h3 style="margin: 0px;">
             <span>
-                Add New Board
+                Yeni Pano Ekle
             </span>
         </h3>
     </div>
@@ -14,11 +14,11 @@
 
         <mat-form-field style="width: 100%;" appearance="fill">
             <mat-label>
-                Title
+                Başlık
             </mat-label>
             <input formControlName="title" matInput>
             <mat-error *ngIf="boardForm.get('title')?.hasError('required')">
-                Title is required!
+                Başlık zorunlu!
             </mat-error>
         </mat-form-field>
 
@@ -27,6 +27,6 @@
 <div mat-dialog-actions class="d-flex justify-content-end">
     <button (click)="create()" [disabled]="boardForm.invalid" style="cursor: pointer;" mat-raised-button
         color="primary">
-        Create New Board
+        Yeni Pano Oluştur
     </button>
 </div>

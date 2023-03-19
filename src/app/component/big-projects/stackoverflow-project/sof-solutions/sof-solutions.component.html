@@ -1,7 +1,7 @@
 <div class="container" *ngIf="question!=undefined">
     <div class="content-wrapper cHeight">
         <div class="title-container">
-            Question - Answer Page
+            Soru - Cevap Sayfası
         </div>
         <hr>
         <mat-card class="question-card bgAnt">
@@ -22,15 +22,15 @@
         <ng-container *ngIf="userService.user!=undefined">
             <mat-form-field appearance="fill">
                 <textarea [(ngModel)]="solutionText" matInput cdkTextareaAutosize cdkAutosizeMinRows="5"
-                    placeholder="Enter your answer. Min 8 characters..."></textarea>
+                    placeholder="Cevabınızı girin. En az 8 karakter..."></textarea>
             </mat-form-field>
             <!-- {{solutionText.length}} -->
             <div class="new-post-actions-container justify-content-between">
                 <button routerLink="/big-projects/stackoverflow-project/sof-home" mat-raised-button color="accent">
-                    Back to Questions
+                    Sorulara Geri Dön
                 </button>
                 <button [disabled]="condition()" (click)="postSolutions()" mat-raised-button class="post-button">
-                    Save
+                    Kaydet
                 </button>
             </div>
         </ng-container>

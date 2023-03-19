@@ -8,7 +8,7 @@
 
     <div *ngFor="let task of tasksLoop;let i=index">
         <mat-form-field style="width: 90%;">
-            <mat-label>Task{{i+1}}</mat-label>
+            <mat-label>Görev{{i+1}}</mat-label>
             <input [(ngModel)]="tasks[i]" matInput>
         </mat-form-field>
         <button (click)="deleteTask(i)" mat-icon-button style="width: 10%;">

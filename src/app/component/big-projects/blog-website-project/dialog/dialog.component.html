@@ -2,7 +2,7 @@
     <div class="d-flex align-items-center me-1">
         <span style="margin: 0px;">
             <h1>
-                {{isUpdate ? "Edit Post":"See Post"}}
+                {{isUpdate ? "Postu Düzenle":"Post"}}
             </h1>
         </span>
     </div>
@@ -39,7 +39,7 @@
             <div class="row">
                 <mat-form-field>
                     <mat-label>
-                        Blog Title
+                        Blog Başlık
                     </mat-label>
                     <input matInput formControlName="title">
                 </mat-form-field>
@@ -47,14 +47,14 @@
             <div class="row">
                 <mat-form-field>
                     <mat-label>
-                        Blog Contents
+                        Blog İçerik
                     </mat-label>
                     <textarea matInput formControlName="body" cols="40" rows="10"> </textarea>
                 </mat-form-field>
             </div>
         </div>
         <div class="d-flex justify-content-end">
-            <button (click)="onSubmit()" [disabled]="!form.valid" mat-raised-button color="warn">Update</button>
+            <button (click)="onSubmit()" [disabled]="!form.valid" mat-raised-button color="warn">Güncelle</button>
         </div>
     </form>
 

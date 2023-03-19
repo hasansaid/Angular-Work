@@ -2,6 +2,14 @@
     <div class="d-flex justify-content-end mt-5 my-3">
         <button mat-raised-button (click)="openNewCardDialog()" color="accent">Yeni Kart Ekle</button>
     </div>
+    <div class="conteiner d-flex justify-content-center mt-5"
+        *ngIf="jiraBoardsService.boards[boardid].cards.length == 0">
+        <div>
+            <img src="../../../../../assets/images/veriYok.png" width="250">
+            <h1 class="mt-4 mb-1 text-center fw-normal">Burası ıssız...</h1>
+            <h2 class="text-center fw-light">Lütfen veri girişi yapın.</h2>
+        </div>
+    </div>
     <mat-card class="matCard my-3" *ngFor="let card of jiraBoardsService.boards[boardid].cards;let i = index">
         <mat-card-title>{{card.title}}</mat-card-title>
         <mat-card-content class="d-flex justify-content-between">

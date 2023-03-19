@@ -1,42 +1,43 @@
 <div class="container">
     <div class="form-container">
-        <div class="title">CREATE ACCOUNT</div>
+        <div class="title">HESAP OLUŞTUR</div>
         <form [formGroup]="accountForm">
             <mat-form-field appearance="outline">
-                <mat-label>Enter your email...</mat-label>
+                <mat-label>Email girin...</mat-label>
                 <input matInput formControlName="email" />
                 <mat-error>
-                    <p *ngIf="f['email'].errors && f['email'].errors['required']">Email is required..</p>
-                    <p *ngIf="f['email'].errors && f['email'].errors['email']">Enter the email format correctly...</p>
+                    <p *ngIf="f['email'].errors && f['email'].errors['required']">Email zorunlu..</p>
+                    <p *ngIf="f['email'].errors && f['email'].errors['email']">E-posta biçimini doğru girin..</p>
                 </mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Enter your username...</mat-label>
+                <mat-label>Kullanıcı adı girin...</mat-label>
                 <input matInput formControlName="username" />
                 <mat-error>
-                    <p *ngIf="f['password'].errors && f['password'].errors['required']">Username is required..</p>
-                    <p *ngIf="f['password'].errors && f['password'].errors['maxlength']">Enter a maximum of 10
-                        characters..</p>
+                    <p *ngIf="f['password'].errors && f['password'].errors['required']">Kullanıcı Adı zorunlu..</p>
+                    <p *ngIf="f['password'].errors && f['password'].errors['maxlength']">En fazla 10 karakter girin..
+                    </p>
                 </mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Enter your password...</mat-label>
+                <mat-label>Şifre girin...</mat-label>
                 <input type="password" matInput formControlName="password" />
                 <mat-error>
-                    <p *ngIf="f['password'].errors && f['password'].errors['required']">Password is required..</p>
-                    <p *ngIf="f['password'].errors && f['password'].errors['minlength']">Enter a minimum of 8
-                        characters..</p>
+                    <p *ngIf="f['password'].errors && f['password'].errors['required']">Şifre zorunlu..</p>
+                    <p *ngIf="f['password'].errors && f['password'].errors['minlength']">En az 8 karakter girin..</p>
                 </mat-error>
             </mat-form-field>
         </form>
         <div class="buttons-container">
             <button (click)="createAccount()" [disabled]="accountForm.invalid" mat-raised-button class="login-button">
-                Register
+                Kayıt Ol
             </button>
-            <p>Or</p>
-            <button routerLink="/big-projects/stackoverflow-project/sof-login" mat-button color="primary">Login</button>
+            <p>ya da</p>
+            <button routerLink="/big-projects/stackoverflow-project/sof-login" mat-button color="primary">
+                Giriş Yap
+            </button>
             <!-- {{accountForm.value |json}} -->
         </div>
     </div>
