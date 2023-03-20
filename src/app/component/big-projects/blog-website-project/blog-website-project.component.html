@@ -1,6 +1,15 @@
+<mat-toolbar color="primary">
+    <div routerLink="/big-projects/blog-website-project" style="cursor: pointer;">
+        BLOG WEBSİTE PROJESİ
+    </div>
+    <div (click)="leave()" class="col-md-4 p-4" routerLink="/big-projects" style="cursor: pointer;" mat-button>
+        AYRIL
+    </div>
+    <app-google-translate></app-google-translate>
+</mat-toolbar>
 <div class="container">
-    <div class="row">
-        <div class="col-md-4  col-sm-6 mt-3" *ngFor="let post of posts">
+    <div class="row mt-5">
+        <div class="col-md-4 col-sm-6 my-4" *ngFor="let post of posts">
             <mat-card class="example-card">
                 <mat-card-header>
                     <!-- <div mat-card-avatar class="example-header-image"></div> -->
@@ -21,19 +30,42 @@
                     </p>
                 </mat-card-content>
                 <mat-card-actions>
-
-                    <div style="margin-left:4px ;">
-                        <div class="row">
-                            <div class="col-md-5 "> <button (click)="openDialog(post,false)" mat-raised-button
-                                    color="primary">View</button>
-                                <button (click)="openDialog(post,true)" mat-raised-button color="accent">Edit</button>
+                    <div class="row row-cols-1 row-cols-md-4 g-1">
+                        <div class="col">
+                            <div class="card">
+                                <button (click)="openDialog(post,false)" mat-raised-button color="primary"
+                                    class="d-flex justify-content-center mtaBtn">
+                                    Görüntüle (M)
+                                </button>
                             </div>
-                            <div class="col-md-7 ">
-                                <a href="/big-projects/blog-website-project/view-blog/{{post.id}}">
-                                    <button mat-raised-button color="primary">View Page</button>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <button (click)="openDialog(post,true)" mat-raised-button color="accent"
+                                    class="d-flex justify-content-center mtaBtn">
+                                    Düzenle (M)
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <a href="/big-projects/blog-website-project/view-blog/{{post.id}}"
+                                    style="display: contents">
+                                    <button mat-raised-button color="primary"
+                                        class="d-flex justify-content-center mtaBtn">
+                                        Görüntüle
+                                    </button>
                                 </a>
-                                <a class="ms-2" href="/big-projects/blog-website-project/update-blog/{{post.id}}">
-                                    <button mat-raised-button color="accent">Edit Page</button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <a class="ms-2" href="/big-projects/blog-website-project/update-blog/{{post.id}}"
+                                    style="display: contents">
+                                    <button mat-raised-button color="accent"
+                                        class="d-flex justify-content-center mtaBtn">
+                                        Düzenle
+                                    </button>
                                 </a>
                             </div>
                         </div>

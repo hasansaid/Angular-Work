@@ -1,3 +1,9 @@
+<mat-toolbar color="primary">
+    <div routerLink="/big-projects/blog-website-project" style="cursor: pointer;">
+        BLOG WEBSITE PROJECT
+    </div>
+    <app-google-translate></app-google-translate>
+</mat-toolbar>
 <div class="container shadow p-5 mt-5">
     <div class="d-flex justify-content-center">
         <h1 class="fs-1 fw-bold">EDIT PAGE</h1>
@@ -7,7 +13,7 @@
             <div class="row">
                 <mat-form-field>
                     <mat-label>
-                        Blog Title
+                        Blog Başlık
                     </mat-label>
                     <input matInput formControlName="title">
                 </mat-form-field>
@@ -15,14 +21,14 @@
             <div class="row">
                 <mat-form-field>
                     <mat-label>
-                        Blog Contents
+                        Blog İçerik
                     </mat-label>
                     <textarea matInput formControlName="body" cols="40" rows="10"> </textarea>
                 </mat-form-field>
             </div>
         </div>
         <div class="d-flex justify-content-end me-2">
-            <button (click)="onSubmit()" [disabled]="!form.valid" mat-raised-button color="warn">UPDATE</button>
+            <button (click)="onSubmit()" [disabled]="!form.valid" mat-raised-button color="warn">Güncelle</button>
         </div>
     </form>
 </div>

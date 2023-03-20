@@ -1,17 +1,22 @@
-<div class="container mt-5">
+<mat-toolbar color="primary">
+    <div routerLink="/big-projects/blog-website-project" style="cursor: pointer;">
+        BLOG WEBSİTE PROJESİ
+    </div>
+    <app-google-translate></app-google-translate>
+</mat-toolbar>
+<div class="container mt-5 h165">
     <div class="row" *ngIf="blogPost !=null">
         <div class="col-md-6" style="padding-left: 0px;">
-            <img class="w-100" src="assets/images/image{{blogPost.imageId}}.jpg">
+            <img class="w-100 rounded" src="assets/images/image{{blogPost.imageId}}.jpg">
         </div>
         <div class="col-md-6">
             <h2 class="fs-2">{{blogPost.title}}</h2>
             <p>{{blogPost.body}}</p>
         </div>
     </div>
-    <p class="d-flex justify-content-center m-5 fs-2">COMMENTS</p>
-
-    <div class="row" *ngFor="let comment of comments"
-        style="background-color: lightgray; margin-top: 20px; padding: 20px;">
+    <h1 class="d-flex justify-content-center mt-5">YORUMLAR</h1>
+    <hr>
+    <div class="row cBtn my-4" *ngFor="let comment of comments">
         <div class="col-md-2">
             <img style="width: 100px; height: 100px; border-radius: 30%;"
                 src="assets/images/profile/profile{{comment.userId}}.jpg" alt="">

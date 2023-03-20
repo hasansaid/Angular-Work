@@ -8,7 +8,7 @@
 
     <div *ngFor="let task of tasksLoop;let i=index">
         <mat-form-field style="width: 90%;">
-            <mat-label>Task{{i+1}}</mat-label>
+            <mat-label>Görev{{i+1}}</mat-label>
             <input [(ngModel)]="tasks[i]" matInput>
         </mat-form-field>
         <button (click)="deleteTask(i)" mat-icon-button style="width: 10%;">
@@ -18,8 +18,12 @@
 
 </mat-dialog-content>
 
-<mat-dialog-actions>
-    <button (click)="addTask()" mat-raised-button>Yeni Task Ekle</button>
-    <button (click)="close()" mat-raised-button color="accent">İptal Et</button>
-    <button mat-raised-button (click)="create()" color="primary">Ekle</button>
+<mat-dialog-actions class="d-flex justify-content-between">
+    <div>
+        <button (click)="addTask()" mat-raised-button>Task Artır</button>
+    </div>
+    <div>
+        <button (click)="close()" mat-raised-button color="accent">İptal Et</button>
+        <button mat-raised-button (click)="create()" color="primary">Ekle</button>
+    </div>
 </mat-dialog-actions>

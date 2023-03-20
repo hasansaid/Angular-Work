@@ -1,8 +1,9 @@
 .boardD {
   display: flex;
   justify-content: space-between;
-  background-color: yellow;
+  border-radius: 10px;
+  background-color: gainsboro;
   align-items: center;
-  margin: 10px 30px;
-  padding: 0px 20px;
+  margin: 20px 0px;
+  padding: 8px 20px;
 }

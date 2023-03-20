@@ -94,3 +94,9 @@ mat-card-content {
 .increasedecrease {
   margin-left: 5px;
 }
+.bgAnt {
+  background-color: antiquewhite;
+}
+.cHeight {
+  height: max-content;
+}

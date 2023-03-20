@@ -1,29 +1,30 @@
-<div style="display: flex;justify-content:center;margin: 30px 0px;">
-    <div style="display: flex;flex-direction: column;">
-        <div style="display: flex;justify-content:center;margin: 30px 0px;">
-            <button mat-raised-button (click)="openNewCardDialog()" color="accent">Yeni Kart Ekle</button>
-        </div>
-
-
-        <mat-card style="min-width: 400px;margin-bottom: 30px;"
-            *ngFor="let card of jiraBoardsService.boards[boardid].cards;let i = index">
-            <mat-card-title>{{card.title}}</mat-card-title>
-            <mat-card-content>
-                <div style="display: flex;
-        flex-direction: column;">
-                    <mat-checkbox *ngFor="let checkbox of card.checklist;let ikinci = index"
-                        [(ngModel)]="card.status[ikinci]">
-                        {{checkbox}}
-                    </mat-checkbox>
-
-                </div>
-
-            </mat-card-content>
-            <mat-card-actions>
-                <button color="accent" (click)="deleteCard(i)" mat-raised-button>Kartı Sil</button>
-                <!-- <button color="primary" (click)="editCard(i,card)" mat-raised-button>Güncelle</button> -->
-            </mat-card-actions>
-        </mat-card>
+<div class="container">
+    <div class="d-flex justify-content-end mt-5 my-3">
+        <button mat-raised-button (click)="openNewCardDialog()" color="accent">Yeni Kart Ekle</button>
     </div>
-
+    <div class="conteiner d-flex justify-content-center mt-5"
+        *ngIf="jiraBoardsService.boards[boardid].cards.length == 0">
+        <div>
+            <img src="../../../../../assets/images/veriYok.png" width="250">
+            <h1 class="mt-4 mb-1 text-center fw-normal">Burası ıssız...</h1>
+            <h2 class="text-center fw-light">Lütfen veri girişi yapın.</h2>
+        </div>
+    </div>
+    <mat-card class="matCard my-3" *ngFor="let card of jiraBoardsService.boards[boardid].cards;let i = index">
+        <mat-card-title>{{card.title}}</mat-card-title>
+        <mat-card-content class="d-flex justify-content-between">
+            <div class="d-flex flex-column">
+                <mat-checkbox *ngFor="let checkbox of card.checklist;let ikinci = index"
+                    [(ngModel)]="card.status[ikinci]">
+                    {{checkbox}}
+                </mat-checkbox>
+            </div>
+            <div class="d-flex justify-content-end align-items-end">
+                <button mat-mini-fab color="primary" (click)="deleteCard(i)"
+                    aria-label="Example icon button with a delete icon">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </mat-card-content>
+    </mat-card>
 </div>

@@ -16,10 +16,10 @@ export class JiraViewBoardComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     public jiraBoardsService: JiraBoardsService,
     private matDialog: MatDialog
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    debugger;
+    // debugger;
     this.boardid = this.activatedRoute.snapshot.paramMap.get('boardid');
     this.boardTitle = this.jiraBoardsService.boards[this.boardid].title;
   }

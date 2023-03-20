@@ -1,35 +1,35 @@
 <div class="container">
     <div class="form-container">
-        <div class="title">LOGIN</div>
+        <div class="title">GİRİŞ</div>
         <form [formGroup]="loginForm">
             <mat-form-field appearance="outline">
-                <mat-label>Enter your email...</mat-label>
+                <mat-label>Email girin...</mat-label>
                 <input matInput formControlName="email" />
                 <mat-error>
-                    <p *ngIf="f['email'].errors && f['email'].errors['required']">Email is required..</p>
-                    <p *ngIf="f['email'].errors && f['email'].errors['email']">Enter the email format correctly..</p>
+                    <p *ngIf="f['email'].errors && f['email'].errors['required']">Email zorunlu..</p>
+                    <p *ngIf="f['email'].errors && f['email'].errors['email']">E-posta biçimini doğru girin..</p>
                 </mat-error>
             </mat-form-field>
 
 
             <mat-form-field appearance="outline">
-                <mat-label>Enter your password...</mat-label>
+                <mat-label>Şifre girin...</mat-label>
                 <input type="password" matInput formControlName="password" />
                 <mat-error>
-                    <p *ngIf="f['password'].errors && f['password'].errors['required']">Password is required..</p>
+                    <p *ngIf="f['password'].errors && f['password'].errors['required']">Şifre zorunlu..</p>
                     <p *ngIf="f['password'].errors && f['password'].errors['minlength']">
-                        Number of characters you entered: {{loginForm.value.password.length}} .Enter a minimum of 8
-                        characters..</p>
+                        Girdiğiniz karakter sayısı: {{loginForm.value.password.length}}. En az 8 karakter girin..</p>
                 </mat-error>
             </mat-form-field>
         </form>
         <div class="buttons-container mt-3">
             <button (click)="login()" [disabled]="!loginForm.valid" mat-raised-button class="login-button">
-                Login
+                Giriş
             </button>
-            <p>Or</p>
-            <button routerLink="/big-projects/stackoverflow-project/sof-account" mat-button color="primary">Create
-                Account</button>
+            <p>ya da</p>
+            <button routerLink="/big-projects/stackoverflow-project/sof-account" mat-button color="primary">
+                Hesap Oluştur
+            </button>
             <!-- {{loginForm.value | json}}
             {{loginForm.valid}} -->
         </div>

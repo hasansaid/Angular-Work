@@ -3,16 +3,16 @@
 <body>
 
 
-    <div class="container ">
+    <div class="container cHeight">
         <div class="content-wrapper">
             <ng-container *ngIf="userService.user!=undefined">
                 <mat-form-field appearance="fill">
                     <textarea [(ngModel)]="question" matInput cdkTextareaAutosize cdkAutosizeMinRows="5"
-                        placeholder="Ask your question..."></textarea>
+                        placeholder="Derdini söylemeyen derman bulamazmış. Haydi sorunu sor..."></textarea>
                 </mat-form-field>
-                <div class="new-post-actions-container">
+                <div class="new-post-actions-container justify-content-end">
                     <button (click)="post()" [disabled]="question.trim() == ''" mat-raised-button
-                        class="post-button">Ask</button>
+                        class="post-button">Sor</button>
                 </div>
             </ng-container>
             <!-- {{question}} -->
@@ -28,7 +28,7 @@
                             </p>
                         </mat-card-content>
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-md-1 d-flex align-items-end">
                         <ng-container *ngIf="item?.userId == userService.user?.id">
                             <button color="warn" (click)="delete(item.id)" mat-icon-button>
                                 <mat-icon class="me-2">

@@ -1,3 +1,4 @@
+import { SofUserService } from './../../../../service/stackoverflow-project/sof-user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JiraHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public userService: SofUserService) { }
 
   ngOnInit(): void {
+  }
+
+  leave() {
+    this.userService.user = undefined;
+    localStorage.clear();
   }
 
 }

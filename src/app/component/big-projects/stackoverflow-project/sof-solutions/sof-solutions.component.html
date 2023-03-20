@@ -1,13 +1,10 @@
 <div class="container" *ngIf="question!=undefined">
-    <div style="display: flex;align-items: center;margin-right: 50px;">
-        <button routerLink="/big-projects/stackoverflow-project/sof-home" mat-raised-button color="accent">Back to
-            Questions</button>
-    </div>
-    <div class="content-wrapper">
+    <div class="content-wrapper cHeight">
         <div class="title-container">
-            Question - Answer Page
+            Soru - Cevap Sayfası
         </div>
-        <mat-card style="background-color: rgb(255, 66, 98);" class="question-card">
+        <hr>
+        <mat-card class="question-card bgAnt">
             <mat-card-content>
                 <div class="solution-container">
                     <div class="data-container">
@@ -25,12 +22,16 @@
         <ng-container *ngIf="userService.user!=undefined">
             <mat-form-field appearance="fill">
                 <textarea [(ngModel)]="solutionText" matInput cdkTextareaAutosize cdkAutosizeMinRows="5"
-                    placeholder="Enter your answer. Min 8 characters..."></textarea>
+                    placeholder="Cevabınızı girin. En az 8 karakter..."></textarea>
             </mat-form-field>
             <!-- {{solutionText.length}} -->
-            <div class="new-post-actions-container">
-                <button [disabled]="condition()" (click)="postSolutions()" mat-raised-button
-                    class="post-button">Save</button>
+            <div class="new-post-actions-container justify-content-between">
+                <button routerLink="/big-projects/stackoverflow-project/sof-home" mat-raised-button color="accent">
+                    Sorulara Geri Dön
+                </button>
+                <button [disabled]="condition()" (click)="postSolutions()" mat-raised-button class="post-button">
+                    Kaydet
+                </button>
             </div>
         </ng-container>
 
@@ -39,9 +40,13 @@
             <mat-card-content>
                 <div class="solution-container">
                     <div class="arrows-container">
-                        <button (click)="plusOne(i,1)" mat-icon-button><mat-icon>expand_less</mat-icon></button>
+                        <button (click)="plusOne(i,1)" mat-icon-button>
+                            <mat-icon>expand_less</mat-icon>
+                        </button>
                         <span class="increasedecrease">{{solution.plus.length - solution.minus.length}}</span>
-                        <button (click)="plusOne(i,-1)" mat-icon-button><mat-icon>expand_more</mat-icon></button>
+                        <button (click)="plusOne(i,-1)" mat-icon-button>
+                            <mat-icon>expand_more</mat-icon>
+                        </button>
                     </div>
                     <div class="data-container">
                         <p class="username">{{solution?.username}}</p>

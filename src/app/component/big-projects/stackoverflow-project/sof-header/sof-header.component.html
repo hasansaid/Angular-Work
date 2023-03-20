@@ -1,24 +1,19 @@
-<mat-toolbar class="d-flex justify-content-center" color="primary">
+<mat-toolbar class="d-flex justify-content-start" color="primary">
     <div style="cursor: pointer;" routerLink="/big-projects/stackoverflow-project">
         Stackoverflow
     </div>
-
-
     <div class="row">
-
         <div *ngIf="userService.user == undefined" routerLink="/big-projects/stackoverflow-project/sof-login"
-            class="col-md-4 me-4" style="cursor: pointer;" mat-button>
-            Login
+            class="col-md-4 mx-4" style="cursor: pointer;" mat-button>
+            Giriş
         </div>
-        <div *ngIf="userService.user != undefined" (click)="logout()" class="col-md-4 me-4" style="cursor: pointer;"
+        <div *ngIf="userService.user != undefined" (click)="logout()" class="col-md-4 mx-4" style="cursor: pointer;"
             mat-button>
-            Logout
+            Çıkış
         </div>
-        <div (click)="leave()" class="col-md-4" routerLink="/big-projects" style="cursor: pointer;" mat-button>
-            LEAVE
-        </div>
-        <div>
-            <app-google-translate></app-google-translate>
+        <div (click)="leave()" class="col-md-4 p-0" routerLink="/big-projects" style="cursor: pointer;" mat-button>
+            AYRIL
         </div>
     </div>
+    <app-google-translate></app-google-translate>
 </mat-toolbar>
